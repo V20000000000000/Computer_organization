@@ -1,0 +1,19 @@
+# Compile of ALU.v was successful.
+# Compile of CompALU.v was successful.
+# Compile of RF.v was successful.
+# Compile of tb_ALU.v was successful.
+# Compile of tb_CompALU.v was successful.
+# Compile of tb_RF.v was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb_CompALU
+# vsim -gui work.tb_CompALU 
+# Start time: 03:39:48 on Mar 13,2024
+# Loading work.tb_CompALU
+# Loading work.CompALU
+# Loading work.RF
+# Loading work.ALU
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
+quit
+# End time: 03:40:01 on Mar 13,2024, Elapsed time: 0:00:13
+# Errors: 0, Warnings: 1
