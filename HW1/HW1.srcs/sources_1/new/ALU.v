@@ -24,7 +24,7 @@ module ALU(
     input [31:0] Src_1,
     input [31:0] Src_2,
     input [5:0] Funct,
-    input [4:0] shamt,
+    input [4:0] Shamt,
     output [31:0] ALU_result,
     output [0:0] Zero,
     output [0:0] Carry
@@ -51,7 +51,7 @@ module ALU(
         end
         else if(Funct == 100010)
         begin
-            ALU_result_reg <= Src_1 >> shamt;
+            ALU_result_reg <= Src_1 >> Shamt;
         end
     end    
     

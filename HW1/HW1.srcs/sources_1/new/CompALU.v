@@ -41,7 +41,7 @@ module CompALU(
     .Src_1(Rs_data_wire),
     .Src_2(Rt_data_wire),
     .Funct(Instruction[5:0]),
-    .shamt(Instruction[10:6]),
+    .Shamt(Instruction[10:6]),
     .ALU_result(CompALU_data),
     .Zero(CompALU_zero),
     .Carry(CompALU_carry)
