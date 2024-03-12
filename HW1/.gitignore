@@ -1,0 +1,12 @@
+HW1.cache/
+HW1.gen/
+HW1.hw/
+HW1.ip_user_files/
+HW1.runs/
+HW1.sim/
+HW1.xpr
+*.jou
+*.log
+*.str
+
+
