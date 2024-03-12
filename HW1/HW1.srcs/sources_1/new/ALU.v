@@ -30,23 +30,25 @@ module ALU(
     output [0:0] Carry
     );
 
+    reg [31:0] ALU_result_reg;
+
     always @(Src_1 or Src_2 or Funct)
     begin
         if(Funct == 001001)
         begin
-            ALU_result <= Src_1 + Src_2;
+            ALU_result_reg <= Src_1 + Src_2;
         end
         else if(Funct == 001010)
         begin
-            ALU_result <= Src_1 - Src_2;
+            ALU_result_reg <= Src_1 - Src_2;
         end
         else if(Funct == 010001)
         begin
-            ALU_result <= Src_1 & Src_2;
+            ALU_result_reg <= Src_1 & Src_2;
         end
         else if(Funct == 100010)
         begin
-            ALU_result <= Src_1 >> Src_2;
+            ALU_result_reg <= Src_1 >> shamt;
         end
         else if(Funct == 100110)
     end    
