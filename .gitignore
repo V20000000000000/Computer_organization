@@ -6,4 +6,5 @@
 *.wlf
 _vmake
 _info
+.work/
 
