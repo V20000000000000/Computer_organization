@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -27,21 +27,21 @@ module CompALU(
     output CompALU_carry
     );
 
-    wire [31:0]Rs_data_wire;
-    wire [31:0]Rt_data_wire;
+    wire [31:0]Inner_Src_1;
+    wire [31:0]Inner_Src_2;
 
-    RF RF(
+    RF Register_File(
     .Rs_addr(Instruction[25:21]),
     .Rt_addr(Instruction[20:16]),
-    .Rs_data(Rs_data_wire),
-    .Rt_data(Rt_data_wire)
+    .Rs_data(Inner_Src_1),
+    .Rt_data(Inner_Src_2)
     );
 
-    ALU ALU(
-    .Src_1(Rs_data_wire),
-    .Src_2(Rt_data_wire),
-    .Funct(Instruction[5:0]),
+    ALU Arithmatic_Logical_Unit(
+    .Src_1(Inner_Src_1),
+    .Src_2(Inner_Src_2),
     .Shamt(Instruction[10:6]),
+    .Funct(Instruction[5:0]),
     .ALU_result(CompALU_data),
     .Zero(CompALU_zero),
     .Carry(CompALU_carry)

@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -30,28 +30,39 @@ module ALU(
     output [0:0] Carry
     );
 
-    reg [32:0] ALU_result_reg;
-    assign ALU_result = ALU_result_reg [31:0];
-    assign Zero = (ALU_result_reg == 0) ? 1 : 0;
-    assign Carry = (ALU_result_reg[32] == 1) ? 1 : 0;
+    reg [31:0] ALU_result_reg;
+    reg Carry_reg;
 
-    always @(Src_1 or Src_2 or Funct)
+    initial
     begin
-        if(Funct == 001001)
+	ALU_result_reg = 0;
+	Carry_reg = 0;
+    end
+
+    	
+    assign ALU_result = ALU_result_reg;
+    assign Zero = (Src_1 == Src_2);
+    assign Carry = Carry_reg;
+
+    always @(*)
+    begin
+        if(Funct == 6'b001001)
         begin
-            ALU_result_reg <= Src_1 + Src_2;
+            {Carry_reg, ALU_result_reg} <= Src_1 + Src_2;
         end
-        else if(Funct == 001010)
+        else if(Funct == 6'b001010)
         begin
-            ALU_result_reg <= Src_1 - Src_2;
+            {Carry_reg, ALU_result_reg} <= Src_1 - Src_2;
         end
-        else if(Funct == 010001)
+        else if(Funct == 6'b010001)
         begin
-            ALU_result_reg <= {1'b0, Src_1 & Src_2};
+            ALU_result_reg <= Src_1 & Src_2;
+            Carry_reg <= 0;
         end
-        else if(Funct == 100010)
+        else if(Funct == 6'b100010)
         begin
             ALU_result_reg <= Src_1 >> Shamt;
+            Carry_reg <= 0;
         end
     end    
     
