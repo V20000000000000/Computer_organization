@@ -38,10 +38,9 @@ module ALU(
 	ALU_result_reg = 0;
 	Carry_reg = 0;
     end
-
     	
     assign ALU_result = ALU_result_reg;
-    assign Zero = (Src_1 == Src_2);
+    assign Zero = (ALU_result_reg == 0);
     assign Carry = Carry_reg;
 
     always @(*)
@@ -52,7 +51,7 @@ module ALU(
         end
         else if(Funct == 6'b001010)
         begin
-            {Carry_reg, ALU_result_reg} <= Src_1 - Src_2;
+            {Carry_reg, ALU_result_reg} <= Src_1 + ~Src_2 +1;
         end
         else if(Funct == 6'b010001)
         begin
