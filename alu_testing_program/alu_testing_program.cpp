@@ -5,13 +5,26 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-
+#include <algorithm>
 using namespace std;
 
 // Function prototypes
 void parseInstruction(const string& line, int& reg1, int& reg2, int& shiftAmt, string& funct);
 string decodeFunction(const string& funct);
 bool testALU(const string& instruction, const string& expectedOutput, ifstream& aluOutputFile);
+
+string intToBinaryString(int num) {
+    string binary = "";
+    while (num > 0) {
+        binary = (num % 2 == 0 ? "0" : "1") + binary;
+        num /= 2;
+    }
+    // Pad the binary string with leading zeros if necessary
+    while (binary.length() < 32) {
+        binary = "0" + binary;
+    }
+    return binary;
+}
 
 int main() {
     // Seed the random number generator
@@ -37,9 +50,16 @@ int main() {
             case 2: funct = "010001"; break;
             case 3: funct = "100010"; break;
         }
-        aluInput << reg1 << "_"
-                 << reg2 << "_"
-                 << shiftAmt << "_"
+
+        // Convert integers to binary strings
+        string reg1Binary = intToBinaryString(reg1);
+        string reg2Binary = intToBinaryString(reg2);
+        string shiftAmtBinary = intToBinaryString(shiftAmt);
+
+        // Write binary strings to file
+        aluInput << reg1Binary << "_"
+                 << reg2Binary << "_"
+                 << shiftAmtBinary << "_"
                  << funct << endl;
     }
     aluInput.close();
@@ -51,6 +71,15 @@ int main() {
         cerr << "Error: Unable to open input/output files!" << endl;
         return 1;
     }
+    
+    /*
+    string line;
+    while (getline(aluOutputFile, line)) {
+        cout << line << endl;
+    }
+    */
+    
+
 
     // Perform tests
     string instruction, output;
@@ -58,10 +87,12 @@ int main() {
     while (getline(aluInputFile, instruction)) {
         getline(aluOutputFile, output);
         if (!testALU(instruction, output, aluOutputFile)) {
+            
             cerr << "Test failed at line " << lineNum << endl;
             cout << aluOutputFile.tellg() << endl; // Print the position of the file pointer
             return 1;
         }
+        cout << "Test passed at line " << lineNum << endl;
         ++lineNum;
     }
 
@@ -121,17 +152,16 @@ bool testALU(const string& instruction, const string& expectedOutput, ifstream& 
         output += to_string((result >> i) & 1);
     }
 
-    // Read actual output from ALU output file
-    string line;
-    getline(aluOutputFile, line);
-    stringstream ss(line);
+    // Remove spaces from expected and actual output
+    string expectedOutputNoSpace = expectedOutput;
+    expectedOutputNoSpace.erase(std::remove_if(expectedOutputNoSpace.begin(), expectedOutputNoSpace.end(), ::isspace), expectedOutputNoSpace.end());
     string actualOutput;
-    getline(ss, actualOutput, ',');  // Get the output value
-    getline(ss, actualOutput, ',');  // Get the Carry_Flag
-    getline(ss, actualOutput, ',');  // Get the Zero_Flag
+    getline(aluOutputFile, actualOutput);
+    string actualOutputNoSpace = actualOutput;
+    actualOutputNoSpace.erase(std::remove_if(actualOutputNoSpace.begin(), actualOutputNoSpace.end(), ::isspace), actualOutputNoSpace.end());
 
     // Compare actual output with expected output
-    if (output != actualOutput) {
+    if (actualOutputNoSpace != expectedOutputNoSpace) {
         cout << "Instruction: " << instruction << ", Function: " << decodedFunct << ", Output: " << output << endl;
         cout << "Expected: " << expectedOutput << ", Actual: " << actualOutput << endl;
         return false;
@@ -139,6 +169,11 @@ bool testALU(const string& instruction, const string& expectedOutput, ifstream& 
 
     return true;
 }
+
+
+
+
+
 
 
 
