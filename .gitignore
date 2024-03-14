@@ -8,5 +8,6 @@ _vmake
 _info
 .work/
 transcript
+*.mpf
 
 
