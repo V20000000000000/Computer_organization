@@ -6,12 +6,19 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+#include <cmath>
 using namespace std;
 
 // Function prototypes
-void parseInstruction(const string& line, int& reg1, int& reg2, int& shiftAmt, string& funct);
+void parseInstruction(const string& line, int& reg1, int& reg2, int& shiftAmt, string& funct, string& carry);
 string decodeFunction(const string& funct);
-bool testALU(const string& instruction, const string& expectedOutput, ifstream& aluOutputFile);
+bool testALU(const string& instruction, const string& expectedOutput, int lineNum);
+string zeroDetect(int num);
+string hasCarry(string binary1, string binary2);
+
+void removeSpaces(std::string &str) {
+    str.erase(std::remove_if(str.begin(), str.end(), ::isspace), str.end());
+}
 
 string intToBinaryString(int num) {
     string binary = "";
@@ -24,6 +31,43 @@ string intToBinaryString(int num) {
         binary = "0" + binary;
     }
     return binary;
+}
+
+int binaryToDecimal(std::string binaryString) {
+    int decimal = 0;
+    int exponent = 0;
+
+    // 從二進位字符串的最右邊（低位）開始遍歷
+    for (int i = binaryString.length() - 1; i >= 0; --i) {
+        // 如果字符是 '1'，則將其對應的2的指數加到十進位值上
+        if (binaryString[i] == '1') {
+            decimal += pow(2, exponent);
+        }
+        // 指數遞增
+        exponent++;
+    }
+    return decimal; // 返回計算出的十進位值
+}
+
+string hasCarry(string binary1, string binary2) {
+    string carry = "0"; // 初始化進位為false
+
+    // 確保兩個二進位數的位數相同
+    int maxLength = max(binary1.length(), binary2.length());
+    binary1 = string(maxLength - binary1.length(), '0') + binary1;
+    binary2 = string(maxLength - binary2.length(), '0') + binary2;
+
+    // 逐位相加並檢查進位
+    for (int i = maxLength - 1; i >= 0; --i) {
+        int sum = (binary1[i] - '0') + (binary2[i] - '0') + stoi(carry);
+        if (sum > 1) {
+            carry = "1"; // 如果和大於1，則設置進位為true
+        } else {
+            carry = "0"; // 否則設置為false
+        }
+    }
+
+    return carry; // 返回最終進位值
 }
 
 int main() {
@@ -72,21 +116,13 @@ int main() {
         return 1;
     }
     
-    /*
-    string line;
-    while (getline(aluOutputFile, line)) {
-        cout << line << endl;
-    }
-    */
-    
-
-
     // Perform tests
     string instruction, output;
     int lineNum = 1;
     while (getline(aluInputFile, instruction)) {
         getline(aluOutputFile, output);
-        if (!testALU(instruction, output, aluOutputFile)) {
+        removeSpaces(output);
+        if (!testALU(instruction, output, lineNum)) {
             
             cerr << "Test failed at line " << lineNum << endl;
             cout << aluOutputFile.tellg() << endl; // Print the position of the file pointer
@@ -105,16 +141,34 @@ int main() {
     return 0;
 }
 
-void parseInstruction(const string& line, int& reg1, int& reg2, int& shiftAmt, string& funct) {
+string zeroDetect(int num)
+{
+    if (num == 0)
+    {
+        return "1";
+    }
+    else
+    {
+        return "0";
+    }
+}
+
+void parseInstruction(const string& line, int& reg1, int& reg2, int& shiftAmt, string& funct, string& carry) {
     stringstream ss(line);
-    string temp;
-    getline(ss, temp, '_');
-    reg1 = stoi(temp);
-    getline(ss, temp, '_');
-    reg2 = stoi(temp);
-    getline(ss, temp, '_');
-    shiftAmt = stoi(temp);
+    string temp1, temp2, temp3;
+
+    getline(ss, temp1, '_');
+    cout << "reg1: " << temp1 << endl;
+    reg1 = binaryToDecimal(temp1);
+    getline(ss, temp2, '_');
+    cout << "reg2: " << temp2 << endl;
+    reg2 = binaryToDecimal(temp2);
+    getline(ss, temp3, '_');
+    cout << "shiftAmt: " << temp3 << endl;
+    shiftAmt = binaryToDecimal(temp3);
     getline(ss, funct, '_');
+    
+    carry = hasCarry(temp1, temp2);
 }
 
 string decodeFunction(const string& funct) {
@@ -125,11 +179,13 @@ string decodeFunction(const string& funct) {
     return "Unknown";
 }
 
-bool testALU(const string& instruction, const string& expectedOutput, ifstream& aluOutputFile) {
+bool testALU(const string& instruction, const string& actualOutput, int lineNum) {
     // Parse instruction
     int reg1, reg2, shiftAmt;
-    string funct;
-    parseInstruction(instruction, reg1, reg2, shiftAmt, funct);
+    string time;
+    string funct, carry;
+    parseInstruction(instruction, reg1, reg2, shiftAmt, funct, carry);
+    cout << "reg1: " << reg1 << ", reg2: " << reg2 << ", shiftAmt: " << shiftAmt << ", funct: " << funct << endl;
 
     // Decode function
     string decodedFunct = decodeFunction(funct);
@@ -138,32 +194,38 @@ bool testALU(const string& instruction, const string& expectedOutput, ifstream& 
     int result;
     if (decodedFunct == "Add unsigned") {
         result = reg1 + reg2;
+
     } else if (decodedFunct == "Subtract unsigned") {
         result = reg1 - reg2;
+        if(reg1 > reg2)
+        {
+            carry = "0";
+        }
+        else
+        {
+            carry = "1";
+        }
     } else if (decodedFunct == "And") {
         result = reg1 & reg2;
     } else if (decodedFunct == "Shift right logical") {
         result = reg1 >> shiftAmt;
     }
+    cout << "result: " << result << endl;
 
     // Convert result to binary string
-    string output;
+    string expectedOutput;
     for (int i = 31; i >= 0; --i) {
-        output += to_string((result >> i) & 1);
+        expectedOutput += to_string((result >> i) & 1);
     }
 
-    // Remove spaces from expected and actual output
-    string expectedOutputNoSpace = expectedOutput;
-    expectedOutputNoSpace.erase(std::remove_if(expectedOutputNoSpace.begin(), expectedOutputNoSpace.end(), ::isspace), expectedOutputNoSpace.end());
-    string actualOutput;
-    getline(aluOutputFile, actualOutput);
-    string actualOutputNoSpace = actualOutput;
-    actualOutputNoSpace.erase(std::remove_if(actualOutputNoSpace.begin(), actualOutputNoSpace.end(), ::isspace), actualOutputNoSpace.end());
+    time = to_string(20 * lineNum);
+
+    expectedOutput = time + "," + expectedOutput + "," + zeroDetect(result) + "," + carry;
 
     // Compare actual output with expected output
-    if (actualOutputNoSpace != expectedOutputNoSpace) {
-        cout << "Instruction: " << instruction << ", Function: " << decodedFunct << ", Output: " << output << endl;
-        cout << "Expected: " << expectedOutput << ", Actual: " << actualOutput << endl;
+    if (expectedOutput != actualOutput) {
+        cout << "Instruction: " << instruction << ", Function: " << decodedFunct << ", Output: " << actualOutput << endl;
+        cout << "Expected: " << expectedOutput << " / Actual: " << actualOutput << endl;
         return false;
     }
 
