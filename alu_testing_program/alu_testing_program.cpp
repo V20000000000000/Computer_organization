@@ -20,14 +20,14 @@ void removeSpaces(std::string &str) {
     str.erase(std::remove_if(str.begin(), str.end(), ::isspace), str.end());
 }
 
-string intToBinaryString(int num) {
+string intToBinaryString(int num, unsigned int length) {
     string binary = "";
     while (num > 0) {
         binary = (num % 2 == 0 ? "0" : "1") + binary;
         num /= 2;
     }
     // Pad the binary string with leading zeros if necessary
-    while (binary.length() < 32) {
+    while (binary.length() < length) {
         binary = "0" + binary;
     }
     return binary;
@@ -84,8 +84,8 @@ int main() {
     // Generate random test instructions
     const int numTests = 10;
     for (int i = 0; i < numTests; ++i) {
-        int reg1 = rand() % 32;
-        int reg2 = rand() % 32;
+        unsigned int reg1 = rand() % 4294967295;
+        unsigned int reg2 = rand() % 4294967295;
         int shiftAmt = rand() % 32;
         string funct;
         switch (rand() % 4) {
@@ -96,9 +96,9 @@ int main() {
         }
 
         // Convert integers to binary strings
-        string reg1Binary = intToBinaryString(reg1);
-        string reg2Binary = intToBinaryString(reg2);
-        string shiftAmtBinary = intToBinaryString(shiftAmt);
+        string reg1Binary = intToBinaryString(reg1, 32);
+        string reg2Binary = intToBinaryString(reg2, 32);
+        string shiftAmtBinary = intToBinaryString(shiftAmt, 5);
 
         // Write binary strings to file
         aluInput << reg1Binary << "_"
@@ -129,6 +129,7 @@ int main() {
             return 1;
         }
         cout << "Test passed at line " << lineNum << endl;
+        cout <<"------------------------------------" << endl;
         ++lineNum;
     }
 
@@ -158,14 +159,14 @@ void parseInstruction(const string& line, int& reg1, int& reg2, int& shiftAmt, s
     string temp1, temp2, temp3;
 
     getline(ss, temp1, '_');
-    cout << "reg1: " << temp1 << endl;
     reg1 = binaryToDecimal(temp1);
+    cout << "reg1: " << temp1 << "  (" << reg1 << ")" << endl;
     getline(ss, temp2, '_');
-    cout << "reg2: " << temp2 << endl;
     reg2 = binaryToDecimal(temp2);
+    cout << "reg2: " << temp2 << "  (" << reg2 << ")" << endl;
     getline(ss, temp3, '_');
-    cout << "shiftAmt: " << temp3 << endl;
     shiftAmt = binaryToDecimal(temp3);
+    cout << "shiftAmt: " << temp3 << "  (" << shiftAmt << ")" << endl;
     getline(ss, funct, '_');
     
     carry = hasCarry(temp1, temp2);
@@ -185,7 +186,8 @@ bool testALU(const string& instruction, const string& actualOutput, int lineNum)
     string time;
     string funct, carry;
     parseInstruction(instruction, reg1, reg2, shiftAmt, funct, carry);
-    cout << "reg1: " << reg1 << ", reg2: " << reg2 << ", shiftAmt: " << shiftAmt << ", funct: " << funct << endl;
+    
+    cout << "Funct: " << funct << endl;
 
     // Decode function
     string decodedFunct = decodeFunction(funct);
@@ -194,7 +196,7 @@ bool testALU(const string& instruction, const string& actualOutput, int lineNum)
     int result;
     if (decodedFunct == "Add unsigned") {
         result = reg1 + reg2;
-
+        cout << ">> Addu Result, reg1, reg2" << endl;
     } else if (decodedFunct == "Subtract unsigned") {
         result = reg1 - reg2;
         if(reg1 > reg2)
@@ -205,10 +207,13 @@ bool testALU(const string& instruction, const string& actualOutput, int lineNum)
         {
             carry = "1";
         }
+        cout << ">> Subu Result, reg1,reg2" << endl;
     } else if (decodedFunct == "And") {
         result = reg1 & reg2;
+        cout << ">> And Result, reg1, reg2" << endl;
     } else if (decodedFunct == "Shift right logical") {
         result = reg1 >> shiftAmt;
+        cout << ">> Srl Result, reg1, shiftAmt" << endl;
     }
     cout << "result: " << result << endl;
 
