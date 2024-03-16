@@ -180,7 +180,7 @@ bool testALU(const string& instruction, const string& actualOutput, int lineNum)
 }
 
 int main() {
-    const int numTests = 100;
+    const int numTests = 1000;
     // Seed the random number generator
     srand(static_cast<unsigned int>(time(0)));
 
@@ -253,7 +253,7 @@ int main() {
         ++lineNum;
     }
 
-    cout << "All tests passed!" << endl;
+    cout << "All " << lineNum-1 << " tests passed!" << endl;
 
     cout << "------------------------------------" << endl;
 
