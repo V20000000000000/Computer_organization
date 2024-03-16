@@ -184,7 +184,7 @@ int main() {
     // Seed the random number generator
     srand(static_cast<unsigned int>(time(0)));
 
-    // Generate ALUin.txt for the next test
+    // Generate regenerate_ALU_input.txt for the next test
     ofstream aluInput("regenerate_ALU_input.txt");
     if (!aluInput) {
         cerr << "Error: Unable to open ALUin.txt for writing!" << endl;
