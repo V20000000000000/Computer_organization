@@ -5,343 +5,9 @@
 # Compile of tb_CompALU.v was successful.
 # Compile of tb_RF.v was successful.
 # 6 compiles, 0 failed with no errors.
-# Compile of ALU.v was successful.
-# Compile of CompALU.v was successful.
-# Compile of RF.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of tb_CompALU.v was successful.
-# Compile of tb_RF.v was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.tb_CompALU
-# vsim -gui work.tb_CompALU 
-# Start time: 17:06:14 on Mar 16,2024
-# Loading work.tb_CompALU
-# Loading work.CompALU
-# Loading work.RF
-# Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
-add wave -position insertpoint  \
-sim:/tb_CompALU/Instruction \
-sim:/tb_CompALU/CompALU_data \
-sim:/tb_CompALU/CompALU_zero \
-sim:/tb_CompALU/CompALU_carry
-run -all
-# Instruction:00000000011010100000000001100010
-# CompALU_data:2147483647, Z:0, C:0
-# Instruction:00000000011001110000000011001001
-# CompALU_data:2004318070, Z:0, C:1
-# Instruction:00000000011010000000000001001010
-# CompALU_data:1879048192, Z:0, C:0
-# Instruction:00000001000000010000000001010001
-# CompALU_data:         1, Z:0, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
-#    Time: 80 ns  Iteration: 1  Instance: /tb_CompALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
-quit -sim
-# End time: 17:12:26 on Mar 16,2024, Elapsed time: 0:06:12
-# Errors: 0, Warnings: 1
-# Compile of ALU.v was successful.
-# Compile of CompALU.v was successful.
-# Compile of RF.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of tb_CompALU.v was successful.
-# Compile of tb_RF.v was successful.
-# 6 compiles, 0 failed with no errors.
-# Compile of ALU.v was successful.
-# Compile of CompALU.v was successful.
-# Compile of RF.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of tb_CompALU.v was successful.
-# Compile of tb_RF.v was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.tb_CompALU
-# vsim -gui work.tb_CompALU 
-# Start time: 17:12:44 on Mar 16,2024
-# Loading work.tb_CompALU
-# Loading work.CompALU
-# Loading work.RF
-# Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
-add wave -position insertpoint  \
-sim:/tb_CompALU/Instruction \
-sim:/tb_CompALU/CompALU_data \
-sim:/tb_CompALU/CompALU_zero \
-sim:/tb_CompALU/CompALU_carry
-run -all
-# Instruction:00000000011010100000000001100010
-# CompALU_data:2147483647, Z:0, C:0
-# Instruction:00000000011001110000000011001001
-# CompALU_data:2004318070, Z:0, C:1
-# Instruction:00000000011010000000000001001010
-# CompALU_data:1879048192, Z:0, C:0
-# Instruction:00000001000000010000000001010001
-# CompALU_data:         1, Z:0, C:0
-# Instruction:00000001111001110000000011001001
-# CompALU_data:4294967295, Z:0, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
-#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
-quit -sim
-# End time: 17:29:43 on Mar 16,2024, Elapsed time: 0:16:59
-# Errors: 0, Warnings: 1
-vsim -gui work.tb_RF
-# vsim -gui work.tb_RF 
-# Start time: 17:29:53 on Mar 16,2024
-# Loading work.tb_RF
-# Loading work.RF
-add wave -position insertpoint  \
-sim:/tb_RF/Rs_addr \
-sim:/tb_RF/Rt_addr \
-sim:/tb_RF/Rs_data \
-sim:/tb_RF/Rt_data
-run -continue
-run -continue
-run -all
-# Rs_addr:00, Rt_addr:1f
-# Src_1:00000000, Src_2:ffffffff
-# Rs_addr:01, Rt_addr:1e
-# Src_1:00000001, Src_2:7f7f7f7f
-# Rs_addr:02, Rt_addr:1d
-# Src_1:00000001, Src_2:00000002
-# Rs_addr:03, Rt_addr:1c
-# Src_1:ffffffff, Src_2:00000020
-# Rs_addr:04, Rt_addr:1b
-# Src_1:7fffffff, Src_2:00000200
-# Rs_addr:05, Rt_addr:1a
-# Src_1:80000000, Src_2:00002000
-# Rs_addr:06, Rt_addr:19
-# Src_1:01010101, Src_2:0000001a
-# Rs_addr:07, Rt_addr:18
-# Src_1:77777777, Src_2:00000019
-# Rs_addr:08, Rt_addr:17
-# Src_1:8fffffff, Src_2:00000018
-# Rs_addr:09, Rt_addr:16
-# Src_1:0fffffff, Src_2:13579bdf
-# Rs_addr:0a, Rt_addr:15
-# Src_1:12341234, Src_2:02468ace
-# Rs_addr:0b, Rt_addr:14
-# Src_1:43214321, Src_2:89abcdef
-# Rs_addr:0c, Rt_addr:13
-# Src_1:12345678, Src_2:01234567
-# Rs_addr:0d, Rt_addr:12
-# Src_1:87654321, Src_2:abcddcba
-# Rs_addr:0e, Rt_addr:11
-# Src_1:80808080, Src_2:f7f7f7f7
-# Rs_addr:0f, Rt_addr:10
-# Src_1:88888888, Src_2:7f7f7f7f
-# Rs_addr:10, Rt_addr:0f
-# Src_1:7f7f7f7f, Src_2:88888888
-# Rs_addr:11, Rt_addr:0e
-# Src_1:f7f7f7f7, Src_2:80808080
-# Rs_addr:12, Rt_addr:0d
-# Src_1:abcddcba, Src_2:87654321
-# Rs_addr:13, Rt_addr:0c
-# Src_1:01234567, Src_2:12345678
-# Rs_addr:14, Rt_addr:0b
-# Src_1:89abcdef, Src_2:43214321
-# Rs_addr:15, Rt_addr:0a
-# Src_1:02468ace, Src_2:12341234
-# Rs_addr:16, Rt_addr:09
-# Src_1:13579bdf, Src_2:0fffffff
-# Rs_addr:17, Rt_addr:08
-# Src_1:00000018, Src_2:8fffffff
-# Rs_addr:18, Rt_addr:07
-# Src_1:00000019, Src_2:77777777
-# Rs_addr:19, Rt_addr:06
-# Src_1:0000001a, Src_2:01010101
-# Rs_addr:1a, Rt_addr:05
-# Src_1:00002000, Src_2:80000000
-# Rs_addr:1b, Rt_addr:04
-# Src_1:00000200, Src_2:7fffffff
-# Rs_addr:1c, Rt_addr:03
-# Src_1:00000020, Src_2:ffffffff
-# Rs_addr:1d, Rt_addr:02
-# Src_1:00000002, Src_2:00000001
-# Rs_addr:1e, Rt_addr:01
-# Src_1:7f7f7f7f, Src_2:00000001
-# Rs_addr:1f, Rt_addr:00
-# Src_1:ffffffff, Src_2:00000000
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v(112)
-#    Time: 320 ns  Iteration: 1  Instance: /tb_RF
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v line 112
-quit -sim
-# End time: 17:30:40 on Mar 16,2024, Elapsed time: 0:00:47
-# Errors: 0, Warnings: 0
-# Compile of ALU.v was successful.
-# Compile of CompALU.v was successful.
-# Compile of RF.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of tb_CompALU.v was successful.
-# Compile of tb_RF.v was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.tb_RF
-# vsim -gui work.tb_RF 
-# Start time: 17:30:52 on Mar 16,2024
-# Loading work.tb_RF
-# Loading work.RF
-add wave -position insertpoint  \
-sim:/tb_RF/Rs_addr \
-sim:/tb_RF/Rt_addr \
-sim:/tb_RF/Rs_data \
-sim:/tb_RF/Rt_data
-run -continue
-run -all
-# Rs_addr:00, Rt_addr:1f
-# Src_1:00000000, Src_2:ffffffff
-# Rs_addr:01, Rt_addr:1e
-# Src_1:00000001, Src_2:7f7f7f7f
-# Rs_addr:02, Rt_addr:1d
-# Src_1:00000001, Src_2:00000002
-# Rs_addr:03, Rt_addr:1c
-# Src_1:ffffffff, Src_2:00000020
-# Rs_addr:04, Rt_addr:1b
-# Src_1:7fffffff, Src_2:00000200
-# Rs_addr:05, Rt_addr:1a
-# Src_1:80000000, Src_2:00002000
-# Rs_addr:06, Rt_addr:19
-# Src_1:01010101, Src_2:0000001a
-# Rs_addr:07, Rt_addr:18
-# Src_1:77777777, Src_2:00000019
-# Rs_addr:08, Rt_addr:17
-# Src_1:8fffffff, Src_2:00000018
-# Rs_addr:09, Rt_addr:16
-# Src_1:0fffffff, Src_2:13579bdf
-# Rs_addr:0a, Rt_addr:15
-# Src_1:12341234, Src_2:02468ace
-# Rs_addr:0b, Rt_addr:14
-# Src_1:43214321, Src_2:89abcdef
-# Rs_addr:0c, Rt_addr:13
-# Src_1:12345678, Src_2:01234567
-# Rs_addr:0d, Rt_addr:12
-# Src_1:87654321, Src_2:abcddcba
-# Rs_addr:0e, Rt_addr:11
-# Src_1:80808080, Src_2:f7f7f7f7
-# Rs_addr:0f, Rt_addr:10
-# Src_1:88888888, Src_2:7f7f7f7f
-# Rs_addr:10, Rt_addr:0f
-# Src_1:7f7f7f7f, Src_2:88888888
-# Rs_addr:11, Rt_addr:0e
-# Src_1:f7f7f7f7, Src_2:80808080
-# Rs_addr:12, Rt_addr:0d
-# Src_1:abcddcba, Src_2:87654321
-# Rs_addr:13, Rt_addr:0c
-# Src_1:01234567, Src_2:12345678
-# Rs_addr:14, Rt_addr:0b
-# Src_1:89abcdef, Src_2:43214321
-# Rs_addr:15, Rt_addr:0a
-# Src_1:02468ace, Src_2:12341234
-# Rs_addr:16, Rt_addr:09
-# Src_1:13579bdf, Src_2:0fffffff
-# Rs_addr:17, Rt_addr:08
-# Src_1:00000018, Src_2:8fffffff
-# Rs_addr:18, Rt_addr:07
-# Src_1:00000019, Src_2:77777777
-# Rs_addr:19, Rt_addr:06
-# Src_1:0000001a, Src_2:01010101
-# Rs_addr:1a, Rt_addr:05
-# Src_1:00002000, Src_2:80000000
-# Rs_addr:1b, Rt_addr:04
-# Src_1:00000200, Src_2:7fffffff
-# Rs_addr:1c, Rt_addr:03
-# Src_1:00000020, Src_2:ffffffff
-# Rs_addr:1d, Rt_addr:02
-# Src_1:00000002, Src_2:00000001
-# Rs_addr:1e, Rt_addr:01
-# Src_1:7f7f7f7f, Src_2:00000001
-# Rs_addr:1f, Rt_addr:00
-# Src_1:ffffffff, Src_2:00000000
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v(112)
-#    Time: 320 ns  Iteration: 1  Instance: /tb_RF
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v line 112
-quit -sim
-vsim -gui work.tb_RF
-# End time: 17:31:38 on Mar 16,2024, Elapsed time: 0:00:46
-# Errors: 0, Warnings: 0
-# vsim -gui work.tb_RF 
-# Start time: 17:31:38 on Mar 16,2024
-# Loading work.tb_RF
-# Loading work.RF
-add wave -position insertpoint  \
-sim:/tb_RF/Rs_addr \
-sim:/tb_RF/Rt_addr \
-sim:/tb_RF/Rs_data \
-sim:/tb_RF/Rt_data
-run -all
-# Rs_addr:00, Rt_addr:1f
-# Src_1:00000000, Src_2:ffffffff
-# Rs_addr:01, Rt_addr:1e
-# Src_1:00000001, Src_2:7f7f7f7f
-# Rs_addr:02, Rt_addr:1d
-# Src_1:00000001, Src_2:00000002
-# Rs_addr:03, Rt_addr:1c
-# Src_1:ffffffff, Src_2:00000020
-# Rs_addr:04, Rt_addr:1b
-# Src_1:7fffffff, Src_2:00000200
-# Rs_addr:05, Rt_addr:1a
-# Src_1:80000000, Src_2:00002000
-# Rs_addr:06, Rt_addr:19
-# Src_1:01010101, Src_2:0000001a
-# Rs_addr:07, Rt_addr:18
-# Src_1:77777777, Src_2:00000019
-# Rs_addr:08, Rt_addr:17
-# Src_1:8fffffff, Src_2:00000018
-# Rs_addr:09, Rt_addr:16
-# Src_1:0fffffff, Src_2:13579bdf
-# Rs_addr:0a, Rt_addr:15
-# Src_1:12341234, Src_2:02468ace
-# Rs_addr:0b, Rt_addr:14
-# Src_1:43214321, Src_2:89abcdef
-# Rs_addr:0c, Rt_addr:13
-# Src_1:12345678, Src_2:01234567
-# Rs_addr:0d, Rt_addr:12
-# Src_1:87654321, Src_2:abcddcba
-# Rs_addr:0e, Rt_addr:11
-# Src_1:80808080, Src_2:f7f7f7f7
-# Rs_addr:0f, Rt_addr:10
-# Src_1:88888888, Src_2:7f7f7f7f
-# Rs_addr:10, Rt_addr:0f
-# Src_1:7f7f7f7f, Src_2:88888888
-# Rs_addr:11, Rt_addr:0e
-# Src_1:f7f7f7f7, Src_2:80808080
-# Rs_addr:12, Rt_addr:0d
-# Src_1:abcddcba, Src_2:87654321
-# Rs_addr:13, Rt_addr:0c
-# Src_1:01234567, Src_2:12345678
-# Rs_addr:14, Rt_addr:0b
-# Src_1:89abcdef, Src_2:43214321
-# Rs_addr:15, Rt_addr:0a
-# Src_1:02468ace, Src_2:12341234
-# Rs_addr:16, Rt_addr:09
-# Src_1:13579bdf, Src_2:0fffffff
-# Rs_addr:17, Rt_addr:08
-# Src_1:00000018, Src_2:8fffffff
-# Rs_addr:18, Rt_addr:07
-# Src_1:00000019, Src_2:77777777
-# Rs_addr:19, Rt_addr:06
-# Src_1:0000001a, Src_2:01010101
-# Rs_addr:1a, Rt_addr:05
-# Src_1:00002000, Src_2:80000000
-# Rs_addr:1b, Rt_addr:04
-# Src_1:00000200, Src_2:7fffffff
-# Rs_addr:1c, Rt_addr:03
-# Src_1:00000020, Src_2:ffffffff
-# Rs_addr:1d, Rt_addr:02
-# Src_1:00000002, Src_2:00000001
-# Rs_addr:1e, Rt_addr:01
-# Src_1:7f7f7f7f, Src_2:00000001
-# Rs_addr:1f, Rt_addr:00
-# Src_1:ffffffff, Src_2:00000000
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v(112)
-#    Time: 320 ns  Iteration: 1  Instance: /tb_RF
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v line 112
-quit -sim
 vsim -gui work.tb_ALU
-# End time: 17:56:34 on Mar 16,2024, Elapsed time: 0:24:56
-# Errors: 0, Warnings: 0
 # vsim -gui work.tb_ALU 
-# Start time: 17:56:34 on Mar 16,2024
+# Start time: 01:15:45 on Mar 17,2024
 # Loading work.tb_ALU
 # Loading work.ALU
 # ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(101): Expected a system task, not a system function '$fscanf'.
@@ -355,289 +21,206 @@ sim:/tb_ALU/ALU_result \
 sim:/tb_ALU/Zero \
 sim:/tb_ALU/Carry
 run -all
-# Src_1:00000000000000000000000000000000, Src_2:00000000000000000011111110100001, Shamt:11101, Funct:001010
-# ALU_result:4294951007, Z:0, C:1
-# Src_1:00000000000000000101110010010101, Src_2:00000000000000000000100010010101, Shamt:10000, Funct:001001
-# ALU_result:     25898, Z:0, C:0
-# Src_1:00000000000000000110011010000110, Src_2:00000000000000000111110110011110, Shamt:11100, Funct:010001
-# ALU_result:     25734, Z:0, C:0
-# Src_1:00000000000000000011111111110101, Src_2:00000000000000000001011001101100, Shamt:00011, Funct:001010
-# ALU_result:     10633, Z:0, C:0
-# Src_1:00000000000000000000011001010111, Src_2:00000000000000000011110110101110, Shamt:00110, Funct:001001
-# ALU_result:     17413, Z:0, C:0
-# Src_1:00000000000000000100000100011010, Src_2:00000000000000000001010100101000, Shamt:01010, Funct:001001
-# ALU_result:     22082, Z:0, C:0
-# Src_1:00000000000000000010001110001011, Src_2:00000000000000000100000000000110, Shamt:11100, Funct:001001
-# ALU_result:     25489, Z:0, C:0
-# Src_1:00000000000000000010010111111000, Src_2:00000000000000000010011101110000, Shamt:10011, Funct:100010
+# Src_1:00000111011000000001001001111111, Src_2:01011000011111110100011110011100, Shamt:00000, Funct:010001
+# ALU_result:   6291996, Z:0, C:0
+# Src_1:01111010101100110110110000111111, Src_2:01001101101110000110111111110001, Shamt:11100, Funct:010001
+# ALU_result:1219521585, Z:0, C:0
+# Src_1:00001111111000101011100010010011, Src_2:01011111001100010010010110000011, Shamt:00111, Funct:100010
+# ALU_result:   2082161, Z:0, C:0
+# Src_1:00010100111011100111100101101111, Src_2:01010010011000110111011111010110, Shamt:01000, Funct:010001
+# ALU_result: 274886982, Z:0, C:0
+# Src_1:01111111110100010111011110011100, Src_2:00011100111011001000111000110111, Shamt:10100, Funct:001010
+# ALU_result:1659169125, Z:0, C:0
+# Src_1:01001001010100101110001111001110, Src_2:01101010010011000111101000001010, Shamt:01101, Funct:010001
+# ALU_result:1212178954, Z:0, C:0
+# Src_1:00010000000111100001100001111110, Src_2:00001101011001100010011100010000, Shamt:01101, Funct:100010
+# ALU_result:     33008, Z:0, C:0
+# Src_1:01000001010010101000001001101010, Src_2:01100000110010100010001011001000, Shamt:00110, Funct:001001
+# ALU_result:2719262002, Z:0, C:0
+# Src_1:01000001010010100101000011001010, Src_2:00001011110101111101100100000100, Shamt:01110, Funct:001001
+# ALU_result:1294084558, Z:0, C:0
+# Src_1:10110000111100111011110100000000, Src_2:01101011011110011100101111010101, Shamt:01101, Funct:010001
+# ALU_result: 544311552, Z:0, C:0
+# Src_1:00111111101100000101111001010001, Src_2:00110001100100010001001000100010, Shamt:00001, Funct:001010
+# ALU_result: 236932143, Z:0, C:0
+# Src_1:01111000110000111011101110101111, Src_2:00110011001010110000110010100111, Shamt:01001, Funct:010001
+# ALU_result: 805505191, Z:0, C:0
+# Src_1:00011111101100101111110111101000, Src_2:00100111011100100110001101001010, Shamt:10010, Funct:001010
+# ALU_result:4164983454, Z:0, C:1
+# Src_1:01111000001111111111001101110000, Src_2:00100010011111111110110010110100, Shamt:11110, Funct:010001
+# ALU_result: 541057072, Z:0, C:0
+# Src_1:01000010001001010001111011011111, Src_2:00110101011010000110010000000001, Shamt:11011, Funct:100010
+# ALU_result:         8, Z:0, C:0
+# Src_1:00001011101111100110000110101100, Src_2:01011111000100101111000001100000, Shamt:01110, Funct:001010
+# ALU_result:2896916812, Z:0, C:1
+# Src_1:01011011100110000100111000100110, Src_2:00000011011110000001011000101000, Shamt:10100, Funct:010001
+# ALU_result:  51906080, Z:0, C:0
+# Src_1:00100110101001110011110010001001, Src_2:01100111110111111010010101110111, Shamt:11101, Funct:001001
+# ALU_result:2391204352, Z:0, C:0
+# Src_1:00000110110101001001011000101011, Src_2:01101111000001111000000000010100, Shamt:11011, Funct:001010
+# ALU_result:2546800151, Z:0, C:1
+# Src_1:01100011011111111010001101000010, Src_2:01010000001100010011110001110000, Shamt:10001, Funct:001001
+# ALU_result:3014713266, Z:0, C:0
+# Src_1:01011110101101011100100110010000, Src_2:01100111100100011110001011110100, Shamt:11101, Funct:010001
+# ALU_result:1183957136, Z:0, C:0
+# Src_1:01111000101101110100110000111000, Src_2:00001010010111010110010100011100, Shamt:01000, Funct:100010
+# ALU_result:   7911244, Z:0, C:0
+# Src_1:00101011111100111010110111000100, Src_2:00000000101110100100000100111011, Shamt:00111, Funct:010001
+# ALU_result:  11665664, Z:0, C:0
+# Src_1:01010010000000111101100111011100, Src_2:00100100001001001011101010110101, Shamt:11001, Funct:100010
+# ALU_result:        41, Z:0, C:0
+# Src_1:01110010101100001010111110100000, Src_2:01101000110101100010000110101001, Shamt:10110, Funct:010001
+# ALU_result:1620058528, Z:0, C:0
+# Src_1:10101101101100010000111011011100, Src_2:00000110011010001110111001100001, Shamt:00000, Funct:100010
+# ALU_result:2914062044, Z:0, C:0
+# Src_1:00001101101011111011101010010100, Src_2:00110010001011011111110011010101, Shamt:00110, Funct:001001
+# ALU_result:1071495017, Z:0, C:0
+# Src_1:11111000101010010110101010101110, Src_2:00101000011111011110011011000000, Shamt:00110, Funct:001001
+# ALU_result: 556224878, Z:0, C:1
+# Src_1:01100111000000011111011001111011, Src_2:01111011000110111001101001110010, Shamt:01000, Funct:010001
+# ALU_result:1661047410, Z:0, C:0
+# Src_1:00000111101111101000101010001100, Src_2:01000001001011100011111110011100, Shamt:01000, Funct:010001
+# ALU_result:  19794572, Z:0, C:0
+# Src_1:01000011110011001000111001111110, Src_2:00010111111010001000010001000010, Shamt:10110, Funct:010001
+# ALU_result:  63472706, Z:0, C:0
+# Src_1:01011110001100101101010110110101, Src_2:11100110101011011010110110111100, Shamt:01010, Funct:100010
+# ALU_result:   1543349, Z:0, C:0
+# Src_1:00000011001000100000001100100110, Src_2:00111010010011111010111011010111, Shamt:11111, Funct:001010
+# ALU_result:3369227343, Z:0, C:1
+# Src_1:00000010001010000011011001100001, Src_2:00111100011001011001111101011100, Shamt:11100, Funct:001010
+# ALU_result:3317864197, Z:0, C:1
+# Src_1:01001001110011100101000000000100, Src_2:00111101000000100000111011110101, Shamt:11010, Funct:010001
+# ALU_result: 151126020, Z:0, C:0
+# Src_1:01000000101001000000001101011010, Src_2:00001110000101000101011001111111, Shamt:01110, Funct:001001
+# ALU_result:1320704473, Z:0, C:0
+# Src_1:01100111001011000100110001110001, Src_2:01010011110001001000111000110110, Shamt:01000, Funct:100010
+# ALU_result:   6761548, Z:0, C:0
+# Src_1:01011111100110001100100100000111, Src_2:00011001111110011111101110111100, Shamt:01000, Funct:001001
+# ALU_result:2039661763, Z:0, C:0
+# Src_1:00111100100001001111111110100100, Src_2:01111010000001111001010111000010, Shamt:00001, Funct:001010
+# ALU_result:3262999010, Z:0, C:1
+# Src_1:10111001110000001110100011100010, Src_2:00110110111001001000111111110000, Shamt:01101, Funct:001001
+# ALU_result:4037376210, Z:0, C:0
+# Src_1:10111110110111001000010111011000, Src_2:10001111011110100111110011010000, Shamt:00110, Funct:001001
+# ALU_result:1314325160, Z:0, C:1
+# Src_1:01101110000101010011110111110111, Src_2:00010111010111111010001100100011, Shamt:11011, Funct:001001
+# ALU_result:2239029530, Z:0, C:0
+# Src_1:01111101000000010110000101000101, Src_2:01010111001101001011100110110000, Shamt:00110, Funct:001001
+# ALU_result:3560315637, Z:0, C:0
+# Src_1:00101011010111101010011100001110, Src_2:00111100100011011101100010110101, Shamt:01110, Funct:001010
+# ALU_result:4006661721, Z:0, C:1
+# Src_1:01110110111111100111010000101101, Src_2:01010101011101001010000001101101, Shamt:00101, Funct:010001
+# ALU_result:1416896557, Z:0, C:0
+# Src_1:00100001011011010011100110100000, Src_2:01100010010101001110000110011101, Shamt:01101, Funct:100010
+# ALU_result:     68457, Z:0, C:0
+# Src_1:01101100000101111011100010110011, Src_2:01001100111001000011111100111000, Shamt:01101, Funct:001010
+# ALU_result: 523467131, Z:0, C:0
+# Src_1:00111111101000110011111001011100, Src_2:01101101111110111100001100100010, Shamt:00010, Funct:010001
+# ALU_result: 765657600, Z:0, C:0
+# Src_1:00111100111010110010101011010111, Src_2:00111010110100110010101111010110, Shamt:10001, Funct:100010
+# ALU_result:      7797, Z:0, C:0
+# Src_1:00110100101000100011000011001010, Src_2:00000010011011011110011001011111, Shamt:00101, Funct:001010
+# ALU_result: 842287723, Z:0, C:0
+# Src_1:11110101111011011100000001001010, Src_2:01111100100000110001010111001110, Shamt:11101, Funct:001001
+# ALU_result:1919997464, Z:0, C:1
+# Src_1:00101000010100101100001010010000, Src_2:01001101000111001010100111010110, Shamt:00010, Funct:100010
+# ALU_result: 169128100, Z:0, C:0
+# Src_1:01100101100101010100100011101010, Src_2:01011111111100000010100001011010, Shamt:11001, Funct:001001
+# ALU_result:3313856836, Z:0, C:0
+# Src_1:00101011100011000101000110111111, Src_2:01011111011010100010110111010111, Shamt:00111, Funct:001001
+# ALU_result:2331410326, Z:0, C:0
+# Src_1:01011010000010111110010011111011, Src_2:00001000110011011100000011011011, Shamt:01101, Funct:001010
+# ALU_result:1363026976, Z:0, C:0
+# Src_1:01100001111100110011111010110111, Src_2:01011000111011101111110010000011, Shamt:01111, Funct:001010
+# ALU_result: 151274036, Z:0, C:0
+# Src_1:01100101110111110000111001111111, Src_2:00110110001111101111001100000010, Shamt:00111, Funct:001010
+# ALU_result: 799021949, Z:0, C:0
+# Src_1:00010111111110001010100010000101, Src_2:11111111010011111110001100110100, Shamt:10011, Funct:001010
+# ALU_result: 413713745, Z:0, C:1
+# Src_1:01110111011110100101111011100000, Src_2:00110110000100000101111001000010, Shamt:00001, Funct:100010
+# ALU_result:1002254192, Z:0, C:0
+# Src_1:01111110000010111100010010010001, Src_2:00001100111011100000001010101101, Shamt:01111, Funct:100010
+# ALU_result:     64535, Z:0, C:0
+# Src_1:01001110111011010000111001100101, Src_2:00101100111111011010101010101111, Shamt:00111, Funct:010001
+# ALU_result: 216861221, Z:0, C:0
+# Src_1:00001110011111011001110000101110, Src_2:00101011011011100000110110000101, Shamt:00101, Funct:001010
+# ALU_result:3809447593, Z:0, C:1
+# Src_1:01010001011011001011010100011100, Src_2:00101000010111010001100101001011, Shamt:11010, Funct:010001
+# ALU_result:   4985096, Z:0, C:0
+# Src_1:00000000010011100111001011111001, Src_2:01001000010000010001010110001010, Shamt:00110, Funct:010001
+# ALU_result:   4198536, Z:0, C:0
+# Src_1:01101010100001010101001010010011, Src_2:01101001000111011011000100000111, Shamt:00010, Funct:001010
+# ALU_result:  23568780, Z:0, C:0
+# Src_1:01010110011101001101001101000010, Src_2:00010110011001101111100100111010, Shamt:00110, Funct:100010
+# ALU_result:  22664013, Z:0, C:0
+# Src_1:00111100111100100000001011100011, Src_2:01000101010011101010101010010100, Shamt:00100, Funct:010001
+# ALU_result:  71434880, Z:0, C:0
+# Src_1:01101001110010000001001011000110, Src_2:00000100100011001000000001101110, Shamt:00101, Funct:001010
+# ALU_result:1698402904, Z:0, C:0
+# Src_1:00100101011111001010011100101110, Src_2:11110110110011101100001111010100, Shamt:11111, Funct:100010
 # ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000011101000010001, Src_2:00000000000000000110110101011110, Shamt:10101, Funct:001010
-# ALU_result:4294954163, Z:0, C:1
-# Src_1:00000000000000000001111010010100, Src_2:00000000000000000000000110101110, Shamt:11101, Funct:100010
+# Src_1:01001110111100101110110001010111, Src_2:01111111010000100101110011100101, Shamt:00010, Funct:001010
+# ALU_result:3484454770, Z:0, C:1
+# Src_1:00110010011111101011010100010100, Src_2:01000001110000100010000010001110, Shamt:10000, Funct:010001
+# ALU_result:   4333572, Z:0, C:0
+# Src_1:00001111111101101110011000101001, Src_2:00111011111100001100010001101011, Shamt:10001, Funct:001001
+# ALU_result:1273473684, Z:0, C:0
+# Src_1:00000010101011001001111011001101, Src_2:01000011000010110100010001110011, Shamt:00000, Funct:001010
+# ALU_result:3215022682, Z:0, C:1
+# Src_1:01000100101011110010000010010110, Src_2:01111001110000011100000011110111, Shamt:10101, Funct:100010
+# ALU_result:       549, Z:0, C:0
+# Src_1:00010010001000111110000101100101, Src_2:01111011100100010010111000100011, Shamt:10100, Funct:001010
+# ALU_result:2526196546, Z:0, C:1
+# Src_1:00000110010010001101101101011000, Src_2:00000011110001110010111101101010, Shamt:00110, Funct:001001
+# ALU_result: 168823490, Z:0, C:0
+# Src_1:01011111111011001000010000001101, Src_2:01000110000101111101110010010001, Shamt:00000, Funct:001010
+# ALU_result: 433366908, Z:0, C:0
+# Src_1:01010110101100001111100101110111, Src_2:01100100000011110011110100101101, Shamt:01001, Funct:001001
+# ALU_result:3133159076, Z:0, C:0
+# Src_1:00101110101101111001101000000100, Src_2:01101101101010100011110100001101, Shamt:01111, Funct:001010
+# ALU_result:3238878455, Z:0, C:1
+# Src_1:01101110001011111010111111000001, Src_2:00010001101101011000101100100000, Shamt:10110, Funct:001010
+# ALU_result:1551508641, Z:0, C:0
+# Src_1:01101111011100110011111000001100, Src_2:01100010111100010001110011100001, Shamt:01111, Funct:010001
+# ALU_result:1651579904, Z:0, C:0
+# Src_1:00001001000000001001110101011101, Src_2:01111010111010000100000000110101, Shamt:01001, Funct:001001
+# ALU_result:2213076370, Z:0, C:0
+# Src_1:00100000011100011001010001001010, Src_2:10001000010110000101110100100000, Shamt:11101, Funct:010001
+# ALU_result:   5248000, Z:0, C:0
+# Src_1:00010011100000000100010111110000, Src_2:00011000000000110110110111001010, Shamt:10101, Funct:100010
+# ALU_result:       156, Z:0, C:0
+# Src_1:01001000100001100111101110000000, Src_2:01000101110100010110011101010110, Shamt:00011, Funct:100010
+# ALU_result: 152096624, Z:0, C:0
+# Src_1:00110111100000001000001101011110, Src_2:00110000101000010101110110100010, Shamt:00001, Funct:100010
+# ALU_result: 465584559, Z:0, C:0
+# Src_1:01100001100110101000010011000001, Src_2:01111110110011100111001110010110, Shamt:10110, Funct:100010
+# ALU_result:       390, Z:0, C:0
+# Src_1:10100100100000001010111010000100, Src_2:00110010000001011010111100001000, Shamt:01000, Funct:100010
+# ALU_result:  10780846, Z:0, C:0
+# Src_1:00110011011111001101110000101110, Src_2:01110100011100010001000110001010, Shamt:11110, Funct:100010
 # ALU_result:         0, Z:1, C:0
+# Src_1:00010110100101110000111010000101, Src_2:00011010000101011101001100100100, Shamt:00100, Funct:001001
+# ALU_result: 816636329, Z:0, C:0
+# Src_1:01111011110001010011110111000111, Src_2:01111100100011000101110001111100, Shamt:11101, Funct:001001
+# ALU_result:4166097475, Z:0, C:0
+# Src_1:00000001001101011101011011110100, Src_2:01101101110111001000100000101000, Shamt:10111, Funct:100010
+# ALU_result:         2, Z:0, C:0
+# Src_1:01111110101000100011101010110100, Src_2:01101111110111011101101010001011, Shamt:01111, Funct:001010
+# ALU_result: 247750697, Z:0, C:0
+# Src_1:01101111001100001001000101010110, Src_2:01000110110111001111101011010101, Shamt:11110, Funct:010001
+# ALU_result:1175490644, Z:0, C:0
+# Src_1:01000101001001110010010010111000, Src_2:01011111110101010000100010100110, Shamt:00101, Funct:100010
+# ALU_result:  36256037, Z:0, C:0
+# Src_1:01110011001011101101100000011000, Src_2:00111101110111001111111100010101, Shamt:11100, Funct:010001
+# ALU_result: 822925328, Z:0, C:0
+# Src_1:01010100110100101111110110010100, Src_2:01010100000101001101001010100000, Shamt:11100, Funct:100010
+# ALU_result:         5, Z:0, C:0
+# Src_1:01101110001010000101101111001101, Src_2:01010111111011001110101110010010, Shamt:01010, Funct:010001
+# ALU_result:1177045888, Z:0, C:0
+# Src_1:00111111011110100110101111010111, Src_2:01011100100101000111111010011011, Shamt:10110, Funct:001010
+# ALU_result:3806719292, Z:0, C:1
+# Src_1:00010101101101010101111101001101, Src_2:01010010010011001110011111111101, Shamt:01111, Funct:001010
+# ALU_result:3278403408, Z:0, C:1
 # ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(114)
-#    Time: 200 ns  Iteration: 1  Instance: /tb_ALU
+#    Time: 2 us  Iteration: 1  Instance: /tb_ALU
 # Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v line 114
-quit -sim
-# End time: 20:00:46 on Mar 16,2024, Elapsed time: 2:04:12
-# Errors: 0, Warnings: 1
-vsim -gui work.tb_CompALU
-# vsim -gui work.tb_CompALU 
-# Start time: 20:00:52 on Mar 16,2024
-# Loading work.tb_CompALU
-# Loading work.CompALU
-# Loading work.RF
-# Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
-add wave -position insertpoint  \
-sim:/tb_CompALU/Instruction \
-sim:/tb_CompALU/CompALU_data \
-sim:/tb_CompALU/CompALU_zero \
-sim:/tb_CompALU/CompALU_carry
-run -all
-# Instruction:00000000011010100000000001100010
-# CompALU_data:2147483647, Z:0, C:0
-# Instruction:00000000011001110000000011001001
-# CompALU_data:2004318070, Z:0, C:1
-# Instruction:00000000011010000000000001001010
-# CompALU_data:1879048192, Z:0, C:0
-# Instruction:00000001000000010000000001010001
-# CompALU_data:         1, Z:0, C:0
-# Instruction:00000001111001110000000011001001
-# CompALU_data:4294967295, Z:0, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
-#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
-quit -sim
-# End time: 20:49:19 on Mar 16,2024, Elapsed time: 0:48:27
-# Errors: 0, Warnings: 1
-# Compile of ALU.v was successful.
-# Compile of CompALU.v was successful.
-# Compile of RF.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of tb_CompALU.v was successful.
-# Compile of tb_RF.v was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.tb_CompALU
-# vsim -gui work.tb_CompALU 
-# Start time: 20:49:28 on Mar 16,2024
-# Loading work.tb_CompALU
-# Loading work.CompALU
-# Loading work.RF
-# Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
-add wave -position insertpoint  \
-sim:/tb_CompALU/Instruction \
-sim:/tb_CompALU/CompALU_data \
-sim:/tb_CompALU/CompALU_zero \
-sim:/tb_CompALU/CompALU_carry
-run -all
-# Instruction:00000000011010100000000001100010
-# CompALU_data:2147483647, Z:0, C:0
-# Instruction:00000000011001110000000011001001
-# CompALU_data:2004318070, Z:0, C:1
-# Instruction:00000000011010000000000001001010
-# CompALU_data:1879048192, Z:0, C:0
-# Instruction:00000001000000010000000001010001
-# CompALU_data:         1, Z:0, C:0
-# Instruction:00000001000111100000000011001010
-# CompALU_data: 276856960, Z:0, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
-#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
-# Load canceled
-quit -sim
-vsim -gui work.tb_CompALU
-# End time: 20:51:29 on Mar 16,2024, Elapsed time: 0:02:01
-# Errors: 1, Warnings: 1
-# vsim -gui work.tb_CompALU 
-# Start time: 20:51:29 on Mar 16,2024
-# Loading work.tb_CompALU
-# Loading work.CompALU
-# Loading work.RF
-# Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
-add wave -position insertpoint  \
-sim:/tb_CompALU/Instruction \
-sim:/tb_CompALU/CompALU_data \
-sim:/tb_CompALU/CompALU_zero \
-sim:/tb_CompALU/CompALU_carry
-run -all
-# Instruction:00000000011010100000000001100010
-# CompALU_data:2147483647, Z:0, C:0
-# Instruction:00000000011001110000000011001001
-# CompALU_data:2004318070, Z:0, C:1
-# Instruction:00000000011010000000000001001010
-# CompALU_data:1879048192, Z:0, C:0
-# Instruction:00000001000000010000000001010001
-# CompALU_data:         1, Z:0, C:0
-# Instruction:00000010000111100000000011001010
-# CompALU_data:         0, Z:1, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
-#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
-quit -sim
-# End time: 21:07:09 on Mar 16,2024, Elapsed time: 0:15:40
-# Errors: 0, Warnings: 1
-# Compile of ALU.v was successful.
-# Compile of CompALU.v was successful.
-# Compile of RF.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of tb_CompALU.v was successful.
-# Compile of tb_RF.v was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.tb_CompALU
-# vsim -gui work.tb_CompALU 
-# Start time: 21:10:44 on Mar 16,2024
-# Loading work.tb_CompALU
-# Loading work.CompALU
-# Loading work.RF
-# Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
-add wave -position insertpoint  \
-sim:/tb_CompALU/Instruction \
-sim:/tb_CompALU/CompALU_data \
-sim:/tb_CompALU/CompALU_zero \
-sim:/tb_CompALU/CompALU_carry
-run -all
-# Instruction:00000000011010100000000001100010
-# CompALU_data:2147483647, Z:0, C:0
-# Instruction:00000000011001110000000011001001
-# CompALU_data:2004318070, Z:0, C:1
-# Instruction:00000000011010000000000001001010
-# CompALU_data:1879048192, Z:0, C:0
-# Instruction:00000001000000010000000001010001
-# CompALU_data:         1, Z:0, C:0
-# Instruction:00000010000111100000000011001010
-# CompALU_data:         0, Z:1, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
-#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
-quit -sim
-vsim -gui work.tb_ALU
-# End time: 21:15:38 on Mar 16,2024, Elapsed time: 0:04:54
-# Errors: 0, Warnings: 1
-# vsim -gui work.tb_ALU 
-# Start time: 21:15:38 on Mar 16,2024
-# Loading work.tb_ALU
-# Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(101): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_ALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v
-add wave -position insertpoint  \
-sim:/tb_ALU/Src_1 \
-sim:/tb_ALU/Src_2 \
-sim:/tb_ALU/Shamt \
-sim:/tb_ALU/Funct \
-sim:/tb_ALU/ALU_result \
-sim:/tb_ALU/Zero \
-sim:/tb_ALU/Carry
-run -all
-# Src_1:00000000000000000000000000000000, Src_2:00000000000000000011111110100001, Shamt:11101, Funct:001010
-# ALU_result:4294951007, Z:0, C:1
-# Src_1:00000000000000000101110010010101, Src_2:00000000000000000000100010010101, Shamt:10000, Funct:001001
-# ALU_result:     25898, Z:0, C:0
-# Src_1:00000000000000000110011010000110, Src_2:00000000000000000111110110011110, Shamt:11100, Funct:010001
-# ALU_result:     25734, Z:0, C:0
-# Src_1:00000000000000000011111111110101, Src_2:00000000000000000001011001101100, Shamt:00011, Funct:001010
-# ALU_result:     10633, Z:0, C:0
-# Src_1:00000000000000000000011001010111, Src_2:00000000000000000011110110101110, Shamt:00110, Funct:001001
-# ALU_result:     17413, Z:0, C:0
-# Src_1:00000000000000000100000100011010, Src_2:00000000000000000001010100101000, Shamt:01010, Funct:001001
-# ALU_result:     22082, Z:0, C:0
-# Src_1:00000000000000000010001110001011, Src_2:00000000000000000100000000000110, Shamt:11100, Funct:001001
-# ALU_result:     25489, Z:0, C:0
-# Src_1:00000000000000000010010111111000, Src_2:00000000000000000010011101110000, Shamt:10011, Funct:100010
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000011101000010001, Src_2:00000000000000000110110101011110, Shamt:10101, Funct:001010
-# ALU_result:4294954163, Z:0, C:1
-# Src_1:10001111111111111111111111111111, Src_2:00000000000000000000000000000001, Shamt:10101, Funct:010001
-# ALU_result:         1, Z:0, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(114)
-#    Time: 200 ns  Iteration: 1  Instance: /tb_ALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v line 114
-quit -sim
-# End time: 21:57:20 on Mar 16,2024, Elapsed time: 0:41:42
-# Errors: 0, Warnings: 1
-vsim -gui work.tb_CompALU
-# vsim -gui work.tb_CompALU 
-# Start time: 21:57:33 on Mar 16,2024
-# Loading work.tb_CompALU
-# Loading work.CompALU
-# Loading work.RF
-# Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
-add wave -position insertpoint  \
-sim:/tb_CompALU/Instruction \
-sim:/tb_CompALU/CompALU_data \
-sim:/tb_CompALU/CompALU_zero \
-sim:/tb_CompALU/CompALU_carry
-run -all
-# Instruction:00000000011010100000000001100010
-# CompALU_data:2147483647, Z:0, C:0
-# Instruction:00000000011001110000000011001001
-# CompALU_data:2004318070, Z:0, C:1
-# Instruction:00000000011010000000000001001010
-# CompALU_data:1879048192, Z:0, C:0
-# Instruction:00000001000000010000000001010001
-# CompALU_data:         1, Z:0, C:0
-# Instruction:00000010000111100000000011001010
-# CompALU_data:         0, Z:1, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
-#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
-quit -sim
-# End time: 22:26:49 on Mar 16,2024, Elapsed time: 0:29:16
-# Errors: 0, Warnings: 1
-# Compile of ALU.v was successful.
-# Compile of CompALU.v was successful.
-# Compile of RF.v was successful.
-# Compile of tb_ALU.v was successful.
-# Compile of tb_CompALU.v was successful.
-# Compile of tb_RF.v was successful.
-# 6 compiles, 0 failed with no errors.
-vsim -gui work.tb_ALU
-# vsim -gui work.tb_ALU 
-# Start time: 22:27:38 on Mar 16,2024
-# Loading work.tb_ALU
-# Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(101): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_ALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v
-add wave -position insertpoint  \
-sim:/tb_ALU/Src_1 \
-sim:/tb_ALU/Src_2 \
-sim:/tb_ALU/Shamt \
-sim:/tb_ALU/Funct \
-sim:/tb_ALU/ALU_result \
-sim:/tb_ALU/Zero \
-sim:/tb_ALU/Carry
-run -all
-# Src_1:00000000000000000000000000000000, Src_2:00000000000000000011111110100001, Shamt:11101, Funct:001010
-# ALU_result:4294951007, Z:0, C:1
-# Src_1:00000000000000000101110010010101, Src_2:00000000000000000000100010010101, Shamt:10000, Funct:001001
-# ALU_result:     25898, Z:0, C:0
-# Src_1:00000000000000000110011010000110, Src_2:00000000000000000111110110011110, Shamt:11100, Funct:010001
-# ALU_result:     25734, Z:0, C:0
-# Src_1:00000000000000000011111111110101, Src_2:00000000000000000001011001101100, Shamt:00011, Funct:001010
-# ALU_result:     10633, Z:0, C:0
-# Src_1:00000000000000000000011001010111, Src_2:00000000000000000011110110101110, Shamt:00110, Funct:001001
-# ALU_result:     17413, Z:0, C:0
-# Src_1:00000000000000000100000100011010, Src_2:00000000000000000001010100101000, Shamt:01010, Funct:001001
-# ALU_result:     22082, Z:0, C:0
-# Src_1:00000000000000000010001110001011, Src_2:00000000000000000100000000000110, Shamt:11100, Funct:001001
-# ALU_result:     25489, Z:0, C:0
-# Src_1:00000000000000000010010111111000, Src_2:00000000000000000010011101110000, Shamt:10011, Funct:100010
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000011101000010001, Src_2:00000000000000000110110101011110, Shamt:10101, Funct:001010
-# ALU_result:4294954163, Z:0, C:1
-# Src_1:00000000000000000001111010010100, Src_2:00000000000000000000000110101110, Shamt:11101, Funct:100010
-# ALU_result:         0, Z:1, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(114)
-#    Time: 200 ns  Iteration: 1  Instance: /tb_ALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v line 114
-# End time: 23:34:42 on Mar 16,2024, Elapsed time: 1:07:04
-# Errors: 0, Warnings: 1

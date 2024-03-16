@@ -9,6 +9,8 @@
 #include <cmath>
 #include <iomanip>
 #include <bitset>
+#include <random>
+#include <chrono>
 
 using namespace std;
 
@@ -150,10 +152,12 @@ bool testALU(const string& instruction, const string& actualOutput, int lineNum)
         cout << ">> Subu Result, Src1, Src2" << endl;
     } else if (decodedFunct == "And") {
         result = reg1 & reg2;
+        carry = false;
         cout << ">> And Result, Src1, Src2" << endl;
     } else if (decodedFunct == "Shift right logical") {
         result = reg1 >> shiftAmt;
         cout << ">> Srl Result, Src1, Shamt" << endl;
+        carry = false;
     }
     time = to_string(20 * lineNum);
     
@@ -176,6 +180,7 @@ bool testALU(const string& instruction, const string& actualOutput, int lineNum)
 }
 
 int main() {
+    const int numTests = 100;
     // Seed the random number generator
     srand(static_cast<unsigned int>(time(0)));
 
@@ -187,13 +192,21 @@ int main() {
     }
 
     // Generate random test instructions
-    const int numTests = 10;
+    // Seed the random number generator
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    linear_congruential_engine<uint32_t, 48271, 0, 2147483647> generator(seed);
+
     for (int i = 0; i < numTests; ++i) {
-        unsigned int reg1 = rand() % 4294967295;
-        unsigned int reg2 = rand() % 4294967295;
-        unsigned int shiftAmt = rand() % 32;
+        unsigned int reg1 = generator() % 4294967295;
+        unsigned int reg2 = generator() % 4294967295;
+        unsigned int shiftAmt = generator() % 32;
+
+        if (generator() % 10 == 5)
+            reg1 = reg1 << 1;
+        if (generator() % 10 == 8)
+            reg2 = reg2 << 1;
         string funct;
-        switch (rand() % 4) {
+        switch (generator() % 4) {
             case 0: funct = "001001"; break;
             case 1: funct = "001010"; break;
             case 2: funct = "010001"; break;
