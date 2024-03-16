@@ -12,47 +12,34 @@
 # Compile of tb_CompALU.v was successful.
 # Compile of tb_RF.v was successful.
 # 6 compiles, 0 failed with no errors.
-vsim -gui work.tb_ALU
-# vsim -gui work.tb_ALU 
-# Start time: 02:19:20 on Mar 16,2024
-# Loading work.tb_ALU
+vsim -gui work.tb_CompALU
+# vsim -gui work.tb_CompALU 
+# Start time: 17:06:14 on Mar 16,2024
+# Loading work.tb_CompALU
+# Loading work.CompALU
+# Loading work.RF
 # Loading work.ALU
-# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(101): Expected a system task, not a system function '$fscanf'.
-#    Time: 0 ns  Iteration: 0  Region: /tb_ALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
 add wave -position insertpoint  \
-sim:/tb_ALU/Src_1 \
-sim:/tb_ALU/Src_2 \
-sim:/tb_ALU/Shamt \
-sim:/tb_ALU/Funct \
-sim:/tb_ALU/ALU_result \
-sim:/tb_ALU/Zero \
-sim:/tb_ALU/Carry
+sim:/tb_CompALU/Instruction \
+sim:/tb_CompALU/CompALU_data \
+sim:/tb_CompALU/CompALU_zero \
+sim:/tb_CompALU/CompALU_carry
 run -all
-# Src_1:00000000000000000000000000001111, Src_2:00000000000000000000000000001001, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000000000000001101, Src_2:00000000000000000000000000001010, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000000000000000001, Src_2:00000000000000000000000000011000, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000000000000001110, Src_2:00000000000000000000000000011000, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000000000000011101, Src_2:00000000000000000000000000000000, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000000000000011110, Src_2:00000000000000000000000000001101, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000000000000010001, Src_2:00000000000000000000000000010000, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000000000000000111, Src_2:00000000000000000000000000001000, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000000000000000101, Src_2:00000000000000000000000000010110, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# Src_1:00000000000000000000000000001010, Src_2:00000000000000000000000000001101, Shamt:00000, Funct:000000
-# ALU_result:         0, Z:1, C:0
-# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(114)
-#    Time: 200 ns  Iteration: 1  Instance: /tb_ALU
-# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v line 114
+# Instruction:00000000011010100000000001100010
+# CompALU_data:2147483647, Z:0, C:0
+# Instruction:00000000011001110000000011001001
+# CompALU_data:2004318070, Z:0, C:1
+# Instruction:00000000011010000000000001001010
+# CompALU_data:1879048192, Z:0, C:0
+# Instruction:00000001000000010000000001010001
+# CompALU_data:         1, Z:0, C:0
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
+#    Time: 80 ns  Iteration: 1  Instance: /tb_CompALU
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
 quit -sim
-# End time: 02:30:41 on Mar 16,2024, Elapsed time: 0:11:21
+# End time: 17:12:26 on Mar 16,2024, Elapsed time: 0:06:12
 # Errors: 0, Warnings: 1
 # Compile of ALU.v was successful.
 # Compile of CompALU.v was successful.
@@ -61,9 +48,300 @@ quit -sim
 # Compile of tb_CompALU.v was successful.
 # Compile of tb_RF.v was successful.
 # 6 compiles, 0 failed with no errors.
+# Compile of ALU.v was successful.
+# Compile of CompALU.v was successful.
+# Compile of RF.v was successful.
+# Compile of tb_ALU.v was successful.
+# Compile of tb_CompALU.v was successful.
+# Compile of tb_RF.v was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb_CompALU
+# vsim -gui work.tb_CompALU 
+# Start time: 17:12:44 on Mar 16,2024
+# Loading work.tb_CompALU
+# Loading work.CompALU
+# Loading work.RF
+# Loading work.ALU
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
+add wave -position insertpoint  \
+sim:/tb_CompALU/Instruction \
+sim:/tb_CompALU/CompALU_data \
+sim:/tb_CompALU/CompALU_zero \
+sim:/tb_CompALU/CompALU_carry
+run -all
+# Instruction:00000000011010100000000001100010
+# CompALU_data:2147483647, Z:0, C:0
+# Instruction:00000000011001110000000011001001
+# CompALU_data:2004318070, Z:0, C:1
+# Instruction:00000000011010000000000001001010
+# CompALU_data:1879048192, Z:0, C:0
+# Instruction:00000001000000010000000001010001
+# CompALU_data:         1, Z:0, C:0
+# Instruction:00000001111001110000000011001001
+# CompALU_data:4294967295, Z:0, C:0
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
+#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
+quit -sim
+# End time: 17:29:43 on Mar 16,2024, Elapsed time: 0:16:59
+# Errors: 0, Warnings: 1
+vsim -gui work.tb_RF
+# vsim -gui work.tb_RF 
+# Start time: 17:29:53 on Mar 16,2024
+# Loading work.tb_RF
+# Loading work.RF
+add wave -position insertpoint  \
+sim:/tb_RF/Rs_addr \
+sim:/tb_RF/Rt_addr \
+sim:/tb_RF/Rs_data \
+sim:/tb_RF/Rt_data
+run -continue
+run -continue
+run -all
+# Rs_addr:00, Rt_addr:1f
+# Src_1:00000000, Src_2:ffffffff
+# Rs_addr:01, Rt_addr:1e
+# Src_1:00000001, Src_2:7f7f7f7f
+# Rs_addr:02, Rt_addr:1d
+# Src_1:00000001, Src_2:00000002
+# Rs_addr:03, Rt_addr:1c
+# Src_1:ffffffff, Src_2:00000020
+# Rs_addr:04, Rt_addr:1b
+# Src_1:7fffffff, Src_2:00000200
+# Rs_addr:05, Rt_addr:1a
+# Src_1:80000000, Src_2:00002000
+# Rs_addr:06, Rt_addr:19
+# Src_1:01010101, Src_2:0000001a
+# Rs_addr:07, Rt_addr:18
+# Src_1:77777777, Src_2:00000019
+# Rs_addr:08, Rt_addr:17
+# Src_1:8fffffff, Src_2:00000018
+# Rs_addr:09, Rt_addr:16
+# Src_1:0fffffff, Src_2:13579bdf
+# Rs_addr:0a, Rt_addr:15
+# Src_1:12341234, Src_2:02468ace
+# Rs_addr:0b, Rt_addr:14
+# Src_1:43214321, Src_2:89abcdef
+# Rs_addr:0c, Rt_addr:13
+# Src_1:12345678, Src_2:01234567
+# Rs_addr:0d, Rt_addr:12
+# Src_1:87654321, Src_2:abcddcba
+# Rs_addr:0e, Rt_addr:11
+# Src_1:80808080, Src_2:f7f7f7f7
+# Rs_addr:0f, Rt_addr:10
+# Src_1:88888888, Src_2:7f7f7f7f
+# Rs_addr:10, Rt_addr:0f
+# Src_1:7f7f7f7f, Src_2:88888888
+# Rs_addr:11, Rt_addr:0e
+# Src_1:f7f7f7f7, Src_2:80808080
+# Rs_addr:12, Rt_addr:0d
+# Src_1:abcddcba, Src_2:87654321
+# Rs_addr:13, Rt_addr:0c
+# Src_1:01234567, Src_2:12345678
+# Rs_addr:14, Rt_addr:0b
+# Src_1:89abcdef, Src_2:43214321
+# Rs_addr:15, Rt_addr:0a
+# Src_1:02468ace, Src_2:12341234
+# Rs_addr:16, Rt_addr:09
+# Src_1:13579bdf, Src_2:0fffffff
+# Rs_addr:17, Rt_addr:08
+# Src_1:00000018, Src_2:8fffffff
+# Rs_addr:18, Rt_addr:07
+# Src_1:00000019, Src_2:77777777
+# Rs_addr:19, Rt_addr:06
+# Src_1:0000001a, Src_2:01010101
+# Rs_addr:1a, Rt_addr:05
+# Src_1:00002000, Src_2:80000000
+# Rs_addr:1b, Rt_addr:04
+# Src_1:00000200, Src_2:7fffffff
+# Rs_addr:1c, Rt_addr:03
+# Src_1:00000020, Src_2:ffffffff
+# Rs_addr:1d, Rt_addr:02
+# Src_1:00000002, Src_2:00000001
+# Rs_addr:1e, Rt_addr:01
+# Src_1:7f7f7f7f, Src_2:00000001
+# Rs_addr:1f, Rt_addr:00
+# Src_1:ffffffff, Src_2:00000000
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v(112)
+#    Time: 320 ns  Iteration: 1  Instance: /tb_RF
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v line 112
+quit -sim
+# End time: 17:30:40 on Mar 16,2024, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 0
+# Compile of ALU.v was successful.
+# Compile of CompALU.v was successful.
+# Compile of RF.v was successful.
+# Compile of tb_ALU.v was successful.
+# Compile of tb_CompALU.v was successful.
+# Compile of tb_RF.v was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb_RF
+# vsim -gui work.tb_RF 
+# Start time: 17:30:52 on Mar 16,2024
+# Loading work.tb_RF
+# Loading work.RF
+add wave -position insertpoint  \
+sim:/tb_RF/Rs_addr \
+sim:/tb_RF/Rt_addr \
+sim:/tb_RF/Rs_data \
+sim:/tb_RF/Rt_data
+run -continue
+run -all
+# Rs_addr:00, Rt_addr:1f
+# Src_1:00000000, Src_2:ffffffff
+# Rs_addr:01, Rt_addr:1e
+# Src_1:00000001, Src_2:7f7f7f7f
+# Rs_addr:02, Rt_addr:1d
+# Src_1:00000001, Src_2:00000002
+# Rs_addr:03, Rt_addr:1c
+# Src_1:ffffffff, Src_2:00000020
+# Rs_addr:04, Rt_addr:1b
+# Src_1:7fffffff, Src_2:00000200
+# Rs_addr:05, Rt_addr:1a
+# Src_1:80000000, Src_2:00002000
+# Rs_addr:06, Rt_addr:19
+# Src_1:01010101, Src_2:0000001a
+# Rs_addr:07, Rt_addr:18
+# Src_1:77777777, Src_2:00000019
+# Rs_addr:08, Rt_addr:17
+# Src_1:8fffffff, Src_2:00000018
+# Rs_addr:09, Rt_addr:16
+# Src_1:0fffffff, Src_2:13579bdf
+# Rs_addr:0a, Rt_addr:15
+# Src_1:12341234, Src_2:02468ace
+# Rs_addr:0b, Rt_addr:14
+# Src_1:43214321, Src_2:89abcdef
+# Rs_addr:0c, Rt_addr:13
+# Src_1:12345678, Src_2:01234567
+# Rs_addr:0d, Rt_addr:12
+# Src_1:87654321, Src_2:abcddcba
+# Rs_addr:0e, Rt_addr:11
+# Src_1:80808080, Src_2:f7f7f7f7
+# Rs_addr:0f, Rt_addr:10
+# Src_1:88888888, Src_2:7f7f7f7f
+# Rs_addr:10, Rt_addr:0f
+# Src_1:7f7f7f7f, Src_2:88888888
+# Rs_addr:11, Rt_addr:0e
+# Src_1:f7f7f7f7, Src_2:80808080
+# Rs_addr:12, Rt_addr:0d
+# Src_1:abcddcba, Src_2:87654321
+# Rs_addr:13, Rt_addr:0c
+# Src_1:01234567, Src_2:12345678
+# Rs_addr:14, Rt_addr:0b
+# Src_1:89abcdef, Src_2:43214321
+# Rs_addr:15, Rt_addr:0a
+# Src_1:02468ace, Src_2:12341234
+# Rs_addr:16, Rt_addr:09
+# Src_1:13579bdf, Src_2:0fffffff
+# Rs_addr:17, Rt_addr:08
+# Src_1:00000018, Src_2:8fffffff
+# Rs_addr:18, Rt_addr:07
+# Src_1:00000019, Src_2:77777777
+# Rs_addr:19, Rt_addr:06
+# Src_1:0000001a, Src_2:01010101
+# Rs_addr:1a, Rt_addr:05
+# Src_1:00002000, Src_2:80000000
+# Rs_addr:1b, Rt_addr:04
+# Src_1:00000200, Src_2:7fffffff
+# Rs_addr:1c, Rt_addr:03
+# Src_1:00000020, Src_2:ffffffff
+# Rs_addr:1d, Rt_addr:02
+# Src_1:00000002, Src_2:00000001
+# Rs_addr:1e, Rt_addr:01
+# Src_1:7f7f7f7f, Src_2:00000001
+# Rs_addr:1f, Rt_addr:00
+# Src_1:ffffffff, Src_2:00000000
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v(112)
+#    Time: 320 ns  Iteration: 1  Instance: /tb_RF
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v line 112
+quit -sim
+vsim -gui work.tb_RF
+# End time: 17:31:38 on Mar 16,2024, Elapsed time: 0:00:46
+# Errors: 0, Warnings: 0
+# vsim -gui work.tb_RF 
+# Start time: 17:31:38 on Mar 16,2024
+# Loading work.tb_RF
+# Loading work.RF
+add wave -position insertpoint  \
+sim:/tb_RF/Rs_addr \
+sim:/tb_RF/Rt_addr \
+sim:/tb_RF/Rs_data \
+sim:/tb_RF/Rt_data
+run -all
+# Rs_addr:00, Rt_addr:1f
+# Src_1:00000000, Src_2:ffffffff
+# Rs_addr:01, Rt_addr:1e
+# Src_1:00000001, Src_2:7f7f7f7f
+# Rs_addr:02, Rt_addr:1d
+# Src_1:00000001, Src_2:00000002
+# Rs_addr:03, Rt_addr:1c
+# Src_1:ffffffff, Src_2:00000020
+# Rs_addr:04, Rt_addr:1b
+# Src_1:7fffffff, Src_2:00000200
+# Rs_addr:05, Rt_addr:1a
+# Src_1:80000000, Src_2:00002000
+# Rs_addr:06, Rt_addr:19
+# Src_1:01010101, Src_2:0000001a
+# Rs_addr:07, Rt_addr:18
+# Src_1:77777777, Src_2:00000019
+# Rs_addr:08, Rt_addr:17
+# Src_1:8fffffff, Src_2:00000018
+# Rs_addr:09, Rt_addr:16
+# Src_1:0fffffff, Src_2:13579bdf
+# Rs_addr:0a, Rt_addr:15
+# Src_1:12341234, Src_2:02468ace
+# Rs_addr:0b, Rt_addr:14
+# Src_1:43214321, Src_2:89abcdef
+# Rs_addr:0c, Rt_addr:13
+# Src_1:12345678, Src_2:01234567
+# Rs_addr:0d, Rt_addr:12
+# Src_1:87654321, Src_2:abcddcba
+# Rs_addr:0e, Rt_addr:11
+# Src_1:80808080, Src_2:f7f7f7f7
+# Rs_addr:0f, Rt_addr:10
+# Src_1:88888888, Src_2:7f7f7f7f
+# Rs_addr:10, Rt_addr:0f
+# Src_1:7f7f7f7f, Src_2:88888888
+# Rs_addr:11, Rt_addr:0e
+# Src_1:f7f7f7f7, Src_2:80808080
+# Rs_addr:12, Rt_addr:0d
+# Src_1:abcddcba, Src_2:87654321
+# Rs_addr:13, Rt_addr:0c
+# Src_1:01234567, Src_2:12345678
+# Rs_addr:14, Rt_addr:0b
+# Src_1:89abcdef, Src_2:43214321
+# Rs_addr:15, Rt_addr:0a
+# Src_1:02468ace, Src_2:12341234
+# Rs_addr:16, Rt_addr:09
+# Src_1:13579bdf, Src_2:0fffffff
+# Rs_addr:17, Rt_addr:08
+# Src_1:00000018, Src_2:8fffffff
+# Rs_addr:18, Rt_addr:07
+# Src_1:00000019, Src_2:77777777
+# Rs_addr:19, Rt_addr:06
+# Src_1:0000001a, Src_2:01010101
+# Rs_addr:1a, Rt_addr:05
+# Src_1:00002000, Src_2:80000000
+# Rs_addr:1b, Rt_addr:04
+# Src_1:00000200, Src_2:7fffffff
+# Rs_addr:1c, Rt_addr:03
+# Src_1:00000020, Src_2:ffffffff
+# Rs_addr:1d, Rt_addr:02
+# Src_1:00000002, Src_2:00000001
+# Rs_addr:1e, Rt_addr:01
+# Src_1:7f7f7f7f, Src_2:00000001
+# Rs_addr:1f, Rt_addr:00
+# Src_1:ffffffff, Src_2:00000000
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v(112)
+#    Time: 320 ns  Iteration: 1  Instance: /tb_RF
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_RF.v line 112
+quit -sim
 vsim -gui work.tb_ALU
+# End time: 17:56:34 on Mar 16,2024, Elapsed time: 0:24:56
+# Errors: 0, Warnings: 0
 # vsim -gui work.tb_ALU 
-# Start time: 02:30:57 on Mar 16,2024
+# Start time: 17:56:34 on Mar 16,2024
 # Loading work.tb_ALU
 # Loading work.ALU
 # ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(101): Expected a system task, not a system function '$fscanf'.

@@ -7,6 +7,7 @@
 #include <ctime>
 #include <algorithm>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -19,9 +20,16 @@ string hasCarry(string binary1, string binary2);
 void removeSpaces(string &str);
 string intToBinaryString(int num, unsigned int length);
 int binaryToDecimal(string binaryString);
+string decimalToHexadecimal(int decimalNum);
 
 void removeSpaces(string &str) {
     str.erase(remove_if(str.begin(), str.end(), ::isspace), str.end());
+}
+
+string decimalToHexadecimal(int decimalNum) {
+    stringstream ss;
+    ss << setw(8) << setfill('0') << hex << decimalNum; // Convert decimal to hexadecimal
+    return ss.str();
 }
 
 string intToBinaryString(int num, unsigned int length) {
@@ -85,16 +93,20 @@ string zeroDetect(int num) {
 void parseInstruction(const string& line, int& reg1, int& reg2, int& shiftAmt, string& funct, string& carry) {
     stringstream ss(line);
     string temp1, temp2, temp3;
+    string hex1, hex2, hex3;
 
     getline(ss, temp1, '_');
     reg1 = binaryToDecimal(temp1);
-    cout << "reg1: " << temp1 << "  (" << reg1 << ")" << endl;
+    hex1 = decimalToHexadecimal(reg1);
+    cout << "Src1: " << temp1 << "  (0x" << hex1 << ")" << "  (" << reg1 << ")" << endl;
     getline(ss, temp2, '_');
     reg2 = binaryToDecimal(temp2);
-    cout << "reg2: " << temp2 << "  (" << reg2 << ")" << endl;
+    hex2 = decimalToHexadecimal(reg2);
+    cout << "Src2: " << temp2 << "  (0x" << hex2 << ")" << "  (" << reg2 << ")" << endl;
     getline(ss, temp3, '_');
     shiftAmt = binaryToDecimal(temp3);
-    cout << "shiftAmt: " << temp3 << "  (" << shiftAmt << ")" << endl;
+    hex3 = decimalToHexadecimal(shiftAmt);
+    cout << "Shamt: " << temp3 << "  (0x" << hex3 << ")" << "  (" << shiftAmt << ")" << endl;
     getline(ss, funct, '_');
 
     carry = hasCarry(temp1, temp2);
@@ -124,7 +136,7 @@ bool testALU(const string& instruction, const string& actualOutput, int lineNum)
     int result;
     if (decodedFunct == "Add unsigned") {
         result = reg1 + reg2;
-        cout << ">> Addu Result, reg1, reg2" << endl;
+        cout << ">> Addu Result, Src1, Src2" << endl;
     } else if (decodedFunct == "Subtract unsigned") {
         result = reg1 - reg2;
         if(reg1 > reg2) {
@@ -132,16 +144,15 @@ bool testALU(const string& instruction, const string& actualOutput, int lineNum)
         } else {
             carry = "1";
         }
-        cout << ">> Subu Result, reg1, reg2" << endl;
+        cout << ">> Subu Result, Src1, Src2" << endl;
     } else if (decodedFunct == "And") {
         result = reg1 & reg2;
-        cout << ">> And Result, reg1, reg2" << endl;
+        cout << ">> And Result, Src1, Src2" << endl;
     } else if (decodedFunct == "Shift right logical") {
         result = reg1 >> shiftAmt;
-        cout << ">> Srl Result, reg1, shiftAmt" << endl;
+        cout << ">> Srl Result, Src1, Shamt" << endl;
     }
-    cout << "result: " << result << endl;
-
+    
     // Convert result to binary string
     string expectedOutput;
     for (int i = 31; i >= 0; --i) {
@@ -154,11 +165,16 @@ bool testALU(const string& instruction, const string& actualOutput, int lineNum)
 
     // Compare actual output with expected output
     if (expectedOutput != actualOutput) {
-        cout << "Instruction: " << instruction << ", Function: " << decodedFunct << ", Output: " << actualOutput << endl;
-        cout << "Expected: " << expectedOutput << " / Actual: " << actualOutput << endl;
+        cout << "Instruction: " << instruction << endl;
+        cout << "Function: " << decodedFunct << endl;
+        cout << "Expected: " << expectedOutput << endl;
+        cout << "Actual: " << actualOutput << endl;
         return false;
+    }else{
+        cout << "ALU_result: " << intToBinaryString(result, 32) << " (0x" << decimalToHexadecimal(result) << ") (" << result << ")" << endl;
+        cout << "Zero: " << zeroDetect(result) << endl;
+        cout << "Carry: " << carry << endl;
     }
-
     return true;
 }
 
@@ -214,9 +230,12 @@ int main() {
     while (getline(aluInputFile, instruction)) {
         getline(aluOutputFile, output);
         removeSpaces(output);
+        cout << "Line Number: " << lineNum << endl;
         if (!testALU(instruction, output, lineNum)) {
+            cout << "------------------------------------" << endl;
             cerr << "Test failed at line " << lineNum << endl;
-            cout << aluOutputFile.tellg() << endl; // Print the position of the file pointer
+            //cout << aluOutputFile.tellg() << endl; // Print the position of the file pointer
+            cout << "------------------------------------" << endl;
             return 1;
         }
         cout << "Test passed at line " << lineNum << endl;
@@ -225,6 +244,8 @@ int main() {
     }
 
     cout << "All tests passed!" << endl;
+
+    cout << "------------------------------------" << endl;
 
     // Close files
     aluInputFile.close();
