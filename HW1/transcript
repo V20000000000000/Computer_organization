@@ -590,3 +590,54 @@ run -all
 # ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
 #    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
 # Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
+quit -sim
+# End time: 22:26:49 on Mar 16,2024, Elapsed time: 0:29:16
+# Errors: 0, Warnings: 1
+# Compile of ALU.v was successful.
+# Compile of CompALU.v was successful.
+# Compile of RF.v was successful.
+# Compile of tb_ALU.v was successful.
+# Compile of tb_CompALU.v was successful.
+# Compile of tb_RF.v was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb_ALU
+# vsim -gui work.tb_ALU 
+# Start time: 22:27:38 on Mar 16,2024
+# Loading work.tb_ALU
+# Loading work.ALU
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(101): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_ALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v
+add wave -position insertpoint  \
+sim:/tb_ALU/Src_1 \
+sim:/tb_ALU/Src_2 \
+sim:/tb_ALU/Shamt \
+sim:/tb_ALU/Funct \
+sim:/tb_ALU/ALU_result \
+sim:/tb_ALU/Zero \
+sim:/tb_ALU/Carry
+run -all
+# Src_1:00000000000000000000000000000000, Src_2:00000000000000000011111110100001, Shamt:11101, Funct:001010
+# ALU_result:4294951007, Z:0, C:1
+# Src_1:00000000000000000101110010010101, Src_2:00000000000000000000100010010101, Shamt:10000, Funct:001001
+# ALU_result:     25898, Z:0, C:0
+# Src_1:00000000000000000110011010000110, Src_2:00000000000000000111110110011110, Shamt:11100, Funct:010001
+# ALU_result:     25734, Z:0, C:0
+# Src_1:00000000000000000011111111110101, Src_2:00000000000000000001011001101100, Shamt:00011, Funct:001010
+# ALU_result:     10633, Z:0, C:0
+# Src_1:00000000000000000000011001010111, Src_2:00000000000000000011110110101110, Shamt:00110, Funct:001001
+# ALU_result:     17413, Z:0, C:0
+# Src_1:00000000000000000100000100011010, Src_2:00000000000000000001010100101000, Shamt:01010, Funct:001001
+# ALU_result:     22082, Z:0, C:0
+# Src_1:00000000000000000010001110001011, Src_2:00000000000000000100000000000110, Shamt:11100, Funct:001001
+# ALU_result:     25489, Z:0, C:0
+# Src_1:00000000000000000010010111111000, Src_2:00000000000000000010011101110000, Shamt:10011, Funct:100010
+# ALU_result:         0, Z:1, C:0
+# Src_1:00000000000000000011101000010001, Src_2:00000000000000000110110101011110, Shamt:10101, Funct:001010
+# ALU_result:4294954163, Z:0, C:1
+# Src_1:00000000000000000001111010010100, Src_2:00000000000000000000000110101110, Shamt:11101, Funct:100010
+# ALU_result:         0, Z:1, C:0
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(114)
+#    Time: 200 ns  Iteration: 1  Instance: /tb_ALU
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v line 114
+# End time: 23:34:42 on Mar 16,2024, Elapsed time: 1:07:04
+# Errors: 0, Warnings: 1
