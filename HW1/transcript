@@ -378,3 +378,215 @@ run -all
 # ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(114)
 #    Time: 200 ns  Iteration: 1  Instance: /tb_ALU
 # Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v line 114
+quit -sim
+# End time: 20:00:46 on Mar 16,2024, Elapsed time: 2:04:12
+# Errors: 0, Warnings: 1
+vsim -gui work.tb_CompALU
+# vsim -gui work.tb_CompALU 
+# Start time: 20:00:52 on Mar 16,2024
+# Loading work.tb_CompALU
+# Loading work.CompALU
+# Loading work.RF
+# Loading work.ALU
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
+add wave -position insertpoint  \
+sim:/tb_CompALU/Instruction \
+sim:/tb_CompALU/CompALU_data \
+sim:/tb_CompALU/CompALU_zero \
+sim:/tb_CompALU/CompALU_carry
+run -all
+# Instruction:00000000011010100000000001100010
+# CompALU_data:2147483647, Z:0, C:0
+# Instruction:00000000011001110000000011001001
+# CompALU_data:2004318070, Z:0, C:1
+# Instruction:00000000011010000000000001001010
+# CompALU_data:1879048192, Z:0, C:0
+# Instruction:00000001000000010000000001010001
+# CompALU_data:         1, Z:0, C:0
+# Instruction:00000001111001110000000011001001
+# CompALU_data:4294967295, Z:0, C:0
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
+#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
+quit -sim
+# End time: 20:49:19 on Mar 16,2024, Elapsed time: 0:48:27
+# Errors: 0, Warnings: 1
+# Compile of ALU.v was successful.
+# Compile of CompALU.v was successful.
+# Compile of RF.v was successful.
+# Compile of tb_ALU.v was successful.
+# Compile of tb_CompALU.v was successful.
+# Compile of tb_RF.v was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb_CompALU
+# vsim -gui work.tb_CompALU 
+# Start time: 20:49:28 on Mar 16,2024
+# Loading work.tb_CompALU
+# Loading work.CompALU
+# Loading work.RF
+# Loading work.ALU
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
+add wave -position insertpoint  \
+sim:/tb_CompALU/Instruction \
+sim:/tb_CompALU/CompALU_data \
+sim:/tb_CompALU/CompALU_zero \
+sim:/tb_CompALU/CompALU_carry
+run -all
+# Instruction:00000000011010100000000001100010
+# CompALU_data:2147483647, Z:0, C:0
+# Instruction:00000000011001110000000011001001
+# CompALU_data:2004318070, Z:0, C:1
+# Instruction:00000000011010000000000001001010
+# CompALU_data:1879048192, Z:0, C:0
+# Instruction:00000001000000010000000001010001
+# CompALU_data:         1, Z:0, C:0
+# Instruction:00000001000111100000000011001010
+# CompALU_data: 276856960, Z:0, C:0
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
+#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
+# Load canceled
+quit -sim
+vsim -gui work.tb_CompALU
+# End time: 20:51:29 on Mar 16,2024, Elapsed time: 0:02:01
+# Errors: 1, Warnings: 1
+# vsim -gui work.tb_CompALU 
+# Start time: 20:51:29 on Mar 16,2024
+# Loading work.tb_CompALU
+# Loading work.CompALU
+# Loading work.RF
+# Loading work.ALU
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
+add wave -position insertpoint  \
+sim:/tb_CompALU/Instruction \
+sim:/tb_CompALU/CompALU_data \
+sim:/tb_CompALU/CompALU_zero \
+sim:/tb_CompALU/CompALU_carry
+run -all
+# Instruction:00000000011010100000000001100010
+# CompALU_data:2147483647, Z:0, C:0
+# Instruction:00000000011001110000000011001001
+# CompALU_data:2004318070, Z:0, C:1
+# Instruction:00000000011010000000000001001010
+# CompALU_data:1879048192, Z:0, C:0
+# Instruction:00000001000000010000000001010001
+# CompALU_data:         1, Z:0, C:0
+# Instruction:00000010000111100000000011001010
+# CompALU_data:         0, Z:1, C:0
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
+#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
+quit -sim
+# End time: 21:07:09 on Mar 16,2024, Elapsed time: 0:15:40
+# Errors: 0, Warnings: 1
+# Compile of ALU.v was successful.
+# Compile of CompALU.v was successful.
+# Compile of RF.v was successful.
+# Compile of tb_ALU.v was successful.
+# Compile of tb_CompALU.v was successful.
+# Compile of tb_RF.v was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb_CompALU
+# vsim -gui work.tb_CompALU 
+# Start time: 21:10:44 on Mar 16,2024
+# Loading work.tb_CompALU
+# Loading work.CompALU
+# Loading work.RF
+# Loading work.ALU
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
+add wave -position insertpoint  \
+sim:/tb_CompALU/Instruction \
+sim:/tb_CompALU/CompALU_data \
+sim:/tb_CompALU/CompALU_zero \
+sim:/tb_CompALU/CompALU_carry
+run -all
+# Instruction:00000000011010100000000001100010
+# CompALU_data:2147483647, Z:0, C:0
+# Instruction:00000000011001110000000011001001
+# CompALU_data:2004318070, Z:0, C:1
+# Instruction:00000000011010000000000001001010
+# CompALU_data:1879048192, Z:0, C:0
+# Instruction:00000001000000010000000001010001
+# CompALU_data:         1, Z:0, C:0
+# Instruction:00000010000111100000000011001010
+# CompALU_data:         0, Z:1, C:0
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
+#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
+quit -sim
+vsim -gui work.tb_ALU
+# End time: 21:15:38 on Mar 16,2024, Elapsed time: 0:04:54
+# Errors: 0, Warnings: 1
+# vsim -gui work.tb_ALU 
+# Start time: 21:15:38 on Mar 16,2024
+# Loading work.tb_ALU
+# Loading work.ALU
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(101): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_ALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v
+add wave -position insertpoint  \
+sim:/tb_ALU/Src_1 \
+sim:/tb_ALU/Src_2 \
+sim:/tb_ALU/Shamt \
+sim:/tb_ALU/Funct \
+sim:/tb_ALU/ALU_result \
+sim:/tb_ALU/Zero \
+sim:/tb_ALU/Carry
+run -all
+# Src_1:00000000000000000000000000000000, Src_2:00000000000000000011111110100001, Shamt:11101, Funct:001010
+# ALU_result:4294951007, Z:0, C:1
+# Src_1:00000000000000000101110010010101, Src_2:00000000000000000000100010010101, Shamt:10000, Funct:001001
+# ALU_result:     25898, Z:0, C:0
+# Src_1:00000000000000000110011010000110, Src_2:00000000000000000111110110011110, Shamt:11100, Funct:010001
+# ALU_result:     25734, Z:0, C:0
+# Src_1:00000000000000000011111111110101, Src_2:00000000000000000001011001101100, Shamt:00011, Funct:001010
+# ALU_result:     10633, Z:0, C:0
+# Src_1:00000000000000000000011001010111, Src_2:00000000000000000011110110101110, Shamt:00110, Funct:001001
+# ALU_result:     17413, Z:0, C:0
+# Src_1:00000000000000000100000100011010, Src_2:00000000000000000001010100101000, Shamt:01010, Funct:001001
+# ALU_result:     22082, Z:0, C:0
+# Src_1:00000000000000000010001110001011, Src_2:00000000000000000100000000000110, Shamt:11100, Funct:001001
+# ALU_result:     25489, Z:0, C:0
+# Src_1:00000000000000000010010111111000, Src_2:00000000000000000010011101110000, Shamt:10011, Funct:100010
+# ALU_result:         0, Z:1, C:0
+# Src_1:00000000000000000011101000010001, Src_2:00000000000000000110110101011110, Shamt:10101, Funct:001010
+# ALU_result:4294954163, Z:0, C:1
+# Src_1:10001111111111111111111111111111, Src_2:00000000000000000000000000000001, Shamt:10101, Funct:010001
+# ALU_result:         1, Z:0, C:0
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v(114)
+#    Time: 200 ns  Iteration: 1  Instance: /tb_ALU
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_ALU.v line 114
+quit -sim
+# End time: 21:57:20 on Mar 16,2024, Elapsed time: 0:41:42
+# Errors: 0, Warnings: 1
+vsim -gui work.tb_CompALU
+# vsim -gui work.tb_CompALU 
+# Start time: 21:57:33 on Mar 16,2024
+# Loading work.tb_CompALU
+# Loading work.CompALU
+# Loading work.RF
+# Loading work.ALU
+# ** Warning: (vsim-PLI-3691) D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(104): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Region: /tb_CompALU/StimuliProcess File: D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v
+add wave -position insertpoint  \
+sim:/tb_CompALU/Instruction \
+sim:/tb_CompALU/CompALU_data \
+sim:/tb_CompALU/CompALU_zero \
+sim:/tb_CompALU/CompALU_carry
+run -all
+# Instruction:00000000011010100000000001100010
+# CompALU_data:2147483647, Z:0, C:0
+# Instruction:00000000011001110000000011001001
+# CompALU_data:2004318070, Z:0, C:1
+# Instruction:00000000011010000000000001001010
+# CompALU_data:1879048192, Z:0, C:0
+# Instruction:00000001000000010000000001010001
+# CompALU_data:         1, Z:0, C:0
+# Instruction:00000010000111100000000011001010
+# CompALU_data:         0, Z:1, C:0
+# ** Note: $stop    : D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v(117)
+#    Time: 100 ns  Iteration: 1  Instance: /tb_CompALU
+# Break in NamedBeginStat StimuliProcess at D:/c_Dpractice/Computer_organization/Computer_organization/HW1/tb_CompALU.v line 117
