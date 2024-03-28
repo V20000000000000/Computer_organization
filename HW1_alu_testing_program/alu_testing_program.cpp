@@ -258,7 +258,7 @@ int main() {
     cout << "------------------------------------" << endl;
 
     // Close files
-    aluInputFile.close();
+    aluInputFile.close(); 
     aluOutputFile.close();
 
     return 0;
