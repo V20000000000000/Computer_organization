@@ -3,6 +3,6 @@ module Multiplicand (
     input [31:0] multiplicand_in,
     input w_ctrl_Multiplicand,
     input rst
-)
+);
 
 endmodule

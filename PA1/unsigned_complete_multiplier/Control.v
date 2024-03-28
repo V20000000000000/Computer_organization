@@ -8,6 +8,6 @@ module Control (
     input rst,
     input clk,
     input lsb
-)
+);
 
 endmodule
