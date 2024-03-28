@@ -18,11 +18,12 @@ module CompMultiplier (
     wire [31:0] Multiplicand_in;
     wire [31:0] Multiplier_in;
     wire [63:0] Product_out;
+    wire [31:0] Hi;
 
     // internal control signal wires
     wire W_ctrl_Multiplicand;
     wire [5:0] Addu_ctrl;
-    wire Srl_ctrl;
+    wire Adding_ctrl;
     wire W_ctrl_Product;
 
     // internal data signal wires
@@ -41,18 +42,20 @@ module CompMultiplier (
     ALU ALU (
         .result(ALU_result),
         .carry(ALU_carry),
-        .src1(Product_out[63:32]),
-        .src2(Multiplier_out),
+        .src1(Multiplier_out),
+        .src2(Hi),
         .funct(Addu_ctrl)
     );
 
     Product Product (
         .product_out(Product_out),
+        .hi(Hi),
         .alu_result(ALU_result),
         .alu_carry(ALU_carry),
         .multiplier_in(Multiplier_in),
-        .srl_ctrl(Srl_ctrl),
+        .adding_ctrl(Adding_ctrl),
         .w_ctrl_Product(W_ctrl_Product),
+        .lsb(LSB),
         .rdy(Ready),
         .rst(Reset),
         .clk(clk)
