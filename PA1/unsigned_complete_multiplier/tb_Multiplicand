@@ -1,0 +1,61 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2024/03/28 21:52:28
+// Design Name: 
+// Module Name: tb_multiplicand
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description:  test  multiplicand function
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module tb_Multiplicand;
+
+    reg [31:0] multiplicand_in;
+    reg w_ctrl_Multiplicand, rst;
+    wire [31:0] multiplicand_out;
+
+    // 实例化 Multiplicand 模块
+    Multiplicand uut (
+        .multiplicand_out(multiplicand_out),
+        .multiplicand_in(multiplicand_in),
+        .w_ctrl_Multiplicand(w_ctrl_Multiplicand),
+        .rst(rst)
+    );
+
+    // 初始块，应用测试用例
+    initial begin
+        // 测试案例 1: 正常操作
+        multiplicand_in = 32'd100;
+        w_ctrl_Multiplicand = 1'b1; // 启用写控制
+        rst = 1'b0; // 无复位
+        #10; // 延迟以允许模块处理
+        $display("测试案例 1: 正常操作");
+        $display("multiplicand_in = %d, multiplicand_out = %d", multiplicand_in, multiplicand_out);
+
+        // 测试案例 2: 复位操作
+        multiplicand_in = 32'd200;
+        w_ctrl_Multiplicand = 1'b0; // 禁用写控制
+        rst = 1'b1; // 应用复位
+        #10; // 延迟以允许模块处理
+        $display("测试案例 2: reset操作");
+        $display("multiplicand_in = %d, multiplicand_out = %d", multiplicand_in, multiplicand_out);
+
+        // 添加更多测试案例
+
+        // 停止仿真
+        $stop;
+    end
+
+endmodule
