@@ -4,3 +4,5 @@ module Multiplicand (
     input w_ctrl_Multiplicand,
     input rst
 )
+
+endmodule

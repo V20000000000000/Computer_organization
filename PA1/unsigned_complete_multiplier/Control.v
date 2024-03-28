@@ -9,3 +9,5 @@ module Control (
     input clk,
     input lsb
 )
+
+endmodule

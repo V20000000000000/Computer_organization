@@ -70,13 +70,4 @@ module CompMultiplier (
         .lsb(LSB)
     );
 
-    
-
-    
-    
-
-
-
-
-
 endmodule

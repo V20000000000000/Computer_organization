@@ -8,4 +8,6 @@ module Product (
     input rdy,
     input rst,
     input clk
-)
+);
+
+endmodule
