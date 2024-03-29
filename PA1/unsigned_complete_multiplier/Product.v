@@ -22,17 +22,17 @@ module Product (
         end
         else
         begin
-            if(w_ctrl_Product)    // load multiplicand
+            if(!w_ctrl_Product)    // 0: load product
             begin
                     product <= {alu_result, multiplier_in};
             end 
-            else    // adding or shifting
+            else    // 1: execute product 
             begin
-                if(adding_ctrl)    // add and shift right
+                if(adding_ctrl)    // 1: add and shift right
                 begin
                     product <= {1'b0, alu_result, product[31:1]};
                 end
-                else    // shift right only
+                else    // 0: shift right only
                 begin
                     product <= product >> 1;
                 end
