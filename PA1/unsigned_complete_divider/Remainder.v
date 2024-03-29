@@ -1,11 +1,11 @@
-module Product (
-    output [63:0] product_out,  
+module Remainder (
+    output [63:0] reg2_out,  
     output [31:0] hi,
     input [31:0] alu_result,
     input alu_carry,
-    input [31:0] multiplier_in, 
+    input [31:0] reg2_in, 
     input adding_ctrl,
-    input w_ctrl_Product,
+    input w_ctrl_reg2,
     input lsb,
     input rdy,
     input rst,
@@ -22,9 +22,9 @@ module Product (
         end
         else
         begin
-            if(!w_ctrl_Product)    // 0: load product
+            if(!w_ctrl_reg2)    // 0: load product
             begin
-                    product <= {alu_carry, alu_result, multiplier_in};
+                    product <= {alu_carry, alu_result, reg2_in};
             end 
             else    // 1: execute product 
             begin
@@ -34,14 +34,14 @@ module Product (
                 end
                 else    // lsb = 0: shift right only
                 begin
-                    product <= {1'b0, product[63:1]};
+                    product <= {2'b00, product[63:1]};
                 end
             end
         end
     end
 
     assign hi = product[63:32];
-    assign product_out = product;
+    assign reg2_out = product;
     assign lsb = product[0];
 
 endmodule

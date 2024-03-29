@@ -42,11 +42,11 @@ module tb_CompMultiplier;
 	// Inputs
 	reg Reset;
 	reg Run;
-	reg [31:0] Multiplicand_in;
-	reg [31:0] Multiplier_in;
+	reg [31:0] reg1_in;
+	reg [31:0] reg2_in;
 	
 	// Outputs
-	wire [63:0] Product_out;
+	wire [63:0] reg2_out;
 	wire Ready;
 	
 	// Clock
@@ -61,11 +61,11 @@ module tb_CompMultiplier;
 	// Instantiate the Unit Under Test (UUT)
 	CompMultiplier UUT(
 		// Outputs
-		.Prod(Product_out),
+		.Prod(reg2_out),
 		.Rdy(Ready),
 		// Inputs
-		.Mult(Multiplicand_in),
-		.Mul(Multiplier_in),
+		.Mult(reg1_in),
+		.Mul(reg2_in),
 		.Run(Run),
 		.Rst(Reset),
 		.clk(clk)
@@ -76,8 +76,8 @@ module tb_CompMultiplier;
 		// Initialize inputs
 		Reset 		= `LOW;
 		Run 		= `LOW;
-		Multiplicand_in	= 32'd0;
-		Multiplier_in 	= 32'd0;
+		reg1_in	= 32'd0;
+		reg2_in 	= 32'd0;
 
 		// Initialize testbench files
 		input_file	= $fopen(`INPUT_FILE, "r");
@@ -99,7 +99,7 @@ module tb_CompMultiplier;
 		begin
 			$fscanf(input_file, "%x\n", read_data);
 			@(negedge clk);	// Wait clock
-			{Multiplicand_in, Multiplier_in} = read_data;
+			{reg1_in, reg2_in} = read_data;
 			Reset = `HIGH;
 			@(negedge clk);	// Wait clock
 			Reset = `LOW;
@@ -120,9 +120,9 @@ module tb_CompMultiplier;
 	
 	always @(posedge Ready)
 	begin : Monitoring
-		$display("Multiplicand:%d, Multiplier:%d", Multiplicand_in, Multiplier_in);
-		$display("result:%d", Product_out);
-		$fdisplay(output_file, "%t,%x", $time, Product_out);
+		$display("Multiplicand:%d, Multiplier:%d", reg1_in, reg2_in);
+		$display("result:%d", reg2_out);
+		$fdisplay(output_file, "%t,%x", $time, reg2_out);
 	end
 	
 endmodule

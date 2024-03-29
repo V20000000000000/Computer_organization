@@ -1,14 +1,17 @@
+
 module Control (
     output reg rdy,
-    output reg w_ctrl_Multiplicand,
+    output reg w_ctrl_reg1,
     output reg adding_ctrl,
-    output reg [5:0] addu_ctrl,
-    output reg w_ctrl_Product,
+    output reg [5:0] ALU_control,
+    output reg w_ctrl_reg2,
     input run,
     input rst,
     input clk,
     input lsb
 );
+
+    parameter ALU_function = 6'b001010;
 
     reg [5:0] count;
 
@@ -17,9 +20,9 @@ module Control (
         if(rst)
         begin
             rdy <= 0;
-            addu_ctrl = 6'b001001;
-            w_ctrl_Multiplicand <= 0;   // 0: load multiplicand
-            w_ctrl_Product <= 0;
+            ALU_control = ALU_function;
+            w_ctrl_reg1 <= 0;   // 0: load multiplicand
+            w_ctrl_reg2 <= 0;
             count <= 0;
         end
         else
@@ -35,8 +38,8 @@ module Control (
                 end
                 else
                 begin
-                    w_ctrl_Multiplicand <= 1;
-                    w_ctrl_Product <= 1;
+                    w_ctrl_reg1 <= 1;
+                    w_ctrl_reg2 <= 1;
                     if(lsb)
                     begin
                         adding_ctrl <= 1;

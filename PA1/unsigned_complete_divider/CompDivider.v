@@ -1,27 +1,27 @@
 module CompMultiplier ( 
-    output [63:0] Prod, 
+    output [31:0] Q,
+    output [31:0] R,
     output Rdy, 
-    input [31:0] Mult, 
-    input [31:0] Mul, 
+    input [31:0] Dvsr, 
+    input [31:0] Dvnd, 
     input Run, 
     input Rst, 
     input clk 
 );
 
     // I/O data wires
-    wire [31:0] Multiplicand_in;
-    wire [31:0] Multiplier_in;
-    wire [63:0] Product_out;
+    wire [31:0] reg1_in;
+    wire [31:0] reg2_in;
+    wire [63:0] reg2_out;
     wire [31:0] Hi;
 
     // internal control signal wires
-    wire W_ctrl_Multiplicand;
-    wire [5:0] Addu_ctrl;
-    wire Adding_ctrl;
-    wire W_ctrl_Product;
+    wire w_ctrl_reg1;
+    wire [5:0] ALU_control;
+    wire [1:0] w_ctrl_reg2;
 
     // internal data signal wires
-    wire [31:0] Multiplicand_out;
+    wire [31:0] reg1_out;
     wire [31:0] ALU_result;
     wire ALU_carry;
     wire LSB;
@@ -30,16 +30,17 @@ module CompMultiplier (
     assign Rdy = ready;
 
     //output assignment
-    assign Prod = Product_out;
+    assign R = reg2_out[63:32];
+    assign Q = reg2_out[31:0];
 
     //input assignment
-    assign Multiplicand_in = Mult;
-    assign Multiplier_in = Mul;
+    assign reg1_in = Dvsr;
+    assign reg2_in = Dvnd;
 
-    Multiplicand Multiplicand_register_32bit (
-        .multiplicand_out(Multiplicand_out),
-        .multiplicand_in(Multiplicand_in),
-        .w_ctrl_Multiplicand(W_ctrl_Multiplicand),
+    Divisor reg1 (
+        .reg1_out(reg1_out),
+        .reg1_in(reg1_in),
+        .w_ctrl_reg1(w_ctrl_reg1),
         .rst(Rst)
     );
 
@@ -47,18 +48,17 @@ module CompMultiplier (
         .result(ALU_result),
         .carry(ALU_carry),
         .src1(Hi),
-        .src2(Multiplicand_out),
-        .funct(Addu_ctrl)
+        .src2(reg1_out),
+        .funct(ALU_control)
     );
 
-    Product Product (
-        .product_out(Product_out),
+    Remainder reg2 (
+        .reg2_out(reg2_out),
         .hi(Hi),
         .alu_result(ALU_result),
         .alu_carry(ALU_carry),
-        .multiplier_in(Multiplier_in),
-        .adding_ctrl(Adding_ctrl),
-        .w_ctrl_Product(W_ctrl_Product),
+        .reg2_in(reg2_in),
+        .w_ctrl_reg2(w_ctrl_reg2),
         .lsb(LSB),
         .rdy(ready),
         .rst(Rst),
@@ -67,10 +67,10 @@ module CompMultiplier (
 
     Control Control (
         .rdy(ready),
-        .w_ctrl_Multiplicand(W_ctrl_Multiplicand),
+        .w_ctrl_reg1(w_ctrl_reg1),
         .adding_ctrl(Adding_ctrl),
-        .addu_ctrl(Addu_ctrl),
-        .w_ctrl_Product(W_ctrl_Product),
+        .ALU_control(ALU_control),
+        .w_ctrl_reg2(w_ctrl_reg2),
         .run(Run),
         .rst(Rst),
         .clk(clk),

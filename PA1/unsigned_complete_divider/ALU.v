@@ -1,3 +1,4 @@
+
 module ALU (
     output [31:0] result,
     output carry,
@@ -14,6 +15,10 @@ module ALU (
         if(funct == 6'b001001) // addu
         begin
             {ALU_carry, ALU_result} = src1 + src2;
+        end
+        else if(funct == 6'001010) // subu
+        begin
+            ALU_result = src1 - src2;
         end
     end
     
