@@ -28,20 +28,20 @@ module Product (
             end 
             else    // 1: execute product 
             begin
-                if(adding_ctrl)    // 1: add and shift right
+                if(adding_ctrl)    // lsb = 1: add and shift right
                 begin
                     product <= {1'b0, alu_result, product[31:1]};
                 end
-                else    // 0: shift right only
+                else    // lsb = 0: shift right only
                 begin
-                    product <= product >> 1;
+                    product <= {1'b0, product[63:1]};
                 end
             end
         end
     end
 
     assign hi = product[63:32];
-    assign product_out = (rdy == 1'b1) ? product : product_out;
+    assign product_out = product;
     assign lsb = product[0];
 
 endmodule
