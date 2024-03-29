@@ -1,4 +1,4 @@
-module CompMultiplier ( 
+module CompDivider ( 
     output [31:0] Q,
     output [31:0] R,
     output Rdy, 

@@ -36,8 +36,7 @@ module Remainder (
                     end
                 2'b11:  // Restore original value by adding Divisor to left half Remainder, and place sum in left half Remainder. 
                     begin   // Also shift Remainder left, setting rightmost bit to 0
-                        reg2[64:32] <= {alu_carry, alu_result};
-                        reg2 <= {reg2[63:0], 1'b0};
+                        reg2[64:0] <= {alu_result, reg2[32:1], 1'b0};
                     end
             endcase
         end
