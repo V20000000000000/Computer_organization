@@ -5,7 +5,7 @@ module Remainder (
     input alu_carry,
     input [31:0] reg2_in, 
     input [1:0] w_ctrl_reg2,
-    input sign_flag,
+    output sign_flag,
     input rdy,
     input rst,
     input clk
