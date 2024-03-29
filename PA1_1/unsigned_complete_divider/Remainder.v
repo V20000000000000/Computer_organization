@@ -45,6 +45,6 @@ module Remainder (
 
     assign hi = reg2[63:32];
     assign reg2_out = reg2[63:0];
-    assign sign_flag = reg2[64];
+    assign sign_flag = reg2[65];
 
 endmodule

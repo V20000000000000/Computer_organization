@@ -1,5 +1,5 @@
 /*
- *	Testbench for Project 1 Part 1
+ *	Testbench for Project 1 Part 2
  *	Copyright (C) 2022  Han Ding Hung or any person belong ESSLab.
  *	All Right Reserved.
  *
@@ -30,23 +30,24 @@
 
 // Declarations
 `define DELAY			1	// # * timescale
-`define INPUT_FILE		"testbench/tb_CompMultiplier.in"
-`define OUTPUT_FILE		"testbench/tb_CompMultiplier.out"
+`define INPUT_FILE		"testbench/tb_CompDivider.in"
+`define OUTPUT_FILE		"testbench/tb_CompDivider.out"
 
 // Declaration
-`define LOW		1'b0
+`define LOW	1'b0
 `define HIGH	1'b1
 
-module tb_CompMultiplier;
+module tb_CompDivider;
 
 	// Inputs
 	reg Reset;
 	reg Run;
-	reg [31:0] reg1_in;
-	reg [31:0] reg2_in;
+	reg [31:0] Dividend_in;
+	reg [31:0] Divisor_in;
 	
 	// Outputs
-	wire [63:0] reg2_out;
+	wire [31:0] Quotient_out;
+	wire [31:0] Remainder_out;
 	wire Ready;
 	
 	// Clock
@@ -59,13 +60,14 @@ module tb_CompMultiplier;
 	integer i;
 	
 	// Instantiate the Unit Under Test (UUT)
-	CompMultiplier UUT(
+	CompDivider UUT(
 		// Outputs
-		.Prod(reg2_out),
+		.Q(Quotient_out),
+		.R(Remainder_out),
 		.Rdy(Ready),
 		// Inputs
-		.Mult(reg1_in),
-		.Mul(reg2_in),
+		.Dvnd(Dividend_in),
+		.Dvsr(Divisor_in),
 		.Run(Run),
 		.Rst(Reset),
 		.clk(clk)
@@ -76,8 +78,8 @@ module tb_CompMultiplier;
 		// Initialize inputs
 		Reset 		= `LOW;
 		Run 		= `LOW;
-		reg1_in	= 32'd0;
-		reg2_in 	= 32'd0;
+		Dividend_in	= 32'd0;
+		Divisor_in	= 32'd0;
 
 		// Initialize testbench files
 		input_file	= $fopen(`INPUT_FILE, "r");
@@ -99,7 +101,7 @@ module tb_CompMultiplier;
 		begin
 			$fscanf(input_file, "%x\n", read_data);
 			@(negedge clk);	// Wait clock
-			{reg1_in, reg2_in} = read_data;
+			{Dividend_in, Divisor_in} = read_data;
 			Reset = `HIGH;
 			@(negedge clk);	// Wait clock
 			Reset = `LOW;
@@ -120,9 +122,9 @@ module tb_CompMultiplier;
 	
 	always @(posedge Ready)
 	begin : Monitoring
-		$display("Multiplicand:%d, Multiplier:%d", reg1_in, reg2_in);
-		$display("result:%d", reg2_out);
-		$fdisplay(output_file, "%t,%x", $time, reg2_out);
+		$display("Dividend_in:%d, Divisor_in:%d", Dividend_in, Divisor_in);
+		$display("Quotient_out:%d, Remainder_out:%d", Quotient_out, Remainder_out);
+		$fdisplay(output_file, "%x_%x", Quotient_out, Remainder_out);
 	end
 	
 endmodule
