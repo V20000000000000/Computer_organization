@@ -1,54 +1,54 @@
 module Control (
     output reg rdy,
+    output reg SLL_ctrl,
+    output reg SRL_ctrl,
     output reg w_ctrl_reg1,
-    output reg [5:0] ALU_control,
-    output reg [1:0] w_ctrl_reg2,
+    output reg w_ctrl_reg2,
     input run,
     input rst,
-    input clk,
-    input sign_flag
+    input clk
 );
-    parameter ALU_ADD = 6'b001001, ALU_SUB = 6'b001010;
 
     reg [5:0] count;
+    reg state; 
 
-    always @(posedge rst or posedge clk)
+    always @(posedge clk or posedge rst)
     begin
         if(rst)
         begin
             rdy <= 0;
-            ALU_control = 6'b000000;
-            w_ctrl_reg1 <= 0;   // 0: load multiplicand
-            w_ctrl_reg2 <= 2'b00;   // 00: load and shift left
+            w_ctrl_reg1 <= 1;   // load reg1
+            w_ctrl_reg2 <= 0;   // reg2 = 0
+            SLL_ctrl <= 0;
+            SRL_ctrl <= 0;
             count <= 0;
         end
-        else
+        else if (run)
         begin
-            count <= 0;
-            w_ctrl_reg1 <= 1;
-            w_ctrl_reg2 <= 2'b00;   // load and shift left
-            if (run)
+            count <= count + 1;
+            if(count == 32)
             begin
-                if(count < 32)
-                begin
-                    count <= count + 1;
-                    w_ctrl_reg1 <= 0;
-                    w_ctrl_reg2 <= 2'b01;
-                    ALU_control <= ALU_SUB;
-                    if(sign_flag)   // if sign_flag is 1
-                    begin   // Restore original value by adding Divisor to left half Remainder, and place sum in left half Remainder.
-                        w_ctrl_reg2 <= 2'b11;   // Also shift Remainder left, setting rightmost bit to 0
-                        ALU_control <= ALU_ADD;
-                    end
-                    else    // if sign_flag is 0
-                    begin   // shift left, setting rightmost bit to 1
-                        w_ctrl_reg2 <= 2'b10;
-                    end
-                end
-                else
-                begin
-                    rdy <= 1;
-                end
+                rdy <= 1;   // ready
+                w_ctrl_reg1 <= 0;   
+                w_ctrl_reg2 <= 0;
+                SLL_ctrl <= 0;
+                SRL_ctrl <= 1;
+            end 
+            else if(count == 1)
+            begin
+                rdy <= 0;
+                w_ctrl_reg1 <= 0;
+                w_ctrl_reg2 <= 1;   // load reg2
+                SLL_ctrl <= 0;
+                SRL_ctrl <= 0;
+            end
+            else
+            begin
+                rdy <= 0;
+                w_ctrl_reg1 <= 0;
+                w_ctrl_reg2 <= 0;
+                SLL_ctrl <= 1;
+                SRL_ctrl <= 0;
             end
         end
     end

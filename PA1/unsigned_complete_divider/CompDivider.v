@@ -17,14 +17,14 @@ module CompDivider (
 
     // internal control signal wires
     wire w_ctrl_reg1;
-    wire [5:0] ALU_control;
-    wire [1:0] w_ctrl_reg2;
+    wire w_ctrl_reg2;
+    wire SLL_ctrl;
+    wire SRL_ctrl;
 
     // internal data signal wires
     wire [31:0] reg1_out;
     wire [31:0] ALU_result;
     wire ALU_carry;
-    wire sign_flag;
     wire ready;
     
     assign Rdy = ready;
@@ -34,8 +34,6 @@ module CompDivider (
     assign Q = reg2_out[31:0];
 
     //input assignment
-    assign reg1_in = Dvsr;
-    assign reg2_in = Dvnd;
 
     Divisor reg1 (
         .reg1_out(reg1_out),
@@ -46,10 +44,9 @@ module CompDivider (
 
     ALU ALU (
         .result(ALU_result),
-        .carry(ALU_carry),
-        .src1(Hi),
+        .src1(Hi), 
         .src2(reg1_out),
-        .funct(ALU_control)
+        .carry(ALU_carry)
     );
 
     Remainder reg2 (
@@ -59,7 +56,8 @@ module CompDivider (
         .alu_carry(ALU_carry),
         .reg2_in(reg2_in),
         .w_ctrl_reg2(w_ctrl_reg2),
-        .sign_flag(sign_flag),
+        .SLL_ctrl(SLL_ctrl),
+        .SRL_ctrl(SRL_ctrl),
         .rdy(ready),
         .rst(Rst),
         .clk(clk)
@@ -67,13 +65,13 @@ module CompDivider (
 
     Control Control (
         .rdy(ready),
+        .SLL_ctrl(SLL_ctrl),
+        .SRL_ctrl(SRL_ctrl),
         .w_ctrl_reg1(w_ctrl_reg1),
-        .ALU_control(ALU_control),
         .w_ctrl_reg2(w_ctrl_reg2),
         .run(Run),
         .rst(Rst),
-        .clk(clk),
-        .sign_flag(sign_flag)
+        .clk(clk)
     );
 
 endmodule
