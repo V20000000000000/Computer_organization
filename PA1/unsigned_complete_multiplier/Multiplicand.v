@@ -7,19 +7,21 @@ module Multiplicand (
 
     reg [31:0] multiplicand;
 
+    // Reset logic
     always @(posedge rst)
     begin
-        multiplicand <= 32'b0;
+        if (rst)
+            multiplicand <= 32'b0;
     end
 
+    // Data input control logic
     always @(posedge w_ctrl_Multiplicand)
     begin
-        if(!rst)
-        begin
+        if (!rst)
             multiplicand <= multiplicand_in;
-        end
     end
 
+    // Assign output
     assign multiplicand_out = multiplicand;
 
 endmodule

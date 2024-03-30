@@ -6,7 +6,7 @@ module Product (
     input [31:0] multiplier_in, 
     input adding_ctrl,
     input w_ctrl_Product,
-    input lsb,
+    output lsb,
     input rdy,
     input rst,
     input clk

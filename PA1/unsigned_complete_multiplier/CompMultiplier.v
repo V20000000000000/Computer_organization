@@ -59,10 +59,10 @@ module CompMultiplier (
         .multiplier_in(Multiplier_in),
         .adding_ctrl(Adding_ctrl),
         .w_ctrl_Product(W_ctrl_Product),
-        .lsb(LSB),
         .rdy(ready),
         .rst(Rst),
-        .clk(clk)
+        .clk(clk),
+        .lsb(LSB)
     );
 
     Control Control (
