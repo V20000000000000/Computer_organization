@@ -34,7 +34,7 @@ module Control (
                 SRL_ctrl <= 0;
                 count <= count + 1;
             end
-            else if(count == 32)
+            else if(count == 31)
             begin
                 rdy <= 1;   // ready
                 w_ctrl_reg1 <= 0;   
