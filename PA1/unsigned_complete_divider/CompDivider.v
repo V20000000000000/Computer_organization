@@ -11,8 +11,6 @@ module CompDivider (
 
 
     // I/O data wires
-    wire [31:0] reg1_in;
-    wire [31:0] reg2_in;
     wire [63:0] reg2_out;
     wire [31:0] Hi;
 
@@ -39,7 +37,7 @@ module CompDivider (
 
     Divisor reg1 (
         .reg1_out(reg1_out),
-        .reg1_in(reg1_in),
+        .reg1_in(Dvsr),
         .w_ctrl_reg1(w_ctrl_reg1),
         .rst(Rst)
     );

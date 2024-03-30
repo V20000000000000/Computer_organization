@@ -48,7 +48,7 @@ module Remainder (
         end
     end
 
-    assign hi = reg2[31:0];
-    assign reg2_out = reg2[63:0];
+    assign hi = reg2[63:32];
+    assign reg2_out = reg2[63:0]; 
 
 endmodule
