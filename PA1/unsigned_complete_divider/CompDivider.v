@@ -9,6 +9,7 @@ module CompDivider (
     input clk 
 );
 
+
     // I/O data wires
     wire [31:0] reg1_in;
     wire [31:0] reg2_in;
@@ -20,6 +21,7 @@ module CompDivider (
     wire w_ctrl_reg2;
     wire SLL_ctrl;
     wire SRL_ctrl;
+    wire [5:0] funct;
 
     // internal data signal wires
     wire [31:0] reg1_out;
@@ -46,7 +48,8 @@ module CompDivider (
         .result(ALU_result),
         .src1(Hi), 
         .src2(reg1_out),
-        .carry(ALU_carry)
+        .carry(ALU_carry),
+        .funct(funct)
     );
 
     Remainder reg2 (
@@ -54,13 +57,14 @@ module CompDivider (
         .hi(Hi),
         .alu_result(ALU_result),
         .alu_carry(ALU_carry),
-        .reg2_in(reg2_in),
+        .reg2_in(Dvnd),
         .w_ctrl_reg2(w_ctrl_reg2),
         .SLL_ctrl(SLL_ctrl),
         .SRL_ctrl(SRL_ctrl),
         .rdy(ready),
         .rst(Rst),
-        .clk(clk)
+        .clk(clk),
+        .run(Run)
     );
 
     Control Control (
@@ -71,7 +75,8 @@ module CompDivider (
         .w_ctrl_reg2(w_ctrl_reg2),
         .run(Run),
         .rst(Rst),
-        .clk(clk)
+        .clk(clk),
+        .funct(funct)
     );
 
 endmodule

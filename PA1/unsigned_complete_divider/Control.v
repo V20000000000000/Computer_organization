@@ -4,6 +4,7 @@ module Control (
     output reg SRL_ctrl,
     output reg w_ctrl_reg1,
     output reg w_ctrl_reg2,
+    output reg [5:0] funct,
     input run,
     input rst,
     input clk
@@ -19,36 +20,35 @@ module Control (
             rdy <= 0;
             w_ctrl_reg1 <= 1;   // load reg1
             w_ctrl_reg2 <= 0;   // reg2 = 0
-            SLL_ctrl <= 0;
             SRL_ctrl <= 0;
             count <= 0;
+            funct <= 6'b001010;
         end
         else if (run)
         begin
-            count <= count + 1;
-            if(count == 32)
-            begin
-                rdy <= 1;   // ready
-                w_ctrl_reg1 <= 0;   
-                w_ctrl_reg2 <= 0;
-                SLL_ctrl <= 0;
-                SRL_ctrl <= 1;
-            end 
-            else if(count == 1)
+            if(count == 0)
             begin
                 rdy <= 0;
                 w_ctrl_reg1 <= 0;
                 w_ctrl_reg2 <= 1;   // load reg2
-                SLL_ctrl <= 0;
                 SRL_ctrl <= 0;
+                count <= count + 1;
             end
+            else if(count == 32)
+            begin
+                rdy <= 1;   // ready
+                w_ctrl_reg1 <= 0;   
+                w_ctrl_reg2 <= 0;
+                SRL_ctrl <= 1;
+                count <= count + 1;
+            end 
             else
             begin
                 rdy <= 0;
                 w_ctrl_reg1 <= 0;
                 w_ctrl_reg2 <= 0;
-                SLL_ctrl <= 1;
                 SRL_ctrl <= 0;
+                count <= count + 1;
             end
         end
     end
