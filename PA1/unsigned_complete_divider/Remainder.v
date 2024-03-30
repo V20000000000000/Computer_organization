@@ -1,7 +1,7 @@
 module Remainder (
     output [63:0] reg2_out,  
     output [31:0] hi,
-    input [32:0] alu_result,
+    input [31:0] alu_result,
     input alu_carry,
     input [31:0] reg2_in, 
     input w_ctrl_reg2,
@@ -31,13 +31,13 @@ module Remainder (
             begin
             if (SRL_ctrl)   // SRL_ctrl == 1: shift right and set leftmost bit 0
             begin
-                reg2 <= {reg2[64:33], reg2[31:0]};
+                reg2 <= {1'b0,reg2[64:33], reg2[31:0]};
             end
             else // SRL_ctrl == 0: shift left
             begin
                 if (alu_carry)  // alu_carry == 1: set rightmost bit 0
                 begin
-                    reg2 <= {reg2[63:1], 1'b0};
+                    reg2 <= {reg2[63:0], 1'b0};
                 end
                 else    // alu_carry == 1: set rightmost bit 1
                 begin
