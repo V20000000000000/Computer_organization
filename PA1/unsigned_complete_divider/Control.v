@@ -34,12 +34,17 @@ module Control (
                 SRL_ctrl <= 0;
                 count <= count + 1;
             end
-            else if(count == 31)
+            else if(count == 33)
             begin
-                rdy <= 1;   // ready
+                rdy <= 0;   // ready
                 w_ctrl_reg1 <= 0;   
                 w_ctrl_reg2 <= 0;
                 SRL_ctrl <= 1;
+                count <= count + 1;
+            end 
+            else if(count == 34)
+            begin
+                rdy <= 1;   // ready
                 count <= count + 1;
             end 
             else
