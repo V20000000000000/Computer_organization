@@ -12,21 +12,21 @@ module Product (
     input clk
 );
 
-    reg [64:0] product;
+    reg [64:0] product;   // 64-bit product register
 
     always @(posedge rst or negedge clk)
     begin
-        if(rst)
+        if(rst)   // reset product to 0
         begin
             product <= 65'b0;
         end
-        else
+        else 
         begin
-            if(!w_ctrl_Product)    // 0: load product
+            if(!w_ctrl_Product)    // if w_ctrl_Product = 0, load product
             begin
                     product <= {alu_carry, alu_result, multiplier_in};
             end 
-            else    // 1: execute product 
+            else    // if w_ctrl_Product = 0, not load product 
             begin
                 if(adding_ctrl)    // lsb = 1: add and shift right
                 begin
@@ -39,7 +39,7 @@ module Product (
             end
         end
     end
-
+    // output assignment
     assign hi = product[63:32];
     assign product_out = product;
     assign lsb = product[0];

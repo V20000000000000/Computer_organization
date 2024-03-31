@@ -35,15 +35,15 @@ module CompMultiplier (
     //input assignment
     assign Multiplicand_in = Mult;
     assign Multiplier_in = Mul;
-
-    Multiplicand Multiplicand_register_32bit (
+    
+    Multiplicand Multiplicand_register_32bit (  // 32-bit register
         .multiplicand_out(Multiplicand_out),
         .multiplicand_in(Multiplicand_in),
         .w_ctrl_Multiplicand(W_ctrl_Multiplicand),
         .rst(Rst)
     );
 
-    ALU ALU (
+    ALU ALU (   // 32-bit ALU
         .result(ALU_result),
         .carry(ALU_carry),
         .src1(Hi),
@@ -51,7 +51,7 @@ module CompMultiplier (
         .funct(Addu_ctrl)
     );
 
-    Product Product (
+    Product Product (   // 64-bit product register
         .product_out(Product_out),
         .hi(Hi),
         .alu_result(ALU_result),
@@ -65,7 +65,7 @@ module CompMultiplier (
         .lsb(LSB)
     );
 
-    Control Control (
+    Control Control (   // control unit
         .rdy(ready),
         .w_ctrl_Multiplicand(W_ctrl_Multiplicand),
         .adding_ctrl(Adding_ctrl),

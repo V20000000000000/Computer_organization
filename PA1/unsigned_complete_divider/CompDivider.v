@@ -9,7 +9,6 @@ module CompDivider (
     input clk 
 );
 
-
     // I/O data wires
     wire [63:0] reg2_out;
     wire [31:0] Hi;
