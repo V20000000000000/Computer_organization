@@ -5,13 +5,15 @@ module ALU (
     input [31:0] src2,
     input [5:0] funct
 );
-
+    // ALU module, performs arithmetic operations
     always@(*)
     begin
-        if (funct == 6'b001010)
+        if (funct == 6'b001010) 
         begin
             {carry, result} = src1 - src2;
         end
     end
 
 endmodule
+
+

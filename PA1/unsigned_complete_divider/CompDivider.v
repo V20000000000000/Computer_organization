@@ -25,15 +25,13 @@ module CompDivider (
     wire [31:0] ALU_result;
     wire ALU_carry;
     wire ready;
-    
-    assign Rdy = ready;
 
     //output assignment
     assign R = reg2_out[63:32];
     assign Q = reg2_out[31:0];
+    assign Rdy = ready;
 
-    //input assignment
-
+    // module instances
     Divisor reg1 (
         .reg1_out(reg1_out),
         .reg1_in(Dvsr),

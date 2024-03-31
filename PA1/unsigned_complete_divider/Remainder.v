@@ -23,31 +23,31 @@ module Remainder (
         end 
         else
         begin
-            if (w_ctrl_reg2)   // 1: load reg2
+            if (w_ctrl_reg2)    // load reg2
             begin
                 reg2 <= {32'b0,reg2_in, 1'b0};
             end
             else
             begin
-            if (SRL_ctrl)   // SRL_ctrl == 1: shift right and set leftmost bit 0
+            if (SRL_ctrl)   // shift right
             begin
                 reg2 <= {1'b0,reg2[64:33], reg2[31:0]};
             end
-            else // SRL_ctrl == 0: shift left
+            else 
             begin
-                if (alu_carry)  // alu_carry == 1: set rightmost bit 0
-                begin
-                    reg2 <= {reg2[63:0], 1'b0};
+                if (alu_carry)      
+                begin   // remainder negative >> subtract and add, means keep the same value and shift left
+                    reg2 <= {reg2[63:0], 1'b0}; //set rightmost bit to 0
                 end
-                else    // alu_carry == 1: set rightmost bit 1
-                begin
+                else    // remainder positive >> subtract and shift left
+                begin   //set rightmost bit to 1
                     reg2 <= {alu_result, reg2[31:0], 1'b1};
                 end
             end
             end
         end
     end
-
+    // output assignment
     assign hi = reg2[63:32];
     assign reg2_out = reg2[63:0]; 
 

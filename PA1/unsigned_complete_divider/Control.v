@@ -10,19 +10,18 @@ module Control (
     input clk
 );
 
-    reg [5:0] count;
-    reg state; 
+    reg [5:0] count;    // counter
 
     always @(posedge clk or posedge rst)
     begin
-        if(rst)
+        if(rst) // reset
         begin
-            rdy <= 0;
+            rdy <= 0;   // ready
             w_ctrl_reg1 <= 1;   // load reg1
             w_ctrl_reg2 <= 0;   // reg2 = 0
-            SRL_ctrl <= 0;
-            count <= 0;
-            funct <= 6'b001010;
+            SRL_ctrl <= 0;  // shift right
+            count <= 0; // counter
+            funct <= 6'b001010; // ALU subtract
         end
         else if (run)
         begin
@@ -32,10 +31,10 @@ module Control (
                 w_ctrl_reg1 <= 0;
                 w_ctrl_reg2 <= 1;   // load reg2
                 SRL_ctrl <= 0;
-                count <= count + 1;
+                count <= count + 1; // increment counter
             end
-            else if(count == 33)
-            begin
+            else if(count == 33)    
+            begin   
                 rdy <= 0;   // ready
                 w_ctrl_reg1 <= 0;   
                 w_ctrl_reg2 <= 0;
@@ -45,7 +44,6 @@ module Control (
             else if(count == 34)
             begin
                 rdy <= 1;   // ready
-                count <= count + 1;
             end 
             else
             begin
@@ -59,3 +57,5 @@ module Control (
     end
 
 endmodule
+
+
