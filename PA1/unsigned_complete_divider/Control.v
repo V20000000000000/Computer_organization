@@ -1,6 +1,6 @@
 module Control (
     output reg rdy,
-    output reg SLL_ctrl,
+    output SLL_ctrl,
     output reg SRL_ctrl,
     output reg w_ctrl_reg1,
     output reg w_ctrl_reg2,
@@ -11,6 +11,7 @@ module Control (
 );
 
     reg [5:0] count;    // counter
+    assign SLL_ctrl = 0;   // shift left (no use)
 
     always @(posedge clk or posedge rst)
     begin

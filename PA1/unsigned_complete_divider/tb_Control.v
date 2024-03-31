@@ -1,11 +1,27 @@
-module tb_Control();
+module tb_Control;
 
-    reg run, rst, clk;
-    wire rdy, SLL_ctrl, SRL_ctrl, w_ctrl_reg1, w_ctrl_reg2;
+    // Inputs
+    reg run;
+    reg rst;
+    reg lsb;
+    
+    // Outputs
+    wire rdy;
+    wire SLL_ctrl;
+    wire SRL_ctrl;
+    wire w_ctrl_reg1;
+    wire w_ctrl_reg2;
     wire [5:0] funct;
 
-    // Instantiate Control module
-    Control dut (
+    // Clock generation
+    reg clk = 0;
+    always begin
+        #5; // Change this delay value according to your desired clock period
+        clk = ~clk;
+    end
+    
+    // Instantiate the Control module
+    Control uut (
         .rdy(rdy),
         .SLL_ctrl(SLL_ctrl),
         .SRL_ctrl(SRL_ctrl),
@@ -17,34 +33,50 @@ module tb_Control();
         .clk(clk)
     );
 
-    // Clock generation
-    always #5 clk = ~clk;
-
-    // Stimulus generation
+    // Test case generation
     initial begin
         // Initialize inputs
         run = 0;
         rst = 1;
-        clk = 0;
+        lsb = 0;
+        #20; // Wait for some time
+        // execute
+        run = 0;
+        rst = 1;
+        lsb = 0;
+        #20; // Wait for some time
+        rst = 0;
+        run = 1;
+        lsb = 0;
 
-        // Apply reset
-        #10 rst = 0;
+        // Generate clock cycles
+        repeat (200) begin
+            #5; // Change this delay value according to your desired clock period
+            if (rdy) begin
+                run = 0; // Stop running when rdy is high
+                #5 
+                rst = 1; // Reset the system
+                #10
+                rst = 0; // Release the reset
+                run = 1; // Start running again
+            end
 
-        // Transition to run state
-        #20 run = 1;
+        end
 
-        // Stimulate clock and inputs for 100 clock cycles
-        repeat (2000) begin
-            #5 clk = ~clk;
+        repeat (200) begin
+            #20; // Change this delay value according to your desired clock period
+            lsb = ~lsb; // Toggle lsb every 20 lock cycle
         end
 
         // End simulation
-        #10 $finish;
+        $finish;
     end
 
-    // Display outputs
-    initial begin
-        $monitor("Time=%0t, rdy=%b, SLL_ctrl=%b, SRL_ctrl=%b, w_ctrl_reg1=%b, w_ctrl_reg2=%b, funct=%b", $time, rdy, SLL_ctrl, SRL_ctrl, w_ctrl_reg1, w_ctrl_reg2, funct);
+    // Display results
+    always @(posedge clk) begin
+        $display("Time: %t, rdy: %b, SLL_ctrl: %b, SRL_ctrl: %b, w_ctrl_reg1: %b, w_ctrl_reg2: %b, funct: %b", $time, rdy, SLL_ctrl, SRL_ctrl, w_ctrl_reg1, w_ctrl_reg2, funct);
     end
 
 endmodule
+
+
