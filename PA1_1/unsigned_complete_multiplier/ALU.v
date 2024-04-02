@@ -5,10 +5,11 @@ module ALU (
     input [31:0] src2,
     input [5:0] funct
 );
-
+    // internal signals
     reg [31:0] ALU_result;
     reg ALU_carry;
 
+    // ALU operation logic, only addu is implemented
     always @(*)
     begin
         if(funct == 6'b001001) // addu

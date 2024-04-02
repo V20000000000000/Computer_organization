@@ -10,74 +10,28 @@ module Control (
     input lsb
 );
 
-    reg [4:0] count;
-    reg [1:0] state;
-
-
-    always @(posedge rst or posedge clk)
-    begin
-        if(rst)
-        begin
+    reg [5:0] count;
+    // Control logic
+    always @(posedge clk) begin  // reset logic
+        if (rst) begin
             rdy <= 0;
-            w_ctrl_Multiplicand <= 0;
-            adding_ctrl <= 0;
-            addu_ctrl <= 6'b000000;
+            addu_ctrl <= 6'b001001;
+            w_ctrl_Multiplicand <= 0;   // load multiplicand
             w_ctrl_Product <= 0;
-        end
-        else
-        begin
-            if (run)
-            begin
-                addu_ctrl <= 6'b001001; // ALU function: add
-                state <= 0;
-                case(state)
-                    0:  // initialize, loading values
-                    begin
-                        w_ctrl_Multiplicand <= 1;   // load multiplicand
-                        w_ctrl_Product <= 0;    // load product
-                        rdy <= 0;  // not ready
-                        adding_ctrl <= 0;   // product not adding
-                        count <= 5'b00000;
-                        state <= 1;
-                    end
-                    1:  // execute product
-                    begin
-                        w_ctrl_Multiplicand <= 0;   // not load multiplicand
-                        w_ctrl_Product <= 1;    // execute product
-                        if (lsb)
-                        begin
-                            adding_ctrl <= 1;   // product adding
-                        end
-                        else
-                        begin
-                            adding_ctrl <= 0;   // product not adding
-                        end
-                        count <= count + 1;
-                        state <= 2;
-                    end
-                    2:
-                    begin
-                        if (count == 5'b00000)
-                        begin
-                            state <= 1;
-                        end
-                        else
-                        begin
-                            rdy <= 1;  // ready
-                            state <= 0;
-                        end
-                    end
-                endcase
-            end
-            else
-            begin
-                rdy <= 0;
-                w_ctrl_Multiplicand <= 0;
-                adding_ctrl <= 0;
-                addu_ctrl <= 6'b000000;
-                w_ctrl_Product <= 0;
+            count <= 0;
+        end else begin  // normal operation, count to 32, then set rdy
+            if (run) begin
+                count <= count + 1;
+                if (count == 32) begin  
+                    rdy <= 1;
+                end else begin  
+                    w_ctrl_Multiplicand <= 1;
+                    w_ctrl_Product <= 1;
+                    adding_ctrl <= lsb;
+                end
             end
         end
     end
 
 endmodule
+

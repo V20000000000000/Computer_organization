@@ -5,21 +5,18 @@ module Multiplicand (
     input rst
 );
 
-    reg [31:0] multiplicand;
+    reg [31:0] multiplicand;    // 32-bit multiplicand register
 
-    always @(posedge rst)
-    begin
-        multiplicand <= 32'b0;
-    end
-
+    // Data input control logic, load multiplicand
     always @(posedge w_ctrl_Multiplicand)
     begin
-        if(!rst)
-        begin
+        if (!rst)
             multiplicand <= multiplicand_in;
-        end
+        else
+            multiplicand <= 32'b0;  // reset multiplicand to 0
     end
 
+    // Assign output 
     assign multiplicand_out = multiplicand;
 
 endmodule

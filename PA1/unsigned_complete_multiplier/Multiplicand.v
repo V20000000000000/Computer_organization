@@ -8,7 +8,7 @@ module Multiplicand (
     reg [31:0] multiplicand;    // 32-bit multiplicand register
 
     // Reset logic, reset multiplicand to 0
-    always @(posedge rst)
+    always @(negedge rst)
     begin
         if (rst)
             multiplicand <= 32'b0;
