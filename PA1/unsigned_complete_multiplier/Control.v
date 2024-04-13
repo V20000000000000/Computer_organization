@@ -12,7 +12,7 @@ module Control (
 
     reg [5:0] count;
     // Control logic
-    always @(negedge rst or posedge clk) begin  // reset logic
+    always @(posedge rst or posedge clk) begin  // reset logic
         if (rst) begin
             rdy <= 0;
             addu_ctrl <= 6'b001001;
