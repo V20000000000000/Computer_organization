@@ -13,7 +13,7 @@ module Control (
     reg [5:0] count;    // counter
     assign SLL_ctrl = 0;   // shift left (no use)
 
-    always @(posedge clk or posedge rst)
+    always @(posedge clk)
     begin
         if(rst) // reset
         begin
@@ -42,7 +42,7 @@ module Control (
                 SRL_ctrl <= 1;
                 count <= count + 1;
             end 
-            else if(count == 34)
+            else if(count >= 34)
             begin
                 rdy <= 1;   // ready
             end 

@@ -59,7 +59,6 @@ module tb_Control;
                 rst = 0; // Release the reset
                 run = 1; // Start running again
             end
-
         end
 
         repeat (200) begin
