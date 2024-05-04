@@ -38,7 +38,7 @@ module DM(
 	input Mem_w,		// Write enable
 	input Mem_r,		// Read enable
 	input clk,		// Clock
-	output [31:0]Mem_r_data	// Data
+	output reg [31:0]Mem_r_data	// Data
 );
 
 	/* 

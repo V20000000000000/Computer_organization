@@ -89,9 +89,9 @@ wire Mem_to_reg_wire;
 		.Y(Rd_data_wire)
 	);
 
-	SignExtender SignExtender(
-		.inputData(InstructionWire[15:0]),
-		.outputData(Sign_extended_wire)
+	Sign_Extend Sign_Extend(
+		.input(InstructionWire[15:0]),
+		.output(Sign_extended_wire)
 	);
 
 	ALU ALU(
