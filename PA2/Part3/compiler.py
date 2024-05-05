@@ -1,3 +1,12 @@
+'''
+此程式為PA2 part3的compiler
+請將testbench中的DM.dat RF.dat IM.dat內容複製到DM.txt RF.txt IM.txt中(不要包含第一行的註解)
+之後就會生成DM_out.txt RF_out.txt IM_out.txt 和 log.txt
+可以去跟modelsim的DM.out RF.out 比對看看是否正確
+程式執行過程在log.txt中
+可以跟波型圖比對看看是否正確
+'''
+
 def hex_to_bin(hex_string):
     # 將十六進制字符串轉換為整數
     decimal_number = int(hex_string, 16)
