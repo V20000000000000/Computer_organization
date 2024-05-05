@@ -79,13 +79,12 @@ always @(*) begin
             Reg_dst = 1'b0; // Don't care
             Reg_w = 1'b0;   // not write to register
             ALU_op = 2'b01; // SUBU
-            ALU_src = 1'b0; // I type
+            ALU_src = 1'b1; // I type
             Mem_w = 1'b0;  // Not write data memory
             Mem_r = 1'b0;  // Not read data memory
             Mem_to_reg = 1'b0;  // Don't care
             Branch = 1'b1;  // Not branch
             Jump = 1'b0;    // Not jump
-        end
     6'b011100: // JUMP
         begin
             Reg_dst = 1'b0; // Don't care

@@ -160,7 +160,7 @@ wire isBranch_wire;
 		.zero(zero_wire)
 	);
 
-	ALU_Control ALU_Control_Unit(
+	ALUControl ALU_Control_Unit(
 		.Funct_ctrl(instructionWire[5:0]),	// Funct
 		.ALU_op(ALU_op_wire),	// ALU_op
 		.Funct(Funct_wire)	// Output
