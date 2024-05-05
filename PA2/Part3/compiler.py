@@ -268,7 +268,7 @@ i = 0
 count = 0
 t = 0
 with open('log.txt', 'w') as file:
-    while(i <= 128 and count < 100):
+    while(i <= 120):
         count = count + 1
         print("-----------------------------------------------")
         print("Instruction address: " + str(i))
