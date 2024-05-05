@@ -1,0 +1,1393 @@
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000030
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 0ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000030
+$R2: 00000002
+$R19: 00000030
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 20ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 40ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 0000002e
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 60ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 0000002e
+$R2: 00000002
+$R19: 0000002e
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 80ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 100ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 0000002c
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 120ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 0000002c
+$R2: 00000002
+$R19: 0000002c
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 140ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 160ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 0000002a
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 180ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 0000002a
+$R2: 00000002
+$R19: 0000002a
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 200ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 220ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000028
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 240ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000028
+$R2: 00000002
+$R19: 00000028
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 260ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 280ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000026
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 300ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000026
+$R2: 00000002
+$R19: 00000026
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 320ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 340ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000024
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 360ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000024
+$R2: 00000002
+$R19: 00000024
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 380ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 400ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000022
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 420ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000022
+$R2: 00000002
+$R19: 00000022
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 440ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 460ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000020
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 480ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000020
+$R2: 00000002
+$R19: 00000020
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 500ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 520ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 0000001e
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 540ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 0000001e
+$R2: 00000002
+$R19: 0000001e
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 560ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 580ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 0000001c
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 600ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 0000001c
+$R2: 00000002
+$R19: 0000001c
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 620ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 640ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 0000001a
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 660ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 0000001a
+$R2: 00000002
+$R19: 0000001a
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 680ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 700ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000018
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 720ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000018
+$R2: 00000002
+$R19: 00000018
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 740ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 760ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000016
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 780ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000016
+$R2: 00000002
+$R19: 00000016
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 800ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 820ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000014
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 840ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000014
+$R2: 00000002
+$R19: 00000014
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 860ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 880ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000012
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 900ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000012
+$R2: 00000002
+$R19: 00000012
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 920ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 940ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000010
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 960ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000010
+$R2: 00000002
+$R19: 00000010
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 980ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 1000ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 0000000e
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 1020ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 0000000e
+$R2: 00000002
+$R19: 0000000e
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 1040ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 1060ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 0000000c
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 1080ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 0000000c
+$R2: 00000002
+$R19: 0000000c
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 1100ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 1120ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 0000000a
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 1140ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 0000000a
+$R2: 00000002
+$R19: 0000000a
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 1160ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 1180ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000008
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 1200ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000008
+$R2: 00000002
+$R19: 00000008
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 1220ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 1240ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000006
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 1260ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000006
+$R2: 00000002
+$R19: 00000006
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 1280ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 1300ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000004
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 1320ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000004
+$R2: 00000002
+$R19: 00000004
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 1340ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 1360ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000002
+immediate: 0000000000011110
+
+Next Instruction address: 4
+Next Instruction: 0262980D
+
+time: 1380ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0262980D
+
+Machine code: 0262980D
+opcode: 000000, rs: 10011, rt: 00010, rd: 10011, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R19, $R19, $R2
+Meaning: $R19 = $R19 - $R2
+$R19: 00000002
+$R2: 00000002
+$R19: 00000002
+
+Next Instruction address: 8
+Next Instruction: 70000000
+
+time: 1400ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 70000000
+
+Machine code: 70000000
+opcode: 011100, address: 00000000000000000000000000
+Instruction: J 0
+Meaning: Jump to  {NextPC[31:28] | 4 * 0}
+
+Next Instruction address: 0
+Next Instruction: 4C13001E
+
+time: 1420ns
+-----------------------------------------------
+Instruction address: 0
+Instruction: 4C13001E
+
+Machine code: 4C13001E
+opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
+Instruction: Beq $R0, $R19, 30
+Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+$R0: 00000000
+$R19: 00000000
+immediate: 0000000000011110
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1440ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1460ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1480ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1500ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1520ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1540ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1560ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1580ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1600ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1620ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1640ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1660ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1680ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1700ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1720ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1740ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1760ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1780ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1800ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1820ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1840ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1860ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1880ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1900ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1920ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1940ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1960ns
+-----------------------------------------------
+Instruction address: 124
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 124
+Next Instruction: FFFFFFFF
+
+time: 1980ns
