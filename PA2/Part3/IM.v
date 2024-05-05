@@ -33,10 +33,8 @@
  * CAUTION: DONT MODIFY THE NAME.
  */
 module IM(
-	// Outputs
-
-	// Inputs
-
+	input [31:0] Instr_addr,	// Address
+	output [31:0] Instruction	// Instruction
 );
 
 	/* 
@@ -44,5 +42,7 @@ module IM(
 	 * CAUTION: DONT MODIFY THE NAME AND SIZE.
 	 */
 	reg [7:0]InstrMem[0:`INSTR_MEM_SIZE - 1];
+
+	assign Instruction = {InstrMem[Instr_addr], InstrMem[Instr_addr + 1], InstrMem[Instr_addr + 2], InstrMem[Instr_addr + 3]};
 
 endmodule
