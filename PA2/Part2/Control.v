@@ -55,7 +55,7 @@ always @(*) begin
     6'b101010: // SLTI
         begin
             Reg_dst = 1'b0; // write to rt
-            Reg_w = 1'b1;   // not write to register
+            Reg_w = 1'b1;   // write to register
             ALU_op = 2'b11; // SLTI
             ALU_src = 1'b1; // I type
             Mem_w = 1'b0;  // Not write data memory

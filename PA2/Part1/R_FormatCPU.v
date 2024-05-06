@@ -26,6 +26,8 @@
  * Declaration of top entry for this project.
  * CAUTION: DONT MODIFY THE NAME AND I/O DECLARATION.
  */
+
+//It contains modules such as IM, RF, ALU, Adder, ALU_Control, and Control.
 module R_FormatCPU(
 	// Outputs
 	output	wire	[31:0]	Output_Addr,

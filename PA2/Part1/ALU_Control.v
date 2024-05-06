@@ -13,12 +13,12 @@ begin
             6'b001101: Funct = 6'b001010; // SUBU
             6'b100110: Funct = 6'b100001; // SLL
             6'b110110: Funct = 6'b110101; // SLLV
-            default: Funct = 6'b000000; // AND
+            default: Funct = 6'b000000; // 0
         endcase
     end
     else
     begin
-        Funct = 6'b000000; // AND
+        Funct = 6'b000000; 
     end
 end
 
