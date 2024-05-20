@@ -47,4 +47,14 @@ module RF(
 	 */
 	reg [31:0]R[0:`REG_MEM_SIZE - 1];
 
+	assign Rs_data = R[Rs_addr];
+	assign Rt_data = R[Rt_addr];
+
+	always @(negedge clk)
+	begin
+		if (Reg_w)
+			R[Rd_addr] <= Rd_data;
+	end
+
+endmodule
 endmodule

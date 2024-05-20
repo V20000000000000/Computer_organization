@@ -45,4 +45,6 @@ module IM(
 	 */
 	reg [7:0]InstrMem[0:`INSTR_MEM_SIZE - 1];
 
+	assign Instruction = {InstrMem[Instr_addr], InstrMem[Instr_addr + 1], InstrMem[Instr_addr + 2], InstrMem[Instr_addr + 3]};
+
 endmodule

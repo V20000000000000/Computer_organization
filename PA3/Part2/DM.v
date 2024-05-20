@@ -46,5 +46,20 @@ module DM(
 	 * CAUTION: DONT MODIFY THE NAME AND SIZE.
 	 */
 	reg [7:0]DataMem[0:`DATA_MEM_SIZE - 1];
+	
+	// read data from data memory
+	assign Mem_r_data = Mem_r ? {DataMem[Mem_addr[6:0]], DataMem[Mem_addr[6:0]+1], DataMem[Mem_addr[6:0]+2], DataMem[Mem_addr[6:0]+3]} : 32'b0;
+
+	// write data to data memory
+	always @(negedge clk)
+	begin
+		if(Mem_w)
+		begin
+			DataMem[Mem_addr[6:0]] <= Mem_w_data[31:24];
+			DataMem[Mem_addr[6:0]+1] <= Mem_w_data[23:16];
+			DataMem[Mem_addr[6:0]+2] <= Mem_w_data[15:8];
+			DataMem[Mem_addr[6:0]+3] <= Mem_w_data[7:0];
+		end
+	end
 
 endmodule

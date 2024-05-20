@@ -1,5 +1,5 @@
 module ID_EX
-(
+{
     input [31:0] Rs_data_in, Rt_data_in,
     input [1:0] ALU_op_in,
     input [5:0] Funct_ctrl_in,
@@ -13,7 +13,7 @@ module ID_EX
     output reg [4:0] Rd_addr_out,
     output reg [1:0] ALU_op_out,
     output reg Reg_w_out
-);
+};
 
     always @(negedge clk)
     begin

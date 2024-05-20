@@ -1,6 +1,6 @@
 /*
- *	Template for Project 2 Part 1
- *	Copyright (C) 2022  Chen Chia Yi or any person belong ESSLab.
+ *	Template for Project 3 Part 1
+ *	Copyright (C) 2024 Shi Chen Lin or any person belong ESSLab.
  *	All Right Reserved.
  *
  *	This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
  *	You should have received a copy of the GNU General Public License
  *	along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
- *	This file is for people who have taken the cource (1102 Computer
+ *	This file is for people who have taken the cource (1092 Computer
  *	Organizarion) to use.
  *	We (ESSLab) are not responsible for any illegal use.
  *
@@ -33,30 +33,27 @@
  * CAUTION: DONT MODIFY THE NAME.
  */
 module RF(
-	input [4:0] rs_addr,
-	input [4:0] rt_addr,
-	input [4:0] rd_addr,
-	input [31:0] rd_data,
-	input reg_write,
-	input clk,
-	output [31:0] rs_data,
-	output [31:0] rt_data
+	// Outputs
+	output [31:0] Rs_data, Rt_data,
+	// Inputs
+	input [31:0] Rd_data,
+	input [4:0] Rs_addr, Rt_addr, Rd_addr,
+	input Reg_w, clk
 );
 
 	/* 
 	 * Declaration of inner register.
 	 * CAUTION: DONT MODIFY THE NAME AND SIZE.
 	 */
-
 	reg [31:0]R[0:`REG_MEM_SIZE - 1];
 
-	assign rs_data = R[rs_addr];
-	assign rt_data = R[rt_addr];
+	assign Rs_data = R[Rs_addr];
+	assign Rt_data = R[Rt_addr];
 
 	always @(negedge clk)
 	begin
-		if (reg_write)
-			R[rd_addr] <= rd_data;
+		if (Reg_w)
+			R[Rd_addr] <= Rd_data;
 	end
 
 endmodule

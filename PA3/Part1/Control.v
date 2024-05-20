@@ -1,8 +1,8 @@
 module Control
 (
     input [5:0] Opcode,
-    output reg [5:0] ALU_op,
-    output reg [5:0] Reg_w
+    output reg [1:0] ALU_op,
+    output reg  Reg_w
 );
 
 always @(*)

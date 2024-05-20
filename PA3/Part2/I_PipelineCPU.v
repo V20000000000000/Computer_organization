@@ -34,15 +34,62 @@ module I_PipelineCPU(
 	input         clk
 );
 
+	wire [31:0] instruction_in_wire;
+	wire [31:0] instruction_out_wire;
+	wire Reg_dst_wire1, Reg_dst_wire2;
+	wire Mem_to_reg_wire3, Mem_w_wire4, Mem_r_wire5;
+
+	/* 
+	 * Declaration of Adder.
+	 * CAUTION: DONT MODIFY THE NAME.
+	 */
+
+	Adder Adder(
+		// Outputs
+		.output_Addr(Output_Addr),
+		// Inputs
+		.input_Addr(Input_Addr),
+		.input_Offset(32'b00000000000000000000000000000100)
+	);
+
 	/* 
 	 * Declaration of Instruction Memory.
 	 * CAUTION: DONT MODIFY THE NAME.
 	 */
 	IM Instr_Memory(
 		// Outputs
-		.Instruction(),
+		.Instruction(instruction_in_wire),
 		// Inputs
-		.Instr_addr()
+		.Instr_addr(Input_Addr)
+	);
+
+	/* 
+	 * Declaration of IF/ID.
+	 * CAUTION: DONT MODIFY THE NAME.
+	 */
+	IF_ID IF_ID(
+		// Outputs
+		.Instruction_ID(instruction_out_wire),
+		// Inputs
+		.Instruction(instruction_in_wire).
+		.clk(clk)
+	);
+
+	/* 
+	 * Declaration of Control.
+	 * CAUTION: DONT MODIFY THE NAME.
+	 */
+	Control Control(
+		// Outputs
+		.Reg_dst(),
+		.Reg_w(),
+		.Mem_to_reg(),
+		.Mem_w(),
+		.Mem_r(),
+		.ALU_op(),
+		.ALU_src(),
+		// Inputs
+		.OpCode(instruction_out_wire[31:26]),
 	);
 
 	/* 
@@ -76,4 +123,5 @@ module I_PipelineCPU(
 		.Mem_r(),
 		.clk()
 	);
+
 endmodule

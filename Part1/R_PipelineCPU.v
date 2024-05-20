@@ -52,6 +52,7 @@ module R_PipelineCPU(
 	wire Regw_wire1;
 	wire [1:0] ALU_op_wire1;
 	wire [1:0] ALU_op_wire2;
+	wire [4:0] Rd_addr_wire1;
 	wire [5:0] Funct_ctrl_wire;
 	wire [4:0] shamt_wire;	
 	wire [5:0] Funct_wire;
@@ -62,7 +63,7 @@ module R_PipelineCPU(
 	 */
 	IM Instr_Memory(
 		// Outputs
-		.Instruction(instruction_in_wire),
+		.Instruction(),
 		// Inputs
 		.Instr_addr(Input_Addr)
 	);
@@ -104,7 +105,7 @@ module R_PipelineCPU(
 		.Reg_w(Regw_wire1),
 		.ALU_op(ALU_op_wire1),
 		// Inputs
-		.Opcode(instruction_out_wire[31:26])
+		.Instruction(instruction_out_wire[31:26])
 	);
 	
 	/* 
@@ -139,7 +140,7 @@ module R_PipelineCPU(
 		.outputAddr(Output_Addr),
 		// Inputs
 		.inputAddr(Input_Addr),
-		.inputOffset(32'b00000000000000000000000000000100)
+		.inputOffset(31'b00000000000000000000000000000100)
 	);
 
 	/* 

@@ -1,6 +1,6 @@
 /*
- *	Testbench for Project 2 Part 1
- *	Copyright (C) 2022  Chen Chia Yi or any person belong ESSLab.
+ *	Testbench for Project 3 Part 1
+ *	Copyright (C) 2024 Shi Chen Lin or any person belong ESSLab.
  *	All Right Reserved.
  *
  *	This program is free software: you can redistribute it and/or modify
@@ -42,7 +42,7 @@
 `define LOW		1'b0
 `define HIGH	1'b1
 
-module tb_R_FormatCPU;
+module tb_R_PipelineCPU;
 
 	// Inputs
 	reg [31:0] Input_Addr;
@@ -60,7 +60,7 @@ module tb_R_FormatCPU;
 	integer i;
 	
 	// Instantiate the Unit Under Test (UUT)
-	R_FormatCPU UUT(
+	R_PipelineCPU UUT(
 		// Outputs
 		.Output_Addr(Output_Addr),
 		// Inputs
@@ -71,8 +71,8 @@ module tb_R_FormatCPU;
 	initial
 	begin : Preprocess
 		// Initialize inputs
-		Input_Addr = 32'd0;
-		clk = `HIGH;
+		Input_Addr	= 32'd0;
+		clk = `LOW;
 
 		// Initialize testbench files
 		$readmemh(`INSTR_FILE,	instrMem);
@@ -108,7 +108,6 @@ module tb_R_FormatCPU;
 			@(negedge clk);
 			Input_Addr <= Output_Addr;
 			@(posedge clk);
-
 		end
 		
 		// Read out all register value
