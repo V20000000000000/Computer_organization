@@ -1,1 +1,2 @@
-![image](https://github.com/V20000000000000/Computer_organization/assets/156409592/e230f1fc-5459-4922-a9d7-9c3857475d16)
+![image](https://github.com/V20000000000000/Computer_organization/assets/156409592/ca824380-0954-42ff-b983-273c201fcc22)
+
