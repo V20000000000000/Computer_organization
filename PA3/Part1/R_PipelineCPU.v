@@ -31,7 +31,7 @@ module R_PipelineCPU(
 	output [31:0] Output_Addr,
 	// Inputs
 	input  [31:0] Input_Addr,
-	input         clk
+	input clk
 );
 
 	wire [31:0] instruction_in_wire;
@@ -40,9 +40,12 @@ module R_PipelineCPU(
 	wire [31:0] Rs_data_wire2;
 	wire [31:0] Rt_data_wire1;
 	wire [31:0] Rt_data_wire2;
+	wire [31:0] Rd_data_wire1;
 	wire [31:0] Rd_data_wire2;
 	wire [31:0] ALU_result_wire;
 	wire [4:0] Rd_addr_wire1;
+	wire [4:0] Rd_addr_wire2;
+	wire [4:0] Rd_addr_wire3;
 	wire Regw_wire4;
 	wire Regw_wire3;
 	wire Regw_wire2;
@@ -53,8 +56,6 @@ module R_PipelineCPU(
 	wire [5:0] Funct_ctrl_wire;
 	wire [4:0] shamt_wire;	
 	wire [5:0] Funct_wire;
-
-
 
 	/* 
 	 * Declaration of Instruction Memory.
@@ -79,7 +80,7 @@ module R_PipelineCPU(
 		.Rd_data(Rd_data_wire2),
 		.Rs_addr(instruction_out_wire[25:21]),
 		.Rt_addr(instruction_out_wire[20:16]),
-		.Rd_addr(instruction_out_wire[15:11]),
+		.Rd_addr(Rd_addr_wire3),
 		.Reg_w(Regw_wire4),
 		.clk(clk)
 	);
@@ -131,6 +132,18 @@ module R_PipelineCPU(
 	);
 
 	/* 
+	 * Declaration of Adder.
+	 */
+
+	Adder Adder(
+		// Outputs
+		.outputAddr(Output_Addr),
+		// Inputs
+		.inputAddr(Input_Addr),
+		.inputOffset(31'b00000000000000000000000000000100)
+	);
+
+	/* 
 	 * Declaration of ALU.
 	 */
 	ALU ALU(
@@ -154,5 +167,36 @@ module R_PipelineCPU(
 		.Funct_ctrl(Funct_ctrl_wire)
 	);
 
+	/* 
+	 * Declaration of EX_MEM.
+	 */
+
+	EX_MEM EX_MEM(
+		// Outputs
+		.ALU_result_out(Rd_data_wire1),
+		.Rd_addr_out(Rd_addr_wire2),
+		.Reg_w_out(Regw_wire3),
+		// Inputs
+		.ALU_result_in(ALU_result_wire),
+		.Rd_addr_in(Rd_addr_wire1),
+		.Reg_w_in(Regw_wire2),
+		.clk(clk)
+	);
+
+	/* 
+	 * Declaration of MEM_WB.
+	 */
+
+	MEM_WB MEM_WB(
+		// Outputs
+		.DM_data_out(Rd_data_wire2),
+		.Rd_addr_out(Rd_addr_wire3),
+		.Reg_w_out(Regw_wire4),
+		// Inputs
+		.DM_data_in(Rd_data_wire1),
+		.Rd_addr_in(Rd_addr_wire2),
+		.Reg_w_in(Regw_wire3),
+		.clk(clk)
+	);
 
 endmodule
