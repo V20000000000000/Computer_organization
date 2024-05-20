@@ -5,7 +5,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000030
 immediate: 0000000000011110
@@ -50,7 +50,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 0000002e
 immediate: 0000000000011110
@@ -95,7 +95,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 0000002c
 immediate: 0000000000011110
@@ -140,7 +140,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 0000002a
 immediate: 0000000000011110
@@ -185,7 +185,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000028
 immediate: 0000000000011110
@@ -230,7 +230,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000026
 immediate: 0000000000011110
@@ -275,7 +275,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000024
 immediate: 0000000000011110
@@ -320,7 +320,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000022
 immediate: 0000000000011110
@@ -365,7 +365,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000020
 immediate: 0000000000011110
@@ -410,7 +410,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 0000001e
 immediate: 0000000000011110
@@ -455,7 +455,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 0000001c
 immediate: 0000000000011110
@@ -500,7 +500,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 0000001a
 immediate: 0000000000011110
@@ -545,7 +545,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000018
 immediate: 0000000000011110
@@ -590,7 +590,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000016
 immediate: 0000000000011110
@@ -635,7 +635,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000014
 immediate: 0000000000011110
@@ -680,7 +680,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000012
 immediate: 0000000000011110
@@ -725,7 +725,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000010
 immediate: 0000000000011110
@@ -770,7 +770,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 0000000e
 immediate: 0000000000011110
@@ -815,7 +815,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 0000000c
 immediate: 0000000000011110
@@ -860,7 +860,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 0000000a
 immediate: 0000000000011110
@@ -905,7 +905,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000008
 immediate: 0000000000011110
@@ -950,7 +950,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000006
 immediate: 0000000000011110
@@ -995,7 +995,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000004
 immediate: 0000000000011110
@@ -1040,7 +1040,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000002
 immediate: 0000000000011110
@@ -1085,7 +1085,7 @@ Instruction: 4C13001E
 Machine code: 4C13001E
 opcode: 010011, rs: 00000, rt: 10011, immediate: 0000000000011110
 Instruction: Beq $R0, $R19, 30
-Meaning: If $R0 == 19, then Output_Adder = Input_Adder + 4 + 4 * 30
+Meaning: If $R0 == $R19, then Output_Adder = Input_Adder + 4 + 4 * 30
 $R0: 00000000
 $R19: 00000000
 immediate: 0000000000011110

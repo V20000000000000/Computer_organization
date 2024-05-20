@@ -1,0 +1,1365 @@
+-----------------------------------------------
+Instruction address: 0
+Instruction: 010AA00B
+
+Machine code: 010AA00B
+opcode: 000000, rs: 01000, rt: 01010, rd: 10100, shamt: 00000, funct_ctrl: 001011
+Instruction: Addu $R20, $R8, $R10
+Meaning: $R20 = $R8 + $R10
+$R8: FFFF0000
+$R10: 0000000A
+$R20: 00000000
+
+Next Instruction address: 4
+Next Instruction: 0285B80D
+
+time: 0ns
+-----------------------------------------------
+Instruction address: 4
+Instruction: 0285B80D
+
+Machine code: 0285B80D
+opcode: 000000, rs: 10100, rt: 00101, rd: 10111, shamt: 00000, funct_ctrl: 001101
+Instruction: Subu $R23, $R20, $R5
+Meaning: $R23 = $R20 - $R5
+$R20: ffff000a
+$R5: F7F7F7F7
+$R23: 00000000
+
+Next Instruction address: 8
+Next Instruction: 02E0C866
+
+time: 20ns
+-----------------------------------------------
+Instruction address: 8
+Instruction: 02E0C866
+
+Machine code: 02E0C866
+opcode: 000000, rs: 10111, rt: 00000, rd: 11001, shamt: 00001, funct_ctrl: 100110
+Instruction: Sll $R25, $R23, 1
+Meaning: $R25 = $R23 << 1
+$R23: 08070813
+$R0: 00000000
+$R25: 00000000
+
+Next Instruction address: 12
+Next Instruction: 0321D836
+
+time: 40ns
+-----------------------------------------------
+Instruction address: 12
+Instruction: 0321D836
+
+Machine code: 0321D836
+opcode: 000000, rs: 11001, rt: 00001, rd: 11011, shamt: 00000, funct_ctrl: 110110
+Instruction: Sllv $R27, $R25, $R1
+Meaning: $R27 = $R25 << $R1
+$R25: 100e1026
+$R1: 00000001
+$R27: 00000000
+
+Next Instruction address: 16
+Next Instruction: 3775D836
+
+time: 60ns
+-----------------------------------------------
+Instruction address: 16
+Instruction: 3775D836
+
+Machine code: 3775D836
+opcode: 001101, rs: 11011, rt: 10101, immediate: 1101100000110110
+Instruction: Subiu $R21, $R27, 55350
+Meaning: $R21 = $R27 - 55350
+$R27: 201c204c
+$R21: 00000000immediate: 1101100000110110
+
+Next Instruction address: 20
+Next Instruction: 42750020
+
+time: 80ns
+-----------------------------------------------
+Instruction address: 20
+Instruction: 42750020
+
+Machine code: 42750020
+opcode: 010000, rs: 10011, rt: 10101, immediate: 0000000000100000
+Instruction: Sw $R21, 32($R19)
+Meaning: Memory[$R19 + 32] = $R21
+$R19: 00000030
+$R21: 201b4816
+immediate: 0000000000100000
+
+Next Instruction address: 24
+Next Instruction: 47BC0018
+
+time: 100ns
+-----------------------------------------------
+Instruction address: 24
+Instruction: 47BC0018
+
+Machine code: 47BC0018
+opcode: 010001, rs: 11101, rt: 11100, immediate: 0000000000011000
+Instruction: Lw $R28, 24($R29)
+Meaning: $R28 = Memory[$R29 + 24]
+$R29: 00000000
+$R28: 00000000
+immediate: 0000000000011000
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 120ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 140ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 160ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 180ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 200ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 220ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 240ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 260ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 280ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 300ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 320ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 340ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 360ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 380ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 400ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 420ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 440ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 460ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 480ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 500ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 520ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 540ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 560ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 580ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 600ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 620ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 640ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 660ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 680ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 700ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 720ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 740ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 760ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 780ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 800ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 820ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 840ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 860ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 880ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 900ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 920ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 940ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 960ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 980ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1000ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1020ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1040ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1060ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1080ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1100ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1120ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1140ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1160ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1180ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1200ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1220ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1240ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1260ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1280ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1300ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1320ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1340ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1360ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1380ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1400ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1420ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1440ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1460ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1480ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1500ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1520ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1540ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1560ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1580ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1600ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1620ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1640ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1660ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1680ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1700ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1720ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1740ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1760ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1780ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1800ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1820ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1840ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1860ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1880ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1900ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1920ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1940ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1960ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 1980ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2000ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2020ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2040ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2060ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2080ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2100ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2120ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2140ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2160ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2180ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2200ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2220ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2240ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2260ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2280ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2300ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2320ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2340ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2360ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2380ns
+-----------------------------------------------
+Instruction address: 28
+Instruction: FFFFFFFF
+
+Machine code: FFFFFFFF
+Unknown instruction
+
+Next Instruction address: 28
+Next Instruction: FFFFFFFF
+
+time: 2400ns

@@ -118,7 +118,7 @@ def analysisMachineCode(binary_string, dataMemory, registerFile, file):
         else:
             print("Unknown instruction")
             file.write("Unknown instruction" + "\n")
-            return 0
+            return 4
 
     # I-type
     elif(binary_string[0:6] == "001101"):   #Subiu
@@ -203,7 +203,7 @@ def analysisMachineCode(binary_string, dataMemory, registerFile, file):
         print("immediate: " + str(immediate))
         file.write("opcode: " + str(opcode) + ", rs: " + str(rs) + ", rt: " + str(rt) + ", immediate: " + str(immediate) + "\n")
         file.write("Instruction: Beq" + " " + "$R" + str(str_to_dec(rs)) + ", " + "$R" + str(str_to_dec(rt)) + ", " + str(str_to_dec(immediate)) + "\n")
-        file.write("Meaning: If $R" + str(str_to_dec(rs)) + " == " + "$R" + str(str_to_dec(rt)) + ", then Output_Adder = Input_Adder + 4 + 4 * " + str(str_to_dec(immediate)) + "\n")
+        file.write("Meaning: If $R" + str(str_to_dec(rs)) + " == " + str(str_to_dec(rt)) + ", then Output_Adder = Input_Adder + 4 + 4 * " + str(str_to_dec(immediate)) + "\n")
         file.write("$R" + str(str_to_dec(rs)) + ": " +registerFile[int(str_to_dec(rs))] + "\n")
         file.write("$R" + str(str_to_dec(rt)) + ": " +registerFile[int(str_to_dec(rt))] + "\n")
         file.write("immediate: " + str(immediate) + "\n")
@@ -226,7 +226,7 @@ def analysisMachineCode(binary_string, dataMemory, registerFile, file):
     else:
         print("Unknown instruction")
         file.write("Unknown instruction" + "\n")
-        return 0
+        return 4
 
 # 測試
 

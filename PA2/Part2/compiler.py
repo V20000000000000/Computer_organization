@@ -185,7 +185,7 @@ def analysisMachineCode(binary_string, dataMemory, registerFile, file):
         print("immediate: " + str(immediate))
         file.write("opcode: " + str(opcode) + ", rs: " + str(rs) + ", rt: " + str(rt) + ", immediate: " + str(immediate) + "\n")
         file.write("Instruction: Slti" + " " + "$R" + str(str_to_dec(rt)) + ", " + "$R" + str(str_to_dec(rs)) + ", " + str(str_to_dec(immediate)) + "\n")
-        file.write("Meaning: If $R" + str(str_to_dec(rs)) + " < " + "$R" + str(str_to_dec(immediate)) + ", then $R" + str(str_to_dec(rt)) + " = 1; else $R" + str(str_to_dec(rt)) + " = 0" + "\n")
+        file.write("Meaning: If $R" + str(str_to_dec(rs)) + " < " + str(str_to_dec(immediate)) + ", then $R" + str(str_to_dec(rt)) + " = 1; else $R" + str(str_to_dec(rt)) + " = 0" + "\n")
         file.write("$R" + str(str_to_dec(rs)) + ": " +registerFile[int(str_to_dec(rs))] + "\n")
         file.write("$R" + str(str_to_dec(rt)) + ": " +registerFile[int(str_to_dec(rt))] + "\n")
         file.write("immediate: " + str(immediate) + "\n")
@@ -203,7 +203,7 @@ def analysisMachineCode(binary_string, dataMemory, registerFile, file):
         print("immediate: " + str(immediate))
         file.write("opcode: " + str(opcode) + ", rs: " + str(rs) + ", rt: " + str(rt) + ", immediate: " + str(immediate) + "\n")
         file.write("Instruction: Beq" + " " + "$R" + str(str_to_dec(rs)) + ", " + "$R" + str(str_to_dec(rt)) + ", " + str(str_to_dec(immediate)) + "\n")
-        file.write("Meaning: If $R" + str(str_to_dec(rs)) + " == " + "$R" + str(str_to_dec(rt)) + ", then Output_Adder = Input_Adder + 4 + 4 * " + str(str_to_dec(immediate)) + "\n")
+        file.write("Meaning: If $R" + str(str_to_dec(rs)) + " == " + str(str_to_dec(rt)) + ", then Output_Adder = Input_Adder + 4 + 4 * " + str(str_to_dec(immediate)) + "\n")
         file.write("$R" + str(str_to_dec(rs)) + ": " +registerFile[int(str_to_dec(rs))] + "\n")
         file.write("$R" + str(str_to_dec(rt)) + ": " +registerFile[int(str_to_dec(rt))] + "\n")
         file.write("immediate: " + str(immediate) + "\n")
@@ -268,7 +268,7 @@ i = 0
 count = 0
 t = 0
 with open('log.txt', 'w') as file:
-    while(i <= 120):
+    while(count <= 120):
         count = count + 1
         print("-----------------------------------------------")
         print("Instruction address: " + str(i))
