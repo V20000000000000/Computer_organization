@@ -38,15 +38,14 @@ module I_PipelineCPU(
 	wire [31:0] instruction_out_wire;
 	wire [31:0] Rs_data_wire1, Rs_data_wire2;
 	wire [31:0] Rt_data_wire1, Rt_data_wire2;
-	wire [31:0] Rd_data_wire4;
+	wire [31:0] Rd_data_wire1, Rd_data_wire2, Rd_data_wire3, Rd_data_wire4;
 	wire [31:0] Imm_wire1, Imm_wire2;
 	wire [31:0] src2_wire;
 	wire [31:0] ALU_result_wire2, ALU_result_wire3, ALU_result_wire4;
 	wire [31:0] Mem_w_data_wire;
 	wire [31:0] Mem_r_data_wire3, Mem_r_data_wire4;
 	wire [5:0] Funct_wire;
-	wire [4:0] Rd_addr_wire2, Rd_addr_wire2_1, Rd_addr_wire3, Rd_addr_wire4;
-	wire [4:0] Rt_addr_wire2;
+	wire [4:0] Rd_addr_wire1, Rd_addr_wire2, Rd_addr_wire2_1, Rd_addr_wire3, Rd_addr_wire4;
 	wire [1:0] ALU_op_wire1, ALU_op_wire2;
 	wire Reg_dst_wire1, Reg_dst_wire2;
 	wire Mem_to_reg_wire1, Mem_to_reg_wire2, Mem_to_reg_wire3, Mem_to_reg_wire4;
@@ -62,10 +61,10 @@ module I_PipelineCPU(
 
 	Adder Adder(
 		// Outputs
-		.outputAddr(Output_Addr),
+		.output_Addr(Output_Addr),
 		// Inputs
-		.inputAddr(Input_Addr),
-		.inputOffset(32'b00000000000000000000000000000100)
+		.input_Addr(Input_Addr),
+		.input_Offset(32'b00000000000000000000000000000100)
 	);
 
 	/* 
@@ -87,7 +86,7 @@ module I_PipelineCPU(
 		// Outputs
 		.Instruction_ID(instruction_out_wire),
 		// Inputs
-		.Instruction(instruction_in_wire),
+		.Instruction(instruction_in_wire).
 		.clk(clk)
 	);
 
@@ -103,9 +102,9 @@ module I_PipelineCPU(
 		.Mem_w(Mem_w_wire1),
 		.Mem_r(Mem_r_wire1),
 		.ALU_op(ALU_op_wire1),
-		.ALU_src(ALU_src_wire1),
+		.ALU_src(ALU_op_wire2),
 		// Inputs
-		.Opcode(instruction_out_wire[31:26])
+		.OpCode(instruction_out_wire[31:26]),
 	);
 
 	/* 
@@ -129,7 +128,7 @@ module I_PipelineCPU(
 	 * Declaration of SignExtender.
 	 * CAUTION: DONT MODIFY THE NAME.
 	 */
-	SignExtender SignExtender(
+	SignExtender SignExtender1(
 		// Outputs
 		.outputData(Imm_wire1),
 		// Inputs
@@ -161,7 +160,6 @@ module I_PipelineCPU(
 		.Rd_addr_in(instruction_out_wire[15:11]),
 		.Rt_addr_in(instruction_out_wire[20:16]),
 		.ALU_src_in(ALU_src_wire1),
-		.ALU_op_in(ALU_op_wire1),
 		.Reg_w_in(Reg_w_wire1),
 		.Reg_dst_in(Reg_dst_wire1),
 		.Mem_w_in(Mem_w_wire1),
@@ -174,7 +172,7 @@ module I_PipelineCPU(
 	 * Declaration of ALU_src MUX_32bit.
 	 * CAUTION: DONT MODIFY THE NAME.
 	 */
-	MUX_32bit ALU_src(
+	ALU_src MUX_32bit(
 		// Outputs
 		.Y(src2_wire),
 		// Inputs
@@ -201,7 +199,7 @@ module I_PipelineCPU(
 	 * Declaration of Reg_dst MUX_5bit.
 	 * CAUTION: DONT MODIFY THE NAME.
 	 */
-	MUX_5bit Reg_dst(
+	Reg_dst MUX_5bit(
 		// Outputs
 		.Y(Rd_addr_wire2_1),
 		// Inputs
@@ -285,7 +283,7 @@ module I_PipelineCPU(
 	 * Declaration of Mem_to_reg MUX_32bit.
 	 * CAUTION: DONT MODIFY THE NAME.
 	 */
-	MUX_32bit Mem_to_reg(
+	Mem_to_reg MUX_32bit(
 		// Outputs
 		.Y(Rd_data_wire4),
 		// Inputs

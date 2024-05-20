@@ -1,6 +1,6 @@
 /*
- *	Testbench for Project 2 Part 2
- *	Copyright (C) 2022  Chen Chia Yi or any person belong ESSLab.
+ *	Testbench for Project 3 Part 2
+ *	Copyright (C) 2024 Shi Chen Lin or any person belong ESSLab.
  *	All Right Reserved.
  *
  *	This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
  *	You should have received a copy of the GNU General Public License
  *	along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
- *	This file is for people who have taken the cource (1102 Computer
+ *	This file is for people who have taken the cource (1092 Computer
  *	Organizarion) to use.
  *	We (ESSLab) are not responsible for any illegal use.
  *
@@ -46,7 +46,7 @@
 `define LOW		1'b0
 `define HIGH	1'b1
 
-module tb_I_FormatCPU;
+module tb_I_PipelineCPU;
 
 	// Inputs
 	reg [31:0] Input_Addr;
@@ -66,7 +66,7 @@ module tb_I_FormatCPU;
 	integer i;
 	
 	// Instantiate the Unit Under Test (UUT)
-	I_FormatCPU UUT(
+	I_PipelineCPU UUT(
 		// Outputs
 		.Output_Addr(Output_Addr),
 		// Inputs
@@ -78,7 +78,7 @@ module tb_I_FormatCPU;
 	begin : Preprocess
 		// Initialize inputs
 		Input_Addr	= 32'd0;
-		clk = `HIGH;
+		clk = `LOW;
 
 		// Initialize testbench files
 		$readmemh(`INSTR_FILE,	instrMem);
@@ -122,7 +122,6 @@ module tb_I_FormatCPU;
 			@(negedge clk);
 			Input_Addr <= Output_Addr;
 			@(posedge clk);
-
 		end
 		
 		// Read out all register value

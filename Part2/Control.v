@@ -1,16 +1,17 @@
 module Control
 (
     input [5:0] Opcode,
-    output Reg_dst,
-    output Reg_w,
-    output [1:0] ALU_op,
-    output ALU_src,
-    output Mem_w,
-    output Mem_r,
-    output Mem_to_reg
+    output reg Reg_dst,
+    output reg Reg_w,
+    output reg [1:0] ALU_op,
+    output reg ALU_src,
+    output reg Mem_w,
+    output reg Mem_r,
+    output reg Mem_to_reg
 );
 
-case(Opcode)
+always @(*) begin
+    case(Opcode)
     6'b000000: // R type
         begin
             Reg_dst = 1'b1; // rd
@@ -54,12 +55,24 @@ case(Opcode)
     6'b101010: // SLTI
         begin
             Reg_dst = 1'b0; // write to rt
-            Reg_w = 1'b1;   // not write to register
+            Reg_w = 1'b1;   // write to register
             ALU_op = 2'b11; // SLTI
             ALU_src = 1'b1; // I type
             Mem_w = 1'b0;  // Not write data memory
             Mem_r = 1'b1;  // Don't care
             Mem_to_reg = 1'b0;  // data from ALU
         end
+    default:
+        begin
+            Reg_dst = 1'b0; // write to rt
+            Reg_w = 1'b0;   // not write to register
+            ALU_op = 2'b00; // ADDU
+            ALU_src = 1'b0; // R type
+            Mem_w = 1'b0;  // Not write data memory
+            Mem_r = 1'b0;  // Not read data memory
+            Mem_to_reg = 1'b0;  // data from ALU
+        end
+endcase
+end
 
 endmodule

@@ -1,6 +1,6 @@
 /*
- *	Template for Project 2 Part 2
- *	Copyright (C) 2022  Chen Chia Yi or any person belong ESSLab.
+ *	Template for Project 3 Part 2
+ *	Copyright (C) 2024 Shi Chen Lin or any person belong ESSLab.
  *	All Right Reserved.
  *
  *	This program is free software: you can redistribute it and/or modify
@@ -33,12 +33,12 @@
  * CAUTION: DONT MODIFY THE NAME.
  */
 module DM(
-	input [31:0]Mem_addr,	// Address
-	input [31:0]Mem_w_data,	// Data
-	input Mem_w,		// Write enable
-	input Mem_r,		// Read enable
-	input clk,		// Clock
-	output reg [31:0]Mem_r_data	// Data
+	// Outputs
+	output [31:0] Mem_r_data,
+	// Inputs
+	input [31:0] Mem_w_data,
+	input [31:0] Mem_addr,
+	input Mem_w, Mem_r, clk
 );
 
 	/* 
@@ -46,7 +46,7 @@ module DM(
 	 * CAUTION: DONT MODIFY THE NAME AND SIZE.
 	 */
 	reg [7:0]DataMem[0:`DATA_MEM_SIZE - 1];
-
+	
 	// read data from data memory
 	assign Mem_r_data = Mem_r ? {DataMem[Mem_addr[6:0]], DataMem[Mem_addr[6:0]+1], DataMem[Mem_addr[6:0]+2], DataMem[Mem_addr[6:0]+3]} : 32'b0;
 
