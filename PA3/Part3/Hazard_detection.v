@@ -4,9 +4,9 @@ module Hazard_detection
     input [4:0] IF_ID_Rs_addr,
     input [4:0] IF_ID_Rt_addr,
     input ID_EX_MemRead,
-    output reg IF_ID_write,
-    output reg isControl,
-    output reg PC_Write
+    output reg IF_ID_write = 1'b1,  
+    output reg isControl = 1'b1,
+    output reg PC_Write = 1'b1
 );
 
 //  if (ID/EX.MemRead and
