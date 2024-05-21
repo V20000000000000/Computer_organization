@@ -4,7 +4,7 @@ module MUX_32_2bit
     input [31:0] B,
     input [31:0] C,
     input [1:0] S,
-    output [31:0] Y
+    output reg [31:0] Y
 );
     always @(*)
     begin

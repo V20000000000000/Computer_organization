@@ -6,7 +6,7 @@ module Forwarding
     input [4:0] Mem_WB_Rd_addr,
     input EX_Mem_RegWrite,
     input Mem_WB_RegWrite,
-    output reg [1:0] Forwarding_A
+    output reg [1:0] Forwarding_A,
     output reg [1:0] Forwarding_B
 );
 

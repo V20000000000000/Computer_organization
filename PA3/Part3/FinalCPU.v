@@ -59,7 +59,7 @@ module FinalCPU(
 	wire [1:0] Forwarding_A_wire, Forwarding_B_wire;
 	wire [31:0] Mem_w_data_wire2, Mem_w_data_wire3;
 	wire [31:0] Mem_r_data_wire3, Mem_r_data_wire4;
-	wire [4:0] Funct_wire;
+	wire [5:0] Funct_wire;
 
 	/* 
 	 * Declaration of Instruction Memory.
@@ -122,7 +122,7 @@ module FinalCPU(
 		// Outputs
 		.Y({Reg_dst_wire1, Reg_w_wire1, ALU_op_wire1, ALU_src_wire1, Mem_w_wire1, Mem_r_wire1, Mem_to_reg_wire1}),
 		// Inputs
-		.A(8'b0000000),
+		.A(8'b00000000),
 		.B({Reg_dst_wire0, Reg_w_wire0, ALU_op_wire0, ALU_src_wire0, Mem_w_wire0, Mem_r_wire0, Mem_to_reg_wire0}),
 		.S(isControl_wire)
 	);
@@ -168,8 +168,7 @@ module FinalCPU(
 		.ID_EX_Rt_addr(Rt_addr_wire2),
 		.IF_ID_Rs_addr(instruction_out_wire[25:21]),
 		.IF_ID_Rt_addr(instruction_out_wire[20:16]),
-		.ID_EX_MemRead(Mem_r_wire2),
-		.IF_ID_write(IF_ID_write_wire)
+		.ID_EX_MemRead(Mem_r_wire2)
 	);
 
 	/* 
@@ -193,7 +192,7 @@ module FinalCPU(
 		.Mem_to_reg_out(Mem_to_reg_wire2),
 		// Inputs
 		.Rs_data_in(Rs_data_wire1),
-		.Rt_data(Rt_data_wire1),
+		.Rt_data_in(Rt_data_wire1),
 		.Imm_in(imm_wire1),
 		.Rd_addr_in(instruction_out_wire[15:11]),
 		.Rt_addr_in(instruction_out_wire[20:16]),
@@ -236,7 +235,7 @@ module FinalCPU(
 		.S(Forwarding_B_wire)
 	);
 
-	MUX_32_bit ALU_src_MUX(
+	MUX_32bit ALU_src_MUX(
 		// Outputs
 		.Y(ALU_src2_wire),
 		// Inputs
@@ -252,7 +251,7 @@ module FinalCPU(
 
 	ALU ALU(
 		// Outputs
-		.result(),
+		.result(ALU_result_wire),
 		// Inputs
 		.srcA(ALU_src1_wire),
 		.srcB(ALU_src2_wire),
@@ -299,7 +298,7 @@ module FinalCPU(
 		.EX_Mem_Rd_addr(Rd_addr_wire3),
 		.Mem_WB_Rd_addr(Rd_addr_wire4),
 		.EX_Mem_RegWrite(Reg_w_wire3),
-		.Mem_WB_RegWrite(Reg_w_wire4),
+		.Mem_WB_RegWrite(Reg_w_wire4)
 	);
 
 	/* 
@@ -323,7 +322,7 @@ module FinalCPU(
 		.Mem_r_in(Mem_r_wire2),
 		.Mem_w_in(Mem_w_wire2),
 		.Mem_to_reg_in(Mem_to_reg_wire2),
-		.clk(clk),
+		.clk(clk)
 	);
 
 	/* 
@@ -367,7 +366,7 @@ module FinalCPU(
 	 */
 	MUX_32bit Mem_to_reg_MUX(
 		// Outputs
-		.Y(Rd_addr_wire4),
+		.Y(Rd_data_wire4),
 		// Inputs
 		.A(ALU_result_wire4),
 		.B(Mem_r_data_wire4),
