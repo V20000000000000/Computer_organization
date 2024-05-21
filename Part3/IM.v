@@ -1,6 +1,6 @@
 /*
- *	Template for Project 2 Part 3
- *	Copyright (C) 2022  Chen Chia Yi or any person belong ESSLab.
+ *	Template for Project 3 Part 3
+ *	Copyright (C) 2024 Shi Chen Lin or any person belong ESSLab.
  *	All Right Reserved.
  *
  *	This program is free software: you can redistribute it and/or modify
@@ -33,8 +33,10 @@
  * CAUTION: DONT MODIFY THE NAME.
  */
 module IM(
-	input [31:0] Instr_addr,	// Address
-	output [31:0] Instruction	// Instruction
+	// Outputs
+	output [31:0] Instruction,
+	// Inputs
+	input [31:0] Instr_addr
 );
 
 	/* 

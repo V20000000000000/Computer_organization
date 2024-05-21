@@ -1,6 +1,6 @@
 /*
- *	Testbench for Project 2 Part 3
- *	Copyright (C) 2023  Hsiu-Yi Ou Yang or any person belong ESSLab.
+ *	Testbench for Project 3 Part 3
+ *	Copyright (C) 2024 Shi Chen Lin or any person belong ESSLab.
  *	All Right Reserved.
  *
  *	This program is free software: you can redistribute it and/or modify
@@ -46,12 +46,13 @@
 `define LOW		1'b0
 `define HIGH	1'b1
 
-module tb_SimpleCPU;
+module tb_FinalCPU;
 
 	// Inputs
 	reg [31:0] Input_Addr;
 	
 	// Outputs
+	wire		PC_Write;
 	wire [31:0] Output_Addr;
 	
 	// Clock
@@ -66,8 +67,9 @@ module tb_SimpleCPU;
 	integer i;
 	
 	// Instantiate the Unit Under Test (UUT)
-	SimpleCPU UUT(
+	FinalCPU UUT(
 		// Outputs
+		.PC_Write(PC_Write),
 		.Output_Addr(Output_Addr),
 		// Inputs
 		.Input_Addr(Input_Addr),
@@ -78,7 +80,7 @@ module tb_SimpleCPU;
 	begin : Preprocess
 		// Initialize inputs
 		Input_Addr	= 32'd0;
-		clk = `HIGH;
+		clk = `LOW;
 
 		// Initialize testbench files
 		$readmemh(`INSTR_FILE,	instrMem);
@@ -120,9 +122,8 @@ module tb_SimpleCPU;
 		while (Input_Addr < `INSTR_MAX - 4)
 		begin
 			@(negedge clk);
-			Input_Addr <= Output_Addr;
+			Input_Addr <= (PC_Write) ? Output_Addr : Input_Addr;
 			@(posedge clk);
-
 		end
 		
 		// Read out all register value

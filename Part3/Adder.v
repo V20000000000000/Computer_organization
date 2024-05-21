@@ -1,9 +1,9 @@
 module Adder(
-    input [31:0] A,
-    input [31:0] B,
-    output [31:0] Sum
+    input [31:0] inputAddr,
+    input [31:0] inputOffset,
+    output [31:0] outputAddr
 );
 
-assign Sum = A + B;
+assign outputAddr = inputAddr + inputOffset;
 
 endmodule

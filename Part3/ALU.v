@@ -11,11 +11,8 @@ module ALU
     input [31:0] srcB,
     input [5:0] funct,
     input [4:0] shamt,
-    output reg [31:0] result,
-    output zero
+    output reg [31:0] result
 );
-
-assign zero = (result == 32'b0);
 
 always @(*)
 begin

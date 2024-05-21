@@ -1,8 +1,8 @@
 // Data Memory in Hex
-FF		// Addr = 0x00
-FF		// Addr = 0x01
-FF		// Addr = 0x02
-FF		// Addr = 0x03
+00		// Addr = 0x00
+00		// Addr = 0x01
+00		// Addr = 0x02
+01		// Addr = 0x03
 FF		// Addr = 0x04
 FF		// Addr = 0x05
 FF		// Addr = 0x06
