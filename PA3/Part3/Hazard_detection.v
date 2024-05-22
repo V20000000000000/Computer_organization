@@ -6,7 +6,8 @@ module Hazard_detection
     input ID_EX_MemRead,
     output reg IF_ID_write = 1'b1,  
     output reg isControl = 1'b1,
-    output reg PC_Write = 1'b1
+    output reg PC_Write = 1'b1,
+    output reg addr_ctrl = 1'b1,
 );
 
 //  if (ID/EX.MemRead and
@@ -22,12 +23,14 @@ module Hazard_detection
             IF_ID_write = 0;    
             isControl = 0;
             PC_Write = 0;
+            addr_ctrl = 0;
         end
         else
         begin
             IF_ID_write = 1;
             isControl = 1;
             PC_Write = 1;
+            addr_ctrl = 1;
         end
     end
 

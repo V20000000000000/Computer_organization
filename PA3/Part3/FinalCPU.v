@@ -50,8 +50,8 @@ module FinalCPU(
 	wire [31:0] Rt_data_wire1, Rt_data_wire2;
 	wire [31:0] Rd_data_wire4;
 	wire [31:0] imm_wire1, imm_wire2;
-	wire [4:0] Rd_addr_wire2, Rd_addr_wire2_1, Rd_addr_wire3, Rd_addr_wire4;
-	wire [4:0] Rt_addr_wire2;
+	wire [4:0] Rd_addr_wire1, Rd_addr_wire2, Rd_addr_wire2_1, Rd_addr_wire3, Rd_addr_wire4;
+	wire [4:0] Rt_addr_wire1, Rt_addr_wire2;
 	wire [4:0] Rs_addr_wire2;
 	wire [31:0] ALU_src1_wire, ALU_src2_wire;
 	wire [31:0] Mem_addr_wire;
@@ -60,6 +60,7 @@ module FinalCPU(
 	wire [31:0] Mem_w_data_wire2, Mem_w_data_wire3;
 	wire [31:0] Mem_r_data_wire3, Mem_r_data_wire4;
 	wire [5:0] Funct_wire;
+	wire addr_ctrl_wire;
 
 	/* 
 	 * Declaration of Instruction Memory.
@@ -164,6 +165,7 @@ module FinalCPU(
 		.PC_Write(PC_Write),
 		.isControl(isControl_wire),
 		.IF_ID_write(IF_ID_write_wire),
+		.addr_ctrl(addr_ctrl_wire),
 		// Inputs
 		.ID_EX_Rt_addr(Rt_addr_wire2),
 		.IF_ID_Rs_addr(instruction_out_wire[25:21]),
@@ -194,8 +196,8 @@ module FinalCPU(
 		.Rs_data_in(Rs_data_wire1),
 		.Rt_data_in(Rt_data_wire1),
 		.Imm_in(imm_wire1),
-		.Rd_addr_in(instruction_out_wire[15:11]),
-		.Rt_addr_in(instruction_out_wire[20:16]),
+		.Rd_addr_in(Rd_addr_wire1),
+		.Rt_addr_in(Rt_addr_wire1),
 		.Rs_addr_in(instruction_out_wire[25:21]),
 		.ALU_op_in(ALU_op_wire1),
 		.Reg_w_in(Reg_w_wire1),
@@ -282,6 +284,28 @@ module FinalCPU(
 		.A(Rt_addr_wire2),
 		.B(Rd_addr_wire2),
 		.S(Reg_dst_wire2)
+	);
+
+	/* 
+	 * Declaration of clear_addr MUX_5bit.
+	 * CAUTION: DONT MODIFY THE NAME.
+	 */
+	MUX_5bit clear_Rt_addr_MUX(
+		// Outputs
+		.Y(Rt_addr_wire1),
+		// Inputs
+		.A(5'b00000),
+		.B(instruction_out_wire[20:16]),
+		.S(addr_ctrl_wire)
+	);
+
+	MUX_5bit clear_Rd_addr_MUX(
+		// Outputs
+		.Y(Rd_addr_wire1),
+		// Inputs
+		.A(5'b00000),
+		.B(instruction_out_wire[15:11]),
+		.S(addr_ctrl_wire)
 	);
 
 	/* 
