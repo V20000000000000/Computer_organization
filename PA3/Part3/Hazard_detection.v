@@ -7,7 +7,7 @@ module Hazard_detection
     output reg IF_ID_write = 1'b1,  
     output reg isControl = 1'b1,
     output reg PC_Write = 1'b1,
-    output reg addr_ctrl = 1'b1,
+    output reg addr_ctrl = 1'b1
 );
 
 //  if (ID/EX.MemRead and
