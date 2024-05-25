@@ -27,7 +27,6 @@
  * CAUTION: DONT MODIFY THE NAME AND VALUE.
  */
 `define REG_MEM_SIZE	32	// Words
-
 /*
  * Declaration of Register File for this project.
  * CAUTION: DONT MODIFY THE NAME.
@@ -40,7 +39,6 @@ module RF(
 	input [4:0] Rs_addr, Rt_addr, Rd_addr,
 	input Reg_w, clk
 );
-
 	/* 
 	 * Declaration of inner register.
 	 * CAUTION: DONT MODIFY THE NAME AND SIZE.
@@ -55,5 +53,4 @@ module RF(
 		if (Reg_w)
 			R[Rd_addr] <= Rd_data;
 	end
-
 endmodule

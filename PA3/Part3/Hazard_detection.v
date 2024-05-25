@@ -4,10 +4,10 @@ module Hazard_detection
     input [4:0] IF_ID_Rs_addr,
     input [4:0] IF_ID_Rt_addr,
     input ID_EX_MemRead,
-    output reg IF_ID_write = 1'b1,  
-    output reg isControl = 1'b1,
-    output reg PC_Write = 1'b1,
-    output reg addr_ctrl = 1'b1
+    output reg IF_ID_write,  
+    output reg isControl,
+    output reg PC_Write,
+    output reg addr_ctrl
 );
 
 //  if (ID/EX.MemRead and
@@ -15,6 +15,14 @@ module Hazard_detection
 //  (ID/EX.RegisterRt = = IF/ID.registerRt))
 //  stall the pipeline for one cycle
 //  (ID/EX.MemRead=1 indicates a load instruction)
+
+initial 
+begin
+    IF_ID_write = 1;
+    isControl = 1;
+    PC_Write = 1;
+    addr_ctrl = 1;
+end
 
     always @(*)
     begin

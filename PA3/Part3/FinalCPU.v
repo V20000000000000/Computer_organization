@@ -89,7 +89,7 @@ module FinalCPU(
 	 * Declaration of IF_TD.
 	 * CAUTION: DONT MODIFY THE NAME.
 	 */
-	IF_ID IF_TD(
+	IF_ID IF_ID(
 		// Outputs
 		.Instruction_ID(instruction_out_wire),
 		// Inputs

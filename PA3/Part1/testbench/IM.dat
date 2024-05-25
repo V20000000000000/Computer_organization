@@ -1,20 +1,20 @@
 // Instruction Memory in Hex
-00		// Addr = 0x00
-22		// Addr = 0x01
-50		// Addr = 0x02
+00
+22
+50
 0B		// Addr = 0x03
-00		// Addr = 0x04
-41		// Addr = 0x05
-58		// Addr = 0x06
-0D		// Addr = 0x07
-FF		// Addr = 0x08
-FF		// Addr = 0x09
-FF		// Addr = 0x0A
-FF		// Addr = 0x0B
-FF		// Addr = 0x0C
-FF		// Addr = 0x0D
-FF		// Addr = 0x0E
-FF		// Addr = 0x0F
+00
+41
+58
+0D
+00
+2B
+61
+26
+00
+22
+68
+36
 FF		// Addr = 0x10
 FF		// Addr = 0x11
 FF		// Addr = 0x12

@@ -16,7 +16,6 @@ module EX_MEM
     output reg Mem_w_out,
     output reg Mem_to_reg_out
 );
-
     always @(negedge clk)
     begin
         ALU_result_out <= ALU_result_in;

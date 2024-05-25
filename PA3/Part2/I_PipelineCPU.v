@@ -194,7 +194,7 @@ module I_PipelineCPU(
 		.srcA(Rs_data_wire2),
 		.srcB(src2_wire),
 		.funct(Funct_wire),
-		.shamt(instruction_out_wire[10:6])
+		.shamt(Imm_wire2[10:6])
 	);
 
 	/* 
