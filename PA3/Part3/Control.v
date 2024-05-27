@@ -49,7 +49,7 @@ always @(*) begin
             ALU_op = 2'b01; // SUBU
             ALU_src = 1'b1; // I type
             Mem_w = 1'b0;  // Not write data memory
-            Mem_r = 1'b1;  // Don't care
+            Mem_r = 1'b0;  // Don't care
             Mem_to_reg = 1'b0;  // data from ALU
         end
     6'b101010: // SLTI
@@ -59,7 +59,7 @@ always @(*) begin
             ALU_op = 2'b11; // SLTI
             ALU_src = 1'b1; // I type
             Mem_w = 1'b0;  // Not write data memory
-            Mem_r = 1'b1;  // Don't care
+            Mem_r = 1'b0;  // Don't care
             Mem_to_reg = 1'b0;  // data from ALU
         end
     default:
