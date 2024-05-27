@@ -18,7 +18,7 @@ module Forwarding
         begin
             Forwarding_A = 10;
         end
-        else if ((Rs_addr == Mem_WB_Rd_addr) && (EX_Mem_Rd_addr != Rs_addr) && Mem_WB_RegWrite && Mem_WB_Rd_addr != 0)
+        else if ((Rs_addr == Mem_WB_Rd_addr) && Mem_WB_RegWrite && Mem_WB_Rd_addr != 0) //&& (EX_Mem_Rd_addr != Rs_addr)
         begin
             Forwarding_A = 01;
         end
@@ -36,7 +36,7 @@ module Forwarding
         begin
             Forwarding_B = 10;
         end
-        else if ((Rt_addr == Mem_WB_Rd_addr) && (EX_Mem_Rd_addr != Rt_addr) && Mem_WB_RegWrite && Mem_WB_Rd_addr != 0)
+        else if ((Rt_addr == Mem_WB_Rd_addr) && Mem_WB_RegWrite && Mem_WB_Rd_addr != 0) // && (EX_Mem_Rd_addr != Rt_addr)
         begin
             Forwarding_B = 01;
         end
